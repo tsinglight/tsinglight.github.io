@@ -156,6 +156,16 @@
         </li>
       
         
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-th fa-fw"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
         <li class="menu-item menu-item-archives">
           <a href="/archives" rel="section">
             
@@ -231,8 +241,8 @@
             
               
                 
-                <a class="post-title-link" href="/2016/02/15/用Git-HEXO搭建个人博客/" itemprop="url">
-                  用Git+HEXO搭建个人博客
+                <a class="post-title-link" href="/2016/02/15/用Git-Hexo搭建个人Blog/" itemprop="url">
+                  用Git+Hexo搭建个人Blog
                 </a>
               
             
@@ -245,7 +255,7 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-02-15T12:35:21+08:00" content="2016-02-15">
+            <time itemprop="dateCreated" datetime="2016-02-15T13:35:28+08:00" content="2016-02-15">
               2016-02-15
             </time>
           </span>
@@ -256,8 +266,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/02/15/用Git-HEXO搭建个人博客/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/02/15/用Git-HEXO搭建个人博客/" itemprop="commentsCount"></span>
+                <a href="/2016/02/15/用Git-Hexo搭建个人Blog/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/02/15/用Git-Hexo搭建个人Blog/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -280,7 +290,10 @@
       
         
           
-            
+            <h3 id="1-首先，你需要安装Git-和Node-JS"><a href="#1-首先，你需要安装Git-和Node-JS" class="headerlink" title="1.首先，你需要安装Git,和Node.JS"></a>1.首先，你需要安装Git,和Node.JS</h3><h3 id="Git-for-Windows-Node-JS"><a href="#Git-for-Windows-Node-JS" class="headerlink" title="Git-for-Windows  Node.JS"></a><a href="http://msysgit.github.io/" target="_blank" rel="external">Git-for-Windows</a>  <a href="nodejs.org">Node.JS</a></h3><h3 id="2-配置你的GitHub"><a href="#2-配置你的GitHub" class="headerlink" title="2.配置你的GitHub"></a>2.配置你的GitHub</h3><p>建立Repository<br>建立与你用户名对应的仓库，仓库名必须为【your_user_name.github.io】<br>配置SSH-Key</p>
+<h3 id="3-安装Hexo"><a href="#3-安装Hexo" class="headerlink" title="3.安装Hexo"></a>3.安装Hexo</h3><p>打开Git命令行，执行如下命令<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install -g hexo</span><br></pre></td></tr></table></figure></p>
+<p>在电脑中建立一个名字叫「Hexo」的文件夹（比如我建在了E:\Hexo），然后在此文件夹中右键打开Git Bash。执行下面的命令<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo init&#10;[info] Copying data&#10;[info] You are almost done! Don&#39;t forget to run `npm install` before you start b&#10;logging with Hexo!</span><br></pre></td></tr></table></figure></p>
+
           
         
       
@@ -433,7 +446,7 @@
       <section class="site-overview sidebar-panel  sidebar-panel-active ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
-               src="/images/default_avatar.jpg"
+               src="/uploads/avatar.jpg"
                alt="TsingLight" />
           <p class="site-author-name" itemprop="name">TsingLight</p>
           <p class="site-description motion-element" itemprop="description">Personal Blog</p>
@@ -448,6 +461,13 @@
           
           
 
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
           
 
         </nav>
