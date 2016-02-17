@@ -209,6 +209,15 @@
 
     
     
+      
+      
+        
+        
+        
+      
+
+      
+    
 
     
       
@@ -292,213 +301,6 @@
 <p>CSS相邻兄弟选择器:<br>可以①选择紧接在另一个元素后的元素②二者有相同的父元素<br>例如，如果要增加紧接在 h1 元素后出现的段落的上边距，可以这样写<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">h1 + p &#123;margin-top:50px;&#125;</span><br></pre></td></tr></table></figure></p>
 <p>相邻兄弟结合符还可以结合其他结合符：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">html &gt; body table + ul &#123;margin-top:20px;&#125;</span><br></pre></td></tr></table></figure></p>
 <p>选择紧接在 table 元素后出现的所有兄弟 ul 元素，该 table 元素包含在一个 body 元素中，body 元素本身是 html 元素的子元素。</p>
-
-          
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/02/15/用Git-Hexo搭建个人Blog/" itemprop="url">
-                  用Git+Hexo搭建个人Blog
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-02-15T13:35:28+08:00" content="2016-02-15">
-              2016-02-15
-            </time>
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/02/15/用Git-Hexo搭建个人Blog/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/02/15/用Git-Hexo搭建个人Blog/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="1-首先，你需要安装Git-和Node-JS"><a href="#1-首先，你需要安装Git-和Node-JS" class="headerlink" title="1.首先，你需要安装Git,和Node.JS"></a>1.首先，你需要安装Git,和Node.JS</h3><h3 id="Git-for-Windows-Node-JS"><a href="#Git-for-Windows-Node-JS" class="headerlink" title="Git-for-Windows  Node.JS"></a><a href="http://msysgit.github.io/" target="_blank" rel="external">Git-for-Windows</a>  <a href="http://nodejs.org" target="_blank" rel="external">Node.JS</a></h3><h3 id="2-配置你的GitHub"><a href="#2-配置你的GitHub" class="headerlink" title="2.配置你的GitHub"></a>2.配置你的GitHub</h3><p>建立Repository<br>建立与你用户名对应的仓库，仓库名必须为【your_user_name.github.io】<br>配置SSH-Key</p>
-<h3 id="3-安装Hexo"><a href="#3-安装Hexo" class="headerlink" title="3.安装Hexo"></a>3.安装Hexo</h3><p>打开Git命令行，执行如下命令<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install -g hexo</span><br></pre></td></tr></table></figure></p>
-<p>在电脑中建立一个名字叫「Hexo」的文件夹（比如我建在了E:\Hexo），然后在此文件夹中右键打开Git Bash。执行下面的命令<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ cd E:\hexo&#10;$ hexo init&#10;[info] Copying data&#10;[info] You are almost done! Don&#39;t forget to run `npm install` before you start b&#10;logging with Hexo!</span><br></pre></td></tr></table></figure></p>
-<p>Hexo随后会自动在当前目录下文件夹建立需要的文件。然后按照提示，运行 npm install<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install</span><br></pre></td></tr></table></figure></p>
-<p>之后输入命令<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure></p>
-<p>可以在浏览器中输入</p>
-<h3 id="http-localhost-4000"><a href="#http-localhost-4000" class="headerlink" title="http://localhost:4000/"></a><a href="http://localhost:4000/" target="_blank" rel="external">http://localhost:4000/</a></h3><p>进行访问，这是可以看见Hexo已经为你生成了一个本地blog。 按Ctrl+C停止Server</p>
-<h3 id="4-Create-a-new-post"><a href="#4-Create-a-new-post" class="headerlink" title="4.Create a new post"></a>4.Create a new post</h3><p>在当前目录下（E：\Hexo）,输入<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new &#34;My new post&#34;</span><br></pre></td></tr></table></figure></p>
-<p>刷新<a href="http://localhost:4000/" target="_blank" rel="external">http://localhost:4000/</a>  ，发现自动生成了一篇名为My new post的博客</p>
-<h3 id="5-Generate-static-files"><a href="#5-Generate-static-files" class="headerlink" title="5.Generate static files"></a>5.Generate static files</h3><p>输入命令<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure></p>
-<p>执行该命令后会在当前目录下生成一系HTML和CSS文件</p>
-<h3 id="6-Edit"><a href="#6-Edit" class="headerlink" title="6.Edit"></a>6.Edit</h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new &#34;My New Post&#34;</span><br></pre></td></tr></table></figure>
-<p>会在当前目录(E:\Hexo\source_posts)下生成一个markdown文件：My-New-Post.md</p>
-<p>可以使用一个支持markdown语法的编辑器（比如 Sublime Text 2）来编辑该文件。</p>
-<h3 id="7-部署到github"><a href="#7-部署到github" class="headerlink" title="7.部署到github"></a>7.部署到github</h3><p>部署前需要配置_config.yml文件，首先找到下面的内容<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># Deployment&#10;## Docs: http://hexo.io/docs/deployment.html&#10;deploy:&#10;  type:</span><br></pre></td></tr></table></figure></p>
-<p>将其改为<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># Deployment&#10;## Docs: http://hexo.io/docs/deployment.html&#10;deploy:&#10;  type: github&#10;  repository: git@github.com:xxx/xxx.github.io.git&#10;  branch: master</span><br></pre></td></tr></table></figure></p>
-<p>其中的xxx写你的用户名<br>之后可以发布<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo generate&#10;hexo deploy</span><br></pre></td></tr></table></figure></p>
-<p>根据提示输入账号密码即可</p>
-
-          
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/02/15/hello-world/" itemprop="url">
-                  Hello World
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-02-15T11:11:12+08:00" content="2016-02-15">
-              2016-02-15
-            </time>
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/02/15/hello-world/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/02/15/hello-world/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
 
           
         
