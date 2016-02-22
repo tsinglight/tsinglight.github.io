@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="CSS," />
+  <meta name="keywords" content="JavaScript," />
 
 
 
@@ -57,22 +57,64 @@
 
 
 
-<meta name="description" content="CSS后代选择器：后代选择器又称为包含选择器，可以选择作为某后代的元素
-比如我想对h1元素中的em元素应用样式1h1 em&amp;#123;color:red;&amp;#125;
-此操作会把作为h1元素后代的em元素的文本变红，其他不收到影响12&amp;lt;h1&amp;gt;This is a &amp;lt;em&amp;gt;important&amp;lt;/em&amp;gt; heading&amp;lt;/h1&amp;gt;&amp;lt;p&amp;gt;This">
+<meta name="description" content="JavaScript数字属性和方法属性
+MAX VALUE
+MIN VALUE
+NEGATIVE INFINITIVE
+POSITIVE INFINITIVE
+NaN
+protorype
+constructor
+
+方法
+toExponential()
+toFixed()
+toPrecision()
+toString()
+valueOf()
+
+JavaScript 时间123456789101112">
 <meta property="og:type" content="article">
-<meta property="og:title" content="CSS学习笔记(1)-CSS选择器">
-<meta property="og:url" content="http://yoursite.com/2016/02/17/CSS学习笔记(1)/index.html">
+<meta property="og:title" content="JavaScript学习笔记(2)">
+<meta property="og:url" content="http://yoursite.com/2016/02/20/JavaScript学习笔记-2/index.html">
 <meta property="og:site_name" content="TsingLight's Blog">
-<meta property="og:description" content="CSS后代选择器：后代选择器又称为包含选择器，可以选择作为某后代的元素
-比如我想对h1元素中的em元素应用样式1h1 em&amp;#123;color:red;&amp;#125;
-此操作会把作为h1元素后代的em元素的文本变红，其他不收到影响12&amp;lt;h1&amp;gt;This is a &amp;lt;em&amp;gt;important&amp;lt;/em&amp;gt; heading&amp;lt;/h1&amp;gt;&amp;lt;p&amp;gt;This">
-<meta property="og:updated_time" content="2016-02-17T08:55:18.974Z">
+<meta property="og:description" content="JavaScript数字属性和方法属性
+MAX VALUE
+MIN VALUE
+NEGATIVE INFINITIVE
+POSITIVE INFINITIVE
+NaN
+protorype
+constructor
+
+方法
+toExponential()
+toFixed()
+toPrecision()
+toString()
+valueOf()
+
+JavaScript 时间123456789101112">
+<meta property="og:updated_time" content="2016-02-20T06:30:35.601Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="CSS学习笔记(1)-CSS选择器">
-<meta name="twitter:description" content="CSS后代选择器：后代选择器又称为包含选择器，可以选择作为某后代的元素
-比如我想对h1元素中的em元素应用样式1h1 em&amp;#123;color:red;&amp;#125;
-此操作会把作为h1元素后代的em元素的文本变红，其他不收到影响12&amp;lt;h1&amp;gt;This is a &amp;lt;em&amp;gt;important&amp;lt;/em&amp;gt; heading&amp;lt;/h1&amp;gt;&amp;lt;p&amp;gt;This">
+<meta name="twitter:title" content="JavaScript学习笔记(2)">
+<meta name="twitter:description" content="JavaScript数字属性和方法属性
+MAX VALUE
+MIN VALUE
+NEGATIVE INFINITIVE
+POSITIVE INFINITIVE
+NaN
+protorype
+constructor
+
+方法
+toExponential()
+toFixed()
+toPrecision()
+toString()
+valueOf()
+
+JavaScript 时间123456789101112">
 
 
 
@@ -90,7 +132,7 @@
   };
 </script>
 
-  <title> CSS学习笔记(1)-CSS选择器 | TsingLight's Blog </title>
+  <title> JavaScript学习笔记(2) | TsingLight's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -230,7 +272,7 @@
             
             
               
-                CSS学习笔记(1)-CSS选择器
+                JavaScript学习笔记(2)
               
             
           </h1>
@@ -242,8 +284,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-02-17T15:19:58+08:00" content="2016-02-17">
-              2016-02-17
+            <time itemprop="dateCreated" datetime="2016-02-20T13:21:53+08:00" content="2016-02-20">
+              2016-02-20
             </time>
           </span>
 
@@ -253,8 +295,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/02/17/CSS学习笔记(1)/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/02/17/CSS学习笔记(1)/" itemprop="commentsCount"></span>
+                <a href="/2016/02/20/JavaScript学习笔记-2/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/02/20/JavaScript学习笔记-2/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -275,17 +317,29 @@
       
 
       
-        <h3 id="CSS后代选择器："><a href="#CSS后代选择器：" class="headerlink" title="CSS后代选择器："></a>CSS后代选择器：</h3><p>后代选择器又称为包含选择器，可以选择作为某后代的元素</p>
-<p>比如我想对h1元素中的em元素应用样式<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">h1 em&#123;color:red;&#125;</span><br></pre></td></tr></table></figure></p>
-<p>此操作会把作为h1元素后代的em元素的文本变红，其他不收到影响<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">h1</span>&gt;</span>This is a <span class="tag">&lt;<span class="title">em</span>&gt;</span>important<span class="tag">&lt;/<span class="title">em</span>&gt;</span> heading<span class="tag">&lt;/<span class="title">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">p</span>&gt;</span>This is a <span class="tag">&lt;<span class="title">em</span>&gt;</span> important<span class="tag">&lt;/<span class="title">em</span>&gt;</span> prargraph.<span class="tag">&lt;/<span class="title">p</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
-<h3 id="CSS子元素选择器"><a href="#CSS子元素选择器" class="headerlink" title="CSS子元素选择器:"></a>CSS子元素选择器:</h3><p>只能选择作为某元素子元素的元素。<br>例：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">h1&gt;strong&#123;color:red;&#125;</span><br></pre></td></tr></table></figure></p>
-<p>此规则会令h1下面的两个strong元素变红,但是第二个h1元素的子元素因为是em所以不受影响<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">h1</span>&gt;</span>This is <span class="tag">&lt;<span class="title">strong</span>&gt;</span>very<span class="tag">&lt;/<span class="title">strong</span>&gt;</span><span class="tag">&lt;<span class="title">strong</span>&gt;</span>very<span class="tag">&lt;/<span class="title">strong</span>&gt;</span>important.<span class="tag">&lt;/<span class="title">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">h1</span>&gt;</span>This is <span class="tag">&lt;<span class="title">em</span>&gt;</span>really<span class="tag">&lt;<span class="title">strong</span>&gt;</span>very<span class="tag">&lt;/<span class="title">strong</span>&gt;</span><span class="tag">&lt;/<span class="title">em</span>&gt;</span>important.<span class="tag">&lt;/<span class="title">h1</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
-<h3 id="结合后代选择器和子选择器"><a href="#结合后代选择器和子选择器" class="headerlink" title="结合后代选择器和子选择器"></a>结合后代选择器和子选择器</h3><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">table</span><span class="class">.company</span> td&gt;p</span><br></pre></td></tr></table></figure>
-<p>选择作为td元素子元素的所有p元素，这个td元素继承于table元素，table元素有一个包含company的class属性</p>
-<h3 id="CSS相邻兄弟选择器"><a href="#CSS相邻兄弟选择器" class="headerlink" title="CSS相邻兄弟选择器:"></a>CSS相邻兄弟选择器:</h3><p>可以①选择紧接在另一个元素后的元素②二者有相同的父元素<br>例如，如果要增加紧接在 h1 元素后出现的段落的上边距，可以这样写<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">h1 + p &#123;margin-top:50px;&#125;</span><br></pre></td></tr></table></figure></p>
-<h3 id="相邻兄弟结合符还可以结合其他结合符："><a href="#相邻兄弟结合符还可以结合其他结合符：" class="headerlink" title="相邻兄弟结合符还可以结合其他结合符："></a>相邻兄弟结合符还可以结合其他结合符：</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">html &gt; body table + ul &#123;margin-top:20px;&#125;</span><br></pre></td></tr></table></figure>
-<p>选择紧接在 table 元素后出现的所有兄弟 ul 元素，该 table 元素包含在一个 body 元素中，body 元素本身是 html 元素的子元素。</p>
-
+        <h3 id="JavaScript数字属性和方法"><a href="#JavaScript数字属性和方法" class="headerlink" title="JavaScript数字属性和方法"></a>JavaScript数字属性和方法</h3><h4 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h4><ul>
+<li>MAX VALUE</li>
+<li>MIN VALUE</li>
+<li>NEGATIVE INFINITIVE</li>
+<li>POSITIVE INFINITIVE</li>
+<li>NaN</li>
+<li>protorype</li>
+<li>constructor</li>
+</ul>
+<h4 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h4><ul>
+<li>toExponential()</li>
+<li>toFixed()</li>
+<li>toPrecision()</li>
+<li>toString()</li>
+<li>valueOf()</li>
+</ul>
+<h3 id="JavaScript-时间"><a href="#JavaScript-时间" class="headerlink" title="JavaScript 时间"></a>JavaScript 时间</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//以下实例展示了如何在网页上显示一个时钟</span></span><br><span class="line">&lt;html&gt;</span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="title">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">script</span> <span class="attribute">type</span>=<span class="value">"text/javascript"</span>&gt;</span><span class="handlebars"><span class="xml"></span><br><span class="line">function startTime()</span><br><span class="line">&#123;</span><br><span class="line">var today = new Date()</span><br><span class="line">var h = today.getHours()</span><br><span class="line">var m = today.getMinutes()</span><br><span class="line">var s = today.getSeconds()</span><br><span class="line">//add a zero in front of numbers <span class="tag">&lt;<span class="title">10</span></span><br><span class="line"><span class="attribute">m</span> = <span class="attribute">checkTime</span>(<span class="attribute">m</span>)</span><br><span class="line"><span class="attribute">s</span> = <span class="attribute">checkTime</span>(<span class="attribute">s</span>)</span><br><span class="line"><span class="attribute">document.getElementById</span>('<span class="attribute">txt</span>')<span class="attribute">.innerHTML</span> = <span class="attribute">h</span>+"<span class="attribute">:</span>"+"+<span class="attribute">m</span>+"<span class="attribute">:</span>"+<span class="attribute">s</span></span><br><span class="line"><span class="attribute">t</span>=<span class="value">setTimeout('startTime()',500)</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="attribute">function</span> <span class="attribute">checkTime</span>(<span class="attribute">i</span>)</span><br><span class="line">&#123;</span><br><span class="line"><span class="attribute">if</span> (<span class="attribute">i</span>&lt;<span class="attribute">10</span>)</span><br><span class="line">	&#123;<span class="attribute">i</span>=<span class="value">"0"</span><span class="value">+i&#125;</span></span><br><span class="line">	<span class="attribute">return</span> <span class="attribute">i</span></span><br><span class="line">&#125;</span><br><span class="line"></span></span></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">head</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="title">body</span> <span class="attribute">onload</span>=<span class="value">"startTime()"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">id</span>=<span class="value">"txt"</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">html</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+<h4 id="操作日期"><a href="#操作日期" class="headerlink" title="操作日期"></a>操作日期</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> myDate = <span class="keyword">new</span> <span class="built_in">Date</span>()</span><br><span class="line">myDate.setFullYear(<span class="number">2008</span>,<span class="number">7</span>,<span class="number">9</span>)</span><br></pre></td></tr></table></figure>
+<h4 id="Tip：-表示月份的参数应该介于0-11-上面的例子设置后得到的日期为2008年8月9日"><a href="#Tip：-表示月份的参数应该介于0-11-上面的例子设置后得到的日期为2008年8月9日" class="headerlink" title="Tip： 表示月份的参数应该介于0-11  上面的例子设置后得到的日期为2008年8月9日"></a>Tip： 表示月份的参数应该介于0-11  上面的例子设置后得到的日期为2008年8月9日</h4><h3 id="JavaScript-RegExp对象"><a href="#JavaScript-RegExp对象" class="headerlink" title="JavaScript RegExp对象"></a>JavaScript RegExp对象</h3><figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//RegExp对象用于规定在文本中检索的内容</span></span><br></pre></td></tr></table></figure>
+<h4 id="定义RegExp"><a href="#定义RegExp" class="headerlink" title="定义RegExp"></a>定义RegExp</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> patt1=<span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="string">"e"</span>);</span><br></pre></td></tr></table></figure>
+<p>RegExp对象有三个方法： <code>test()&#39;、</code>exec()<code>、以及</code>compile()`</p>
+<h3 id="JavaScript-BOM（浏览器对象模型）"><a href="#JavaScript-BOM（浏览器对象模型）" class="headerlink" title="JavaScript BOM（浏览器对象模型）"></a>JavaScript BOM（浏览器对象模型）</h3><p>BOM(Broser Object Model)</p>
+<h4 id="Windows对相关"><a href="#Windows对相关" class="headerlink" title="Windows对相关"></a>Windows对相关</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.open()</span><br><span class="line"><span class="built_in">window</span>.close()</span><br><span class="line"><span class="built_in">window</span>.moveTo()</span><br><span class="line"><span class="built_in">window</span>.reseizeTo()</span><br></pre></td></tr></table></figure>
       
     </div>
 
@@ -293,7 +347,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/CSS/" rel="tag">#CSS</a>
+            <a href="/tags/JavaScript/" rel="tag">#JavaScript</a>
           
         </div>
       
@@ -302,17 +356,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/02/15/用Git-Hexo搭建个人Blog/" rel="next" title="用Git+Hexo搭建个人Blog">
-                <i class="fa fa-chevron-left"></i> 用Git+Hexo搭建个人Blog
+              <a href="/2016/02/17/JavaScript-HTML-DOM-2/" rel="next" title="JavaScript HTML DOM (2)">
+                <i class="fa fa-chevron-left"></i> JavaScript HTML DOM (2)
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/02/17/CSS学习笔记-2/" rel="prev" title="CSS学习笔记(2)">
-                CSS学习笔记(2) <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -338,8 +388,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/02/17/CSS学习笔记(1)/"
-           data-title="CSS学习笔记(1)-CSS选择器" data-url="http://yoursite.com/2016/02/17/CSS学习笔记(1)/">
+      <div class="ds-thread" data-thread-key="2016/02/20/JavaScript学习笔记-2/"
+           data-title="JavaScript学习笔记(2)" data-url="http://yoursite.com/2016/02/20/JavaScript学习笔记-2/">
       </div>
     
   </div>
@@ -427,7 +477,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#CSS后代选择器："><span class="nav-number">1.</span> <span class="nav-text">CSS后代选择器：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CSS子元素选择器"><span class="nav-number">2.</span> <span class="nav-text">CSS子元素选择器:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#结合后代选择器和子选择器"><span class="nav-number">3.</span> <span class="nav-text">结合后代选择器和子选择器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CSS相邻兄弟选择器"><span class="nav-number">4.</span> <span class="nav-text">CSS相邻兄弟选择器:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#相邻兄弟结合符还可以结合其他结合符："><span class="nav-number">5.</span> <span class="nav-text">相邻兄弟结合符还可以结合其他结合符：</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#JavaScript数字属性和方法"><span class="nav-number">1.</span> <span class="nav-text">JavaScript数字属性和方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#属性"><span class="nav-number">1.1.</span> <span class="nav-text">属性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#方法"><span class="nav-number">1.2.</span> <span class="nav-text">方法</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JavaScript-时间"><span class="nav-number">2.</span> <span class="nav-text">JavaScript 时间</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#操作日期"><span class="nav-number">2.1.</span> <span class="nav-text">操作日期</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Tip：-表示月份的参数应该介于0-11-上面的例子设置后得到的日期为2008年8月9日"><span class="nav-number">2.2.</span> <span class="nav-text">Tip： 表示月份的参数应该介于0-11  上面的例子设置后得到的日期为2008年8月9日</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JavaScript-RegExp对象"><span class="nav-number">3.</span> <span class="nav-text">JavaScript RegExp对象</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#定义RegExp"><span class="nav-number">3.1.</span> <span class="nav-text">定义RegExp</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JavaScript-BOM（浏览器对象模型）"><span class="nav-number">4.</span> <span class="nav-text">JavaScript BOM（浏览器对象模型）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Windows对相关"><span class="nav-number">4.1.</span> <span class="nav-text">Windows对相关</span></a></li></ol></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">

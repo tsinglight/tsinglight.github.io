@@ -232,6 +232,118 @@
             
               
                 
+                <a class="post-title-link" href="/2016/02/20/JavaScript学习笔记-2/" itemprop="url">
+                  JavaScript学习笔记(2)
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-02-20T13:21:53+08:00" content="2016-02-20">
+              2016-02-20
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/02/20/JavaScript学习笔记-2/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/02/20/JavaScript学习笔记-2/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="JavaScript数字属性和方法"><a href="#JavaScript数字属性和方法" class="headerlink" title="JavaScript数字属性和方法"></a>JavaScript数字属性和方法</h3><h4 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h4><ul>
+<li>MAX VALUE</li>
+<li>MIN VALUE</li>
+<li>NEGATIVE INFINITIVE</li>
+<li>POSITIVE INFINITIVE</li>
+<li>NaN</li>
+<li>protorype</li>
+<li>constructor</li>
+</ul>
+<h4 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h4><ul>
+<li>toExponential()</li>
+<li>toFixed()</li>
+<li>toPrecision()</li>
+<li>toString()</li>
+<li>valueOf()</li>
+</ul>
+<h3 id="JavaScript-时间"><a href="#JavaScript-时间" class="headerlink" title="JavaScript 时间"></a>JavaScript 时间</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//以下实例展示了如何在网页上显示一个时钟</span></span><br><span class="line">&lt;html&gt;</span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="title">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">script</span> <span class="attribute">type</span>=<span class="value">"text/javascript"</span>&gt;</span><span class="handlebars"><span class="xml"></span><br><span class="line">function startTime()</span><br><span class="line">&#123;</span><br><span class="line">var today = new Date()</span><br><span class="line">var h = today.getHours()</span><br><span class="line">var m = today.getMinutes()</span><br><span class="line">var s = today.getSeconds()</span><br><span class="line">//add a zero in front of numbers <span class="tag">&lt;<span class="title">10</span></span><br><span class="line"><span class="attribute">m</span> = <span class="attribute">checkTime</span>(<span class="attribute">m</span>)</span><br><span class="line"><span class="attribute">s</span> = <span class="attribute">checkTime</span>(<span class="attribute">s</span>)</span><br><span class="line"><span class="attribute">document.getElementById</span>('<span class="attribute">txt</span>')<span class="attribute">.innerHTML</span> = <span class="attribute">h</span>+"<span class="attribute">:</span>"+"+<span class="attribute">m</span>+"<span class="attribute">:</span>"+<span class="attribute">s</span></span><br><span class="line"><span class="attribute">t</span>=<span class="value">setTimeout('startTime()',500)</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="attribute">function</span> <span class="attribute">checkTime</span>(<span class="attribute">i</span>)</span><br><span class="line">&#123;</span><br><span class="line"><span class="attribute">if</span> (<span class="attribute">i</span>&lt;<span class="attribute">10</span>)</span><br><span class="line">	&#123;<span class="attribute">i</span>=<span class="value">"0"</span><span class="value">+i&#125;</span></span><br><span class="line">	<span class="attribute">return</span> <span class="attribute">i</span></span><br><span class="line">&#125;</span><br><span class="line"></span></span></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">head</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="title">body</span> <span class="attribute">onload</span>=<span class="value">"startTime()"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">id</span>=<span class="value">"txt"</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">html</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+<h4 id="操作日期"><a href="#操作日期" class="headerlink" title="操作日期"></a>操作日期</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> myDate = <span class="keyword">new</span> <span class="built_in">Date</span>()</span><br><span class="line">myDate.setFullYear(<span class="number">2008</span>,<span class="number">7</span>,<span class="number">9</span>)</span><br></pre></td></tr></table></figure>
+<h4 id="Tip：-表示月份的参数应该介于0-11-上面的例子设置后得到的日期为2008年8月9日"><a href="#Tip：-表示月份的参数应该介于0-11-上面的例子设置后得到的日期为2008年8月9日" class="headerlink" title="Tip： 表示月份的参数应该介于0-11  上面的例子设置后得到的日期为2008年8月9日"></a>Tip： 表示月份的参数应该介于0-11  上面的例子设置后得到的日期为2008年8月9日</h4><h3 id="JavaScript-RegExp对象"><a href="#JavaScript-RegExp对象" class="headerlink" title="JavaScript RegExp对象"></a>JavaScript RegExp对象</h3><figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//RegExp对象用于规定在文本中检索的内容</span></span><br></pre></td></tr></table></figure>
+<h4 id="定义RegExp"><a href="#定义RegExp" class="headerlink" title="定义RegExp"></a>定义RegExp</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> patt1=<span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="string">"e"</span>);</span><br></pre></td></tr></table></figure>
+<p>RegExp对象有三个方法： <code>test()&#39;、</code>exec()<code>、以及</code>compile()`</p>
+<h3 id="JavaScript-BOM（浏览器对象模型）"><a href="#JavaScript-BOM（浏览器对象模型）" class="headerlink" title="JavaScript BOM（浏览器对象模型）"></a>JavaScript BOM（浏览器对象模型）</h3><p>BOM(Broser Object Model)</p>
+<h4 id="Windows对相关"><a href="#Windows对相关" class="headerlink" title="Windows对相关"></a>Windows对相关</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.open()</span><br><span class="line"><span class="built_in">window</span>.close()</span><br><span class="line"><span class="built_in">window</span>.moveTo()</span><br><span class="line"><span class="built_in">window</span>.reseizeTo()</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/02/17/JavaScript-HTML-DOM-2/" itemprop="url">
                   JavaScript HTML DOM (2)
                 </a>
@@ -979,7 +1091,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">7</span>
+              <span class="site-state-item-count">8</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
