@@ -232,6 +232,108 @@
             
               
                 
+                <a class="post-title-link" href="/2016/02/22/基于SIFT的算法的全景图像拼接程序（C-）/" itemprop="url">
+                  基于SIFT算法的全景图像拼接程序（C++）
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-02-22T23:20:19+08:00" content="2016-02-22">
+              2016-02-22
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/02/22/基于SIFT的算法的全景图像拼接程序（C-）/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/02/22/基于SIFT的算法的全景图像拼接程序（C-）/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>程序运行环境： visual studio 2013  +  openCV 2.4.9</p>
+<p>此程序使用sift算法进行图像的全景拼接，主要有以下几个步骤</p>
+<ol>
+<li>读取两张图片,提取sift特征</li>
+<li>使用kd-tree和BBF算法进行特征点匹配</li>
+<li>利用RANSAC算法筛选匹配点，计算变换矩阵</li>
+<li>图像融合</li>
+</ol>
+<hr>
+<ol>
+<li>SIFT特征提取</li>
+</ol>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line">IplImage *img1_Feat = cvCloneImage(img1);<span class="comment">//复制图1，深拷贝，用来画特征点  </span></span><br><span class="line">IplImage *img2_Feat = cvCloneImage(img2);<span class="comment">//复制图2，深拷贝，用来画特征点  </span></span><br><span class="line">IplImage *stacked = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">struct</span> feature *feat1, *feat2;<span class="comment">//feat1：图1的特征点数组，feat2：图2的特征点数组  </span></span><br><span class="line"><span class="keyword">int</span> n1, n2;<span class="comment">//n1:图1中的特征点个数，n2：图2中的特征点个数  </span></span><br><span class="line"><span class="keyword">struct</span> feature *feat;<span class="comment">//每个特征点  </span></span><br><span class="line"><span class="keyword">struct</span> kd_node *kd_root;<span class="comment">//k-d树的树根  </span></span><br><span class="line"><span class="keyword">struct</span> feature **nbrs;<span class="comment">//当前特征点的最近邻点数组  </span></span><br><span class="line"><span class="keyword">int</span> matchNum;<span class="comment">//经距离比值法筛选后的匹配点对的个数  </span></span><br><span class="line"><span class="keyword">struct</span> feature **inliers;<span class="comment">//精RANSAC筛选后的内点数组  </span></span><br><span class="line"><span class="keyword">int</span> n_inliers;<span class="comment">//经RANSAC算法筛选后的内点个数,即feat1中具有符合要求的特征点的个数  </span></span><br><span class="line">stacked = expand_imgs(img1, img2);</span><br><span class="line"></span><br><span class="line"><span class="comment">//默认提取的是LOWE格式的SIFT特征点  </span></span><br><span class="line"><span class="comment">//提取并显示第1幅图片上的特征点  </span></span><br><span class="line">n1 = sift_features(img1, &amp;feat1);<span class="comment">//检测图1中的SIFT特征点,n1是图1的特征点个数  </span></span><br><span class="line">export_features(<span class="string">"feature1.txt"</span>, feat1, n1);<span class="comment">//将特征向量数据写入到文件  </span></span><br><span class="line">draw_features(img1_Feat, feat1, n1);<span class="comment">//画出特征点  </span></span><br><span class="line">cvShowImage(<span class="string">"img1_Feat"</span>, img1_Feat);<span class="comment">//显示  </span></span><br><span class="line"></span><br><span class="line"><span class="comment">//提取并显示第2幅图片上的特征点  </span></span><br><span class="line">n2 = sift_features(img2, &amp;feat2);<span class="comment">//检测图2中的SIFT特征点，n2是图2的特征点个数  </span></span><br><span class="line">export_features(<span class="string">"feature2.txt"</span>, feat2, n2);<span class="comment">//将特征向量数据写入到文件  </span></span><br><span class="line">draw_features(img2_Feat, feat2, n2);<span class="comment">//画出特征点  </span></span><br><span class="line">cvShowImage(<span class="string">"img2_Feat"</span>, img2_Feat);<span class="comment">//显示  </span></span><br><span class="line"></span><br><span class="line"><span class="comment">//根据图1的特征点集feat1建立k-d树，返回k-d树根给kd_root</span></span><br><span class="line">kd_root = kdtree_build(feat1, n1);</span><br><span class="line"></span><br><span class="line">Point pt1, pt2;<span class="comment">//连线的两个端点</span></span><br><span class="line"><span class="keyword">double</span> d0, d1;<span class="comment">//feat2中每个特征点到最近邻和次近邻的距离</span></span><br><span class="line">matchNum = <span class="number">0</span>;<span class="comment">//经距离比值法筛选后的匹配点对的个数</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//遍历特征点集feat2，针对feat2中每个特征点feat，选取符合距离比值条件的匹配点，放到feat的fwd_match域中</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n2; i++)</span><br><span class="line">&#123;</span><br><span class="line">	feat = feat2 + i;<span class="comment">//第i个特征点的指针</span></span><br><span class="line">	<span class="comment">//在kd_root中搜索目标点feat的2个最近邻点，存放在nbrs中，返回实际找到的近邻点个数</span></span><br><span class="line">	<span class="keyword">int</span> k = kdtree_bbf_knn(kd_root, feat, <span class="number">2</span>, &amp;nbrs, KDTREE_BBF_MAX_NN_CHKS);</span><br><span class="line">	<span class="keyword">if</span> (k == <span class="number">2</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		d0 = descr_dist_sq(feat, nbrs[<span class="number">0</span>]);<span class="comment">//feat与最近邻点的距离的平方</span></span><br><span class="line">		d1 = descr_dist_sq(feat, nbrs[<span class="number">1</span>]);<span class="comment">//feat与次近邻点的距离的平方</span></span><br><span class="line">		<span class="comment">//若d0和d1的比值小于阈值NN_SQ_DIST_RATIO_THR，则接受此匹配，否则剔除</span></span><br><span class="line">		<span class="keyword">if</span> (d0 &lt; d1 * NN_SQ_DIST_RATIO_THR)</span><br><span class="line">		&#123;   <span class="comment">//将目标点feat和最近邻点作为匹配点对</span></span><br><span class="line">			pt2 = Point(cvRound(feat-&gt;x), cvRound(feat-&gt;y));<span class="comment">//图2中点的坐标</span></span><br><span class="line">			pt1 = Point(cvRound(nbrs[<span class="number">0</span>]-&gt;x), cvRound(nbrs[<span class="number">0</span>]-&gt;y));<span class="comment">//图1中点的坐标(feat的最近邻点)</span></span><br><span class="line">			pt2.x += img1-&gt;width;<span class="comment">//由于两幅图是左右排列的，pt2的横坐标加上图1的宽度，作为连线的终点</span></span><br><span class="line">			cvLine(stacked, pt1, pt2, CV_RGB(<span class="number">255</span>, <span class="number">0</span>, <span class="number">255</span>), <span class="number">1</span>, <span class="number">8</span>, <span class="number">0</span>);<span class="comment">//画出连线</span></span><br><span class="line">			matchNum++;<span class="comment">//统计匹配点对的个数</span></span><br><span class="line">			feat2[i].fwd_match = nbrs[<span class="number">0</span>];<span class="comment">//使点feat的fwd_match域指向其对应的匹配点</span></span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">free</span>(nbrs);<span class="comment">//释放近邻数组</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//显示并保存经距离比值法筛选后的匹配图</span></span><br><span class="line">cvNamedWindow(<span class="string">"IMG_MATCH1"</span>);<span class="comment">//创建窗口</span></span><br><span class="line">cvShowImage(<span class="string">"IMG_MATCH1"</span>, stacked);<span class="comment">//显示</span></span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/02/20/JavaScript学习笔记-2/" itemprop="url">
                   JavaScript学习笔记(2)
                 </a>
@@ -304,6 +406,10 @@
 <p>RegExp对象有三个方法： <code>test()&#39;、</code>exec()<code>、以及</code>compile()`</p>
 <h3 id="JavaScript-BOM（浏览器对象模型）"><a href="#JavaScript-BOM（浏览器对象模型）" class="headerlink" title="JavaScript BOM（浏览器对象模型）"></a>JavaScript BOM（浏览器对象模型）</h3><p>BOM(Broser Object Model)</p>
 <h4 id="Windows对相关"><a href="#Windows对相关" class="headerlink" title="Windows对相关"></a>Windows对相关</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.open()</span><br><span class="line"><span class="built_in">window</span>.close()</span><br><span class="line"><span class="built_in">window</span>.moveTo()</span><br><span class="line"><span class="built_in">window</span>.reseizeTo()</span><br></pre></td></tr></table></figure>
+<h4 id="Window-Location"><a href="#Window-Location" class="headerlink" title="Window Location"></a>Window Location</h4><h5 id="window-location-对象在编写时可以不用window这个前缀"><a href="#window-location-对象在编写时可以不用window这个前缀" class="headerlink" title="window.location 对象在编写时可以不用window这个前缀"></a>window.location 对象在编写时可以不用window这个前缀</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">location.hostname <span class="comment">//返回主机域名</span></span><br><span class="line">location.pathname<span class="comment">//返回当前页面的路径和文件名</span></span><br><span class="line">location.port<span class="comment">//返回主机端口</span></span><br><span class="line">location.protocol  <span class="comment">//返回所使用的web协议</span></span><br><span class="line">location.herf   <span class="comment">//返回(当前整个页面的)URL</span></span><br><span class="line">location.assign   <span class="comment">//加载新的文档</span></span><br></pre></td></tr></table></figure>
+<h3 id="JavaScript记时"><a href="#JavaScript记时" class="headerlink" title="JavaScript记时"></a>JavaScript记时</h3><p><code>setTimeout()</code><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> t=setTimeout(<span class="string">"javascript语句"</span>,毫秒数)</span><br></pre></td></tr></table></figure></p>
+<p>`clearTimeout()<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">clearTimeout(setTimeout_variable)</span><br></pre></td></tr></table></figure></p>
+
           
         
       
@@ -1091,7 +1197,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">8</span>
+              <span class="site-state-item-count">9</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -1101,7 +1207,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

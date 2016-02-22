@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="CSS," />
+  <meta name="keywords" content="sift;c++;," />
 
 
 
@@ -57,22 +57,52 @@
 
 
 
-<meta name="description" content="CSS 水平对齐在 CSS 中，可以使用多种属性来水平对齐元素对齐块元素块元素指的是如：123&amp;lt;h1&amp;gt;&amp;lt;p&amp;gt;&amp;lt;div&amp;gt;
-占据全部可用宽度的元素，并且在其前后都会换行
-使用 margin 属性来水平对齐可通过将左和右外边距设置为 “auto”，来对齐块元素。例：1234567.center&amp;#123;margin-left:auto;margin-right:au">
+<meta name="description" content="程序运行环境： visual studio 2013  +  openCV 2.4.9
+此程序使用sift算法进行图像的全景拼接，主要有以下几个步骤
+
+读取两张图片,提取sift特征
+使用kd-tree和BBF算法进行特征点匹配
+利用RANSAC算法筛选匹配点，计算变换矩阵
+图像融合
+
+
+
+SIFT特征提取
+
+12345678910111213141516171819202122232425262">
 <meta property="og:type" content="article">
-<meta property="og:title" content="CSS学习笔记(2)">
-<meta property="og:url" content="http://yoursite.com/2016/02/17/CSS学习笔记-2/index.html">
+<meta property="og:title" content="基于SIFT算法的全景图像拼接程序（C++）">
+<meta property="og:url" content="http://yoursite.com/2016/02/22/基于SIFT的算法的全景图像拼接程序（C-）/index.html">
 <meta property="og:site_name" content="TsingLight's Blog">
-<meta property="og:description" content="CSS 水平对齐在 CSS 中，可以使用多种属性来水平对齐元素对齐块元素块元素指的是如：123&amp;lt;h1&amp;gt;&amp;lt;p&amp;gt;&amp;lt;div&amp;gt;
-占据全部可用宽度的元素，并且在其前后都会换行
-使用 margin 属性来水平对齐可通过将左和右外边距设置为 “auto”，来对齐块元素。例：1234567.center&amp;#123;margin-left:auto;margin-right:au">
-<meta property="og:updated_time" content="2016-02-17T09:16:51.111Z">
+<meta property="og:description" content="程序运行环境： visual studio 2013  +  openCV 2.4.9
+此程序使用sift算法进行图像的全景拼接，主要有以下几个步骤
+
+读取两张图片,提取sift特征
+使用kd-tree和BBF算法进行特征点匹配
+利用RANSAC算法筛选匹配点，计算变换矩阵
+图像融合
+
+
+
+SIFT特征提取
+
+12345678910111213141516171819202122232425262">
+<meta property="og:updated_time" content="2016-02-22T15:31:36.361Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="CSS学习笔记(2)">
-<meta name="twitter:description" content="CSS 水平对齐在 CSS 中，可以使用多种属性来水平对齐元素对齐块元素块元素指的是如：123&amp;lt;h1&amp;gt;&amp;lt;p&amp;gt;&amp;lt;div&amp;gt;
-占据全部可用宽度的元素，并且在其前后都会换行
-使用 margin 属性来水平对齐可通过将左和右外边距设置为 “auto”，来对齐块元素。例：1234567.center&amp;#123;margin-left:auto;margin-right:au">
+<meta name="twitter:title" content="基于SIFT算法的全景图像拼接程序（C++）">
+<meta name="twitter:description" content="程序运行环境： visual studio 2013  +  openCV 2.4.9
+此程序使用sift算法进行图像的全景拼接，主要有以下几个步骤
+
+读取两张图片,提取sift特征
+使用kd-tree和BBF算法进行特征点匹配
+利用RANSAC算法筛选匹配点，计算变换矩阵
+图像融合
+
+
+
+SIFT特征提取
+
+12345678910111213141516171819202122232425262">
 
 
 
@@ -90,7 +120,7 @@
   };
 </script>
 
-  <title> CSS学习笔记(2) | TsingLight's Blog </title>
+  <title> 基于SIFT算法的全景图像拼接程序（C++） | TsingLight's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -230,7 +260,7 @@
             
             
               
-                CSS学习笔记(2)
+                基于SIFT算法的全景图像拼接程序（C++）
               
             
           </h1>
@@ -242,8 +272,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-02-17T16:42:21+08:00" content="2016-02-17">
-              2016-02-17
+            <time itemprop="dateCreated" datetime="2016-02-22T23:20:19+08:00" content="2016-02-22">
+              2016-02-22
             </time>
           </span>
 
@@ -253,8 +283,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/02/17/CSS学习笔记-2/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/02/17/CSS学习笔记-2/" itemprop="commentsCount"></span>
+                <a href="/2016/02/22/基于SIFT的算法的全景图像拼接程序（C-）/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/02/22/基于SIFT的算法的全景图像拼接程序（C-）/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -275,15 +305,19 @@
       
 
       
-        <h3 id="CSS-水平对齐"><a href="#CSS-水平对齐" class="headerlink" title="CSS 水平对齐"></a>CSS 水平对齐</h3><p>在 CSS 中，可以使用多种属性来水平对齐元素<br>对齐块元素<br>块元素指的是如：<br><figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;h1&gt;</span></span><br><span class="line"><span class="tag">&lt;p&gt;</span></span><br><span class="line"><span class="tag">&lt;div&gt;</span></span><br></pre></td></tr></table></figure></p>
-<p>占据全部可用宽度的元素，并且在其前后都会换行</p>
-<h3 id="使用-margin-属性来水平对齐"><a href="#使用-margin-属性来水平对齐" class="headerlink" title="使用 margin 属性来水平对齐"></a>使用 margin 属性来水平对齐</h3><p>可通过将左和右外边距设置为 “auto”，来对齐块元素。<br>例：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">.center</span><br><span class="line">&#123;</span><br><span class="line">margin-left:auto;</span><br><span class="line">margin-right:auto;</span><br><span class="line">width:70%;</span><br><span class="line">background-color:#b0e0e6;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h3 id="提示：如果宽度是-100-，则对齐没有效果。"><a href="#提示：如果宽度是-100-，则对齐没有效果。" class="headerlink" title="提示：如果宽度是 100%，则对齐没有效果。"></a>提示：如果宽度是 100%，则对齐没有效果。</h3><h3 id="使用-position-属性进行左和右对齐"><a href="#使用-position-属性进行左和右对齐" class="headerlink" title="使用 position 属性进行左和右对齐"></a>使用 position 属性进行左和右对齐</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">.right</span><br><span class="line">&#123;</span><br><span class="line">positin:absolute;</span><br><span class="line">right:0px;</span><br><span class="line">width:300px;</span><br><span class="line">background-color:#b0e0e6</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="使用-float-属性来进行左和右对齐"><a href="#使用-float-属性来进行左和右对齐" class="headerlink" title="使用 float 属性来进行左和右对齐"></a>使用 float 属性来进行左和右对齐</h3><p>例：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">.right</span><br><span class="line">&#123;</span><br><span class="line">float:right;</span><br><span class="line">width:300px;</span><br><span class="line">background-color:#b0e0e6;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+        <p>程序运行环境： visual studio 2013  +  openCV 2.4.9</p>
+<p>此程序使用sift算法进行图像的全景拼接，主要有以下几个步骤</p>
+<ol>
+<li>读取两张图片,提取sift特征</li>
+<li>使用kd-tree和BBF算法进行特征点匹配</li>
+<li>利用RANSAC算法筛选匹配点，计算变换矩阵</li>
+<li>图像融合</li>
+</ol>
 <hr>
-<h2 id="CSS导航栏"><a href="#CSS导航栏" class="headerlink" title="CSS导航栏"></a>CSS导航栏</h2><p>导航栏的本质其实就是一个链接列表，所以我们可以使用<code>&lt;ul&gt;</code>和<code>&lt;li&gt;</code>元素<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">ul</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">li</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"http://www.baidu.com"</span>&gt;</span>Baidu<span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">li</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"http://www.hao123.com"</span>&gt;</span>hao123<span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">li</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"http://www.360.com"</span>&gt;</span>360<span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">ul</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
-<p>效果如下</p>
-<html><br><body><br><ul><br><li><a href="http://www.baidu.com" target="_blank" rel="external">Baidu</a></li><br><li><a href="http://www.hao123.com" target="_blank" rel="external">hao123</a></li><br><li><a href="http://www.360.com" target="_blank" rel="external">360</a></li><br></ul><br></body><br></html>
+<ol>
+<li>SIFT特征提取</li>
+</ol>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line">IplImage *img1_Feat = cvCloneImage(img1);<span class="comment">//复制图1，深拷贝，用来画特征点  </span></span><br><span class="line">IplImage *img2_Feat = cvCloneImage(img2);<span class="comment">//复制图2，深拷贝，用来画特征点  </span></span><br><span class="line">IplImage *stacked = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">struct</span> feature *feat1, *feat2;<span class="comment">//feat1：图1的特征点数组，feat2：图2的特征点数组  </span></span><br><span class="line"><span class="keyword">int</span> n1, n2;<span class="comment">//n1:图1中的特征点个数，n2：图2中的特征点个数  </span></span><br><span class="line"><span class="keyword">struct</span> feature *feat;<span class="comment">//每个特征点  </span></span><br><span class="line"><span class="keyword">struct</span> kd_node *kd_root;<span class="comment">//k-d树的树根  </span></span><br><span class="line"><span class="keyword">struct</span> feature **nbrs;<span class="comment">//当前特征点的最近邻点数组  </span></span><br><span class="line"><span class="keyword">int</span> matchNum;<span class="comment">//经距离比值法筛选后的匹配点对的个数  </span></span><br><span class="line"><span class="keyword">struct</span> feature **inliers;<span class="comment">//精RANSAC筛选后的内点数组  </span></span><br><span class="line"><span class="keyword">int</span> n_inliers;<span class="comment">//经RANSAC算法筛选后的内点个数,即feat1中具有符合要求的特征点的个数  </span></span><br><span class="line">stacked = expand_imgs(img1, img2);</span><br><span class="line"></span><br><span class="line"><span class="comment">//默认提取的是LOWE格式的SIFT特征点  </span></span><br><span class="line"><span class="comment">//提取并显示第1幅图片上的特征点  </span></span><br><span class="line">n1 = sift_features(img1, &amp;feat1);<span class="comment">//检测图1中的SIFT特征点,n1是图1的特征点个数  </span></span><br><span class="line">export_features(<span class="string">"feature1.txt"</span>, feat1, n1);<span class="comment">//将特征向量数据写入到文件  </span></span><br><span class="line">draw_features(img1_Feat, feat1, n1);<span class="comment">//画出特征点  </span></span><br><span class="line">cvShowImage(<span class="string">"img1_Feat"</span>, img1_Feat);<span class="comment">//显示  </span></span><br><span class="line"></span><br><span class="line"><span class="comment">//提取并显示第2幅图片上的特征点  </span></span><br><span class="line">n2 = sift_features(img2, &amp;feat2);<span class="comment">//检测图2中的SIFT特征点，n2是图2的特征点个数  </span></span><br><span class="line">export_features(<span class="string">"feature2.txt"</span>, feat2, n2);<span class="comment">//将特征向量数据写入到文件  </span></span><br><span class="line">draw_features(img2_Feat, feat2, n2);<span class="comment">//画出特征点  </span></span><br><span class="line">cvShowImage(<span class="string">"img2_Feat"</span>, img2_Feat);<span class="comment">//显示  </span></span><br><span class="line"></span><br><span class="line"><span class="comment">//根据图1的特征点集feat1建立k-d树，返回k-d树根给kd_root</span></span><br><span class="line">kd_root = kdtree_build(feat1, n1);</span><br><span class="line"></span><br><span class="line">Point pt1, pt2;<span class="comment">//连线的两个端点</span></span><br><span class="line"><span class="keyword">double</span> d0, d1;<span class="comment">//feat2中每个特征点到最近邻和次近邻的距离</span></span><br><span class="line">matchNum = <span class="number">0</span>;<span class="comment">//经距离比值法筛选后的匹配点对的个数</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//遍历特征点集feat2，针对feat2中每个特征点feat，选取符合距离比值条件的匹配点，放到feat的fwd_match域中</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n2; i++)</span><br><span class="line">&#123;</span><br><span class="line">	feat = feat2 + i;<span class="comment">//第i个特征点的指针</span></span><br><span class="line">	<span class="comment">//在kd_root中搜索目标点feat的2个最近邻点，存放在nbrs中，返回实际找到的近邻点个数</span></span><br><span class="line">	<span class="keyword">int</span> k = kdtree_bbf_knn(kd_root, feat, <span class="number">2</span>, &amp;nbrs, KDTREE_BBF_MAX_NN_CHKS);</span><br><span class="line">	<span class="keyword">if</span> (k == <span class="number">2</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		d0 = descr_dist_sq(feat, nbrs[<span class="number">0</span>]);<span class="comment">//feat与最近邻点的距离的平方</span></span><br><span class="line">		d1 = descr_dist_sq(feat, nbrs[<span class="number">1</span>]);<span class="comment">//feat与次近邻点的距离的平方</span></span><br><span class="line">		<span class="comment">//若d0和d1的比值小于阈值NN_SQ_DIST_RATIO_THR，则接受此匹配，否则剔除</span></span><br><span class="line">		<span class="keyword">if</span> (d0 &lt; d1 * NN_SQ_DIST_RATIO_THR)</span><br><span class="line">		&#123;   <span class="comment">//将目标点feat和最近邻点作为匹配点对</span></span><br><span class="line">			pt2 = Point(cvRound(feat-&gt;x), cvRound(feat-&gt;y));<span class="comment">//图2中点的坐标</span></span><br><span class="line">			pt1 = Point(cvRound(nbrs[<span class="number">0</span>]-&gt;x), cvRound(nbrs[<span class="number">0</span>]-&gt;y));<span class="comment">//图1中点的坐标(feat的最近邻点)</span></span><br><span class="line">			pt2.x += img1-&gt;width;<span class="comment">//由于两幅图是左右排列的，pt2的横坐标加上图1的宽度，作为连线的终点</span></span><br><span class="line">			cvLine(stacked, pt1, pt2, CV_RGB(<span class="number">255</span>, <span class="number">0</span>, <span class="number">255</span>), <span class="number">1</span>, <span class="number">8</span>, <span class="number">0</span>);<span class="comment">//画出连线</span></span><br><span class="line">			matchNum++;<span class="comment">//统计匹配点对的个数</span></span><br><span class="line">			feat2[i].fwd_match = nbrs[<span class="number">0</span>];<span class="comment">//使点feat的fwd_match域指向其对应的匹配点</span></span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">free</span>(nbrs);<span class="comment">//释放近邻数组</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//显示并保存经距离比值法筛选后的匹配图</span></span><br><span class="line">cvNamedWindow(<span class="string">"IMG_MATCH1"</span>);<span class="comment">//创建窗口</span></span><br><span class="line">cvShowImage(<span class="string">"IMG_MATCH1"</span>, stacked);<span class="comment">//显示</span></span><br></pre></td></tr></table></figure>
       
     </div>
 
@@ -291,7 +325,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/CSS/" rel="tag">#CSS</a>
+            <a href="/tags/sift-c/" rel="tag">#sift;c++;</a>
           
         </div>
       
@@ -300,17 +334,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/02/17/CSS学习笔记(1)/" rel="next" title="CSS学习笔记(1)-CSS选择器">
-                <i class="fa fa-chevron-left"></i> CSS学习笔记(1)-CSS选择器
+              <a href="/2016/02/20/JavaScript学习笔记-2/" rel="next" title="JavaScript学习笔记(2)">
+                <i class="fa fa-chevron-left"></i> JavaScript学习笔记(2)
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/02/17/JavaScript学习笔记/" rel="prev" title="JavaScript学习笔记">
-                JavaScript学习笔记 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -336,8 +366,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/02/17/CSS学习笔记-2/"
-           data-title="CSS学习笔记(2)" data-url="http://yoursite.com/2016/02/17/CSS学习笔记-2/">
+      <div class="ds-thread" data-thread-key="2016/02/22/基于SIFT的算法的全景图像拼接程序（C-）/"
+           data-title="基于SIFT算法的全景图像拼接程序（C++）" data-url="http://yoursite.com/2016/02/22/基于SIFT的算法的全景图像拼接程序（C-）/">
       </div>
     
   </div>
@@ -425,7 +455,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#CSS-水平对齐"><span class="nav-number">1.</span> <span class="nav-text">CSS 水平对齐</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用-margin-属性来水平对齐"><span class="nav-number">2.</span> <span class="nav-text">使用 margin 属性来水平对齐</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#提示：如果宽度是-100-，则对齐没有效果。"><span class="nav-number">3.</span> <span class="nav-text">提示：如果宽度是 100%，则对齐没有效果。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用-position-属性进行左和右对齐"><span class="nav-number">4.</span> <span class="nav-text">使用 position 属性进行左和右对齐</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用-float-属性来进行左和右对齐"><span class="nav-number">5.</span> <span class="nav-text">使用 float 属性来进行左和右对齐</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS导航栏"><span class="nav-number"></span> <span class="nav-text">CSS导航栏</span></a></div>
+              <p class="post-toc-empty">此文章未包含目录</p>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
