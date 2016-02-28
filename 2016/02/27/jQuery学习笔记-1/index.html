@@ -1,0 +1,765 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="jQuery," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.5.0" />
+
+
+
+
+
+
+<meta name="description" content="jQuery添加jQuery库1&amp;#60;head&amp;#62;&amp;#10;&amp;#60;scprit type = &amp;#34;text/javascrpit&amp;#34; src = &amp;#34;jquery.js&amp;#34;&amp;#62;&amp;#60;/script&amp;#62;&amp;#10;&amp;#60;/head&amp;#62;&amp;#10;//&amp;#60;script&amp;#62;&amp;#26631;&amp;#31614;&amp;#24212;&amp;#3581">
+<meta property="og:type" content="article">
+<meta property="og:title" content="jQuery学习笔记-1">
+<meta property="og:url" content="http://yoursite.com/2016/02/27/jQuery学习笔记-1/index.html">
+<meta property="og:site_name" content="TsingLight's Blog">
+<meta property="og:description" content="jQuery添加jQuery库1&amp;#60;head&amp;#62;&amp;#10;&amp;#60;scprit type = &amp;#34;text/javascrpit&amp;#34; src = &amp;#34;jquery.js&amp;#34;&amp;#62;&amp;#60;/script&amp;#62;&amp;#10;&amp;#60;/head&amp;#62;&amp;#10;//&amp;#60;script&amp;#62;&amp;#26631;&amp;#31614;&amp;#24212;&amp;#3581">
+<meta property="og:updated_time" content="2016-02-28T15:04:45.399Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="jQuery学习笔记-1">
+<meta name="twitter:description" content="jQuery添加jQuery库1&amp;#60;head&amp;#62;&amp;#10;&amp;#60;scprit type = &amp;#34;text/javascrpit&amp;#34; src = &amp;#34;jquery.js&amp;#34;&amp;#62;&amp;#60;/script&amp;#62;&amp;#10;&amp;#60;/head&amp;#62;&amp;#10;//&amp;#60;script&amp;#62;&amp;#26631;&amp;#31614;&amp;#24212;&amp;#3581">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> jQuery学习笔记-1 | TsingLight's Blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?2c2c408ab659ca2d88e49ee6d578a80f";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">TsingLight's Blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu ">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+      
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                jQuery学习笔记-1
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-02-27T00:06:06+08:00" content="2016-02-27">
+              2016-02-27
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/02/27/jQuery学习笔记-1/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/02/27/jQuery学习笔记-1/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="jQuery"><a href="#jQuery" class="headerlink" title="jQuery"></a>jQuery</h1><h3 id="添加jQuery库"><a href="#添加jQuery库" class="headerlink" title="添加jQuery库"></a>添加jQuery库</h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#60;head&#62;&#10;&#60;scprit type = &#34;text/javascrpit&#34; src = &#34;jquery.js&#34;&#62;&#60;/script&#62;&#10;&#60;/head&#62;&#10;//&#60;script&#62;&#26631;&#31614;&#24212;&#35813;&#20301;&#20110;&#60;head&#62;&#37096;&#20998;</span><br></pre></td></tr></table></figure>
+<h2 id="jQuery语法："><a href="#jQuery语法：" class="headerlink" title="jQuery语法："></a>jQuery语法：</h2><p>基础语法:<code>$(selector).action</code></p>
+<ul>
+<li>美元符号定义jQuery</li>
+<li>选择符号查询和查找HTML元素</li>
+<li>jQuery的action（）执行对元素的操作</li>
+</ul>
+<h3 id="文档就绪函数"><a href="#文档就绪函数" class="headerlink" title="文档就绪函数"></a>文档就绪函数</h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(document).ready(function()&#123;&#10;---jQuery function go here---&#10;&#125;)</span><br></pre></td></tr></table></figure>
+<p>这是为了防止文档在完全就绪前去运行jQuery代码</p>
+<h3 id="jQuery属性选择器"><a href="#jQuery属性选择器" class="headerlink" title="jQuery属性选择器"></a>jQuery属性选择器</h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(&#34;[href]&#34;) &#36873;&#21462;&#25152;&#26377;&#24102;&#26377;href&#23646;&#24615;&#30340;&#20803;&#32032;&#10;$(&#34;[href=&#39;#&#39;]&#34;) &#36873;&#21462;&#25152;&#26377;&#24102;&#26377;href &#20540;&#31561;&#20110;#&#30340;&#20803;&#32032;&#10;$(&#34;[href!=&#39;#&#39;]&#34;) &#36873;&#21462;&#25152;&#26377;href&#20540;&#19981;&#31561;&#20110;#&#30340;&#20803;&#32032;&#10;$(&#34;[href$=&#39;.jpg&#39;]&#34;) &#36873;&#21462;&#25152;&#26377;href&#30340;&#20540;&#20197;&#34;.jpg&#34;&#32467;&#23614;&#30340;&#20803;&#32032;</span><br></pre></td></tr></table></figure>
+<h3 id="jQuery-CSS选择器"><a href="#jQuery-CSS选择器" class="headerlink" title="jQuery CSS选择器"></a>jQuery CSS选择器</h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(&#34;p&#34;).css(&#34;background-color&#34;,&#34;red&#34;);</span><br></pre></td></tr></table></figure>
+<h3 id="jQuery名称冲突"><a href="#jQuery名称冲突" class="headerlink" title="jQuery名称冲突"></a>jQuery名称冲突</h3><p>JavaScript库中的某些函数也会使用$<br>jQuery 使用名为noConflict()的方法来解决该问题</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var jq = jQuery.noConflict()</span><br></pre></td></tr></table></figure>
+<h2 id="jQuery-效果"><a href="#jQuery-效果" class="headerlink" title="jQuery 效果"></a>jQuery 效果</h2><h4 id="隐藏-显示"><a href="#隐藏-显示" class="headerlink" title="隐藏/显示"></a>隐藏/显示</h4><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(selector).hide(speed,callback);&#10;$(selector).show(speed,callback);</span><br></pre></td></tr></table></figure>
+<p><code>speen</code>规定了隐藏/显示的速度:<code>slow</code>`fast<code>\自定义毫秒</code>callback` 隐藏或显示完成后所执行的函数名</p>
+<p><code>toggle()</code>切换隐藏/显示</p>
+<h4 id="淡入淡出效果"><a href="#淡入淡出效果" class="headerlink" title="淡入淡出效果"></a>淡入淡出效果</h4><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(selector).fadeIn(speed,callback)&#10;$(selector).fadeOut(speed,callback)&#10;$(selector).fadeToggle(speed,callback)</span><br></pre></td></tr></table></figure>
+<p><code>jQuery fadeTo()</code>方法，允许渐变为给定的不透明度<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(selector).fadeTo(speed.opacity,callback);</span><br></pre></td></tr></table></figure></p>
+<h4 id="滑动效果"><a href="#滑动效果" class="headerlink" title="滑动效果"></a>滑动效果</h4><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(selector).slideDown(speed,callback);&#10;$(selector).slideUp(speed,callback);&#10;$(selector).slideToggle();</span><br></pre></td></tr></table></figure>
+<h4 id="jQuery自定义动画"><a href="#jQuery自定义动画" class="headerlink" title="jQuery自定义动画"></a>jQuery自定义动画</h4><p><code>jquery animate()</code>方法用于创建自定义动画<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(selector).animate(&#123;params&#125;,speed,callback);</span><br></pre></td></tr></table></figure></p>
+<p><code>params</code>参数定义形成动画的CSS属性，必须项<br><code>speed</code>参数规定动画效果的时间长度，可选<br><code>callback</code>参数规定动画完成后执行的函数名称，可选。</p>
+<h5 id="jQuery-animate-操作多个属性"><a href="#jQuery-animate-操作多个属性" class="headerlink" title="jQuery animate() 操作多个属性"></a>jQuery animate() 操作多个属性</h5><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(&#34;button&#34;).click(function())&#123;&#10;&#9;$(&#34;div&#34;).animate(&#123;&#10;&#9;&#9;left:&#39;250px&#39;,&#10;&#9;&#9;opacity:&#39;0.5&#39;,&#10;&#9;&#9;height:&#39;150px&#39;,&#10;&#9;&#9;width:&#39;150px&#39;&#10;&#9;&#10;&#9;&#125;);&#10;&#125;);&#10;&#10;//&#20351;&#29992;animate()&#26102;&#65292;&#24517;&#39035;&#20351;&#29992;Camel&#26631;&#35760;&#20070;&#20889;&#25152;&#26377;&#30340;&#23646;&#24615;&#21517;&#65292;&#22914;paddingLeft&#32780;&#38750;padding-let&#10;//&#21516;&#26102;&#65292;&#33394;&#24425;&#21160;&#30011;&#24182;&#19981;&#21253;&#21547;&#22312;&#26680;&#24515;jQuery&#24211;&#20013;</span><br></pre></td></tr></table></figure>
+<h5 id="jQuery-animate-使用相对值"><a href="#jQuery-animate-使用相对值" class="headerlink" title="jQuery animate() 使用相对值"></a>jQuery animate() 使用相对值</h5><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(&#34;button&#34;).click(function)&#123;&#10;&#9;$(&#34;div&#34;).animate(&#123;&#10;&#9;&#9;left:&#39;250px&#39;,&#10;&#9;&#9;height:&#39;+=150px&#39;,&#10;&#9;&#9;width:&#39;150px&#39;&#10;&#9;&#125;);&#10;&#125;);</span><br></pre></td></tr></table></figure>
+<h5 id="jQuery-animate-使用队列功能"><a href="#jQuery-animate-使用队列功能" class="headerlink" title="jQuery animate() 使用队列功能"></a>jQuery animate() 使用队列功能</h5><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(&#34;button&#34;).click(function)&#123;&#10;&#9;var div=$(&#34;div&#34;);&#10;&#9;div.animate(&#123;height:&#39;300px&#39;,opacityL&#39;0.4&#39;&#125;,&#34;slow&#34;);&#10;&#9;div.animate(&#123;width:&#39;300px&#39;,opacity:&#39;0.8&#39;&#125;,&#34;slow&#34;);&#10;&#9;div.animate(&#123;height:&#39;100px&#39;,opacity:&#39;0.4&#39;&#125;,&#34;slow&#34;);&#10;&#9;div.animate(&#123;width:&#39;100px&#39;,opacity:&#39;0.8&#39;&#125;,&#34;slow&#34;);&#9;&#10;&#125;);</span><br></pre></td></tr></table></figure>
+<h5 id="jQuery-stop-方法，用于在动画或者效果完成之前对它们进行停止-适用于所有jQuery效果函数"><a href="#jQuery-stop-方法，用于在动画或者效果完成之前对它们进行停止-适用于所有jQuery效果函数" class="headerlink" title="jQuery stop()方法，用于在动画或者效果完成之前对它们进行停止,适用于所有jQuery效果函数"></a>jQuery stop()方法，用于在动画或者效果完成之前对它们进行停止,适用于所有jQuery效果函数</h5><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(selector).stop(stopAll,goToEnd);&#10;//stopAll&#21442;&#25968;&#35268;&#23450;&#26159;&#21542;&#24212;&#35813;&#28165;&#38500;&#21160;&#30011;&#38431;&#21015;,&#21487;&#36873;&#12290;&#10;//goToEnd&#21442;&#25968;&#35268;&#23450;&#26159;&#21542;&#31435;&#21363;&#23436;&#25104;&#24403;&#21069;&#21160;&#30011;&#65292;&#40664;&#35748;false&#65292;&#21487;&#36873;</span><br></pre></td></tr></table></figure>
+<h5 id="jQuery-Chaining"><a href="#jQuery-Chaining" class="headerlink" title="jQuery-Chaining"></a>jQuery-Chaining</h5><p>通过jQuery，您可以把动作/方法连接起来。<br>Chaining 允许我们在一条语句中允许多个jQuery方法（在相同的元素上）。<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(&#34;#p1&#34;).css(&#34;color&#34;,&#34;red&#34;).slideUp(2000).slideDown(2000);&#10;//&#25110;&#32773;&#20889;&#25104;&#10;$(&#34;#p1&#34;).css(&#34;color&#34;,&#34;red&#34;)&#10;&#9;.slideUp(2000)&#10;&#9;.slideDown(2000);</span><br></pre></td></tr></table></figure></p>
+<h4 id="jQuery获得内容和属性"><a href="#jQuery获得内容和属性" class="headerlink" title="jQuery获得内容和属性"></a>jQuery获得内容和属性</h4><h5 id="jQuery获得内容-text-、html-、val"><a href="#jQuery获得内容-text-、html-、val" class="headerlink" title="jQuery获得内容  text()、html()、val()"></a>jQuery获得内容  <code>text()</code>、<code>html()</code>、<code>val()</code></h5><p>text() 设置或返回所选择元素的文本内容<br>html() 设置或返回所选择元素的内容(包括HTML标记)<br>val() 设置或返回表单字段的值</p>
+<h5 id="jQuery获得属性-attr"><a href="#jQuery获得属性-attr" class="headerlink" title="jQuery获得属性 attr()"></a>jQuery获得属性 attr()</h5><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(&#34;button&#34;).click(function()&#123;&#10;&#9;alret($(&#34;#w3s&#34;).attr(&#34;href&#34;));&#10;&#10;&#125;);</span><br></pre></td></tr></table></figure>
+<h4 id="jQuery添加"><a href="#jQuery添加" class="headerlink" title="jQuery添加"></a>jQuery添加</h4><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">append()//&#22312;&#34987;&#36873;&#25321;&#20803;&#32032;&#32467;&#23614;&#25554;&#20837;&#20869;&#23481;&#10;perpend()//&#22312;&#34987;&#36873;&#25321;&#20803;&#32032;&#30340;&#24320;&#22836;&#25554;&#20837;&#20869;&#23481;&#10;after()//&#22312;&#34987;&#36873;&#25321;&#20803;&#32032;&#20043;&#21518;&#25554;&#20837;&#20869;&#23481;&#10;before()//&#22312;&#34987;&#36873;&#25321;&#20803;&#32032;&#20043;&#21069;&#25554;&#20837;&#20869;&#23481;</span><br></pre></td></tr></table></figure>
+<h4 id="jQuery-删除"><a href="#jQuery-删除" class="headerlink" title="jQuery 删除"></a>jQuery 删除</h4><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">remove() //&#21024;&#38500;&#34987;&#36873;&#20803;&#32032;&#21450;&#20854;&#23376;&#20803;&#32032;&#10;empty() //&#20174;&#34987;&#36873;&#20803;&#32032;&#20013;&#21024;&#38500;&#23376;&#20803;&#32032;</span><br></pre></td></tr></table></figure>
+<p>过滤被删除的元素<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(&#34;p&#34;).remove(&#34;.italic&#34;);&#10;//&#35813;&#20363;&#23376;&#21024;&#38500;&#25152;&#26377; class=&#34;italic&#34;&#30340;&#60;p&#62;&#20803;&#32032;</span><br></pre></td></tr></table></figure></p>
+<h4 id="jQuery-获取并设置CSS类"><a href="#jQuery-获取并设置CSS类" class="headerlink" title="jQuery 获取并设置CSS类"></a>jQuery 获取并设置CSS类</h4><p>jQuery操作CSS<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">addClass() //&#21521;&#34987;&#36873;&#20013;&#30340;&#20803;&#32032;&#20013;&#28155;&#21152;&#19968;&#20010;&#25110;&#22810;&#20010;&#31867;&#10;removeClass() //&#20174;&#34987;&#36873;&#20803;&#32032;&#20013;&#21024;&#38500;&#19968;&#20010;&#25110;&#22810;&#20010;&#31867;&#10;toggleClass() //&#23545;&#34987;&#36873;&#25321;&#20803;&#32032;&#36827;&#34892;&#28155;&#21152;/&#21024;&#38500;&#31867;&#30340;&#20999;&#25442;&#25805;&#20316;&#10;css()   //&#35774;&#32622;&#25110;&#36820;&#22238;&#26679;&#24335;&#23646;&#24615;</span><br></pre></td></tr></table></figure></p>
+<h5 id="jQuery-尺寸"><a href="#jQuery-尺寸" class="headerlink" title="jQuery 尺寸"></a>jQuery 尺寸</h5><ol>
+<li>width()和height()方法<br>width()方法设置或返回元素的宽度（不包括内边距、边框或者外边距）<br>height()方法设置或返回元素的高度(不包括内边距边框或外边距)</li>
+</ol>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(&#34;button&#34;).click(function)&#123;&#10;&#9;var txt=&#34;&#34;&#10;&#9;txt += &#34;Width:&#34; + $(&#34;#div1&#34;).width() + &#34;&#60;/br&#62;&#34;;&#10;&#9;txt += &#34;Height:&#34; + $(&#34;#div1&#34;).height();&#10;&#9;$(&#34;#div1&#34;).html(txt);&#10;&#125;);</span><br></pre></td></tr></table></figure>
+<ol>
+<li><p>innerWidth()和innerHeight()方法用于创建自定义动画<br>innerWidth()返回元素的宽度（包括内边距）<br>innerHeight()方法返回元素的高度（包括内边距）</p>
+</li>
+<li><p>outerWidth()和outerHeight()方法<br>outerWidth()返回元素的宽度（包括内边距和边框）<br>outerHeight()返回元素的高度（包括内边距和边框）</p>
+</li>
+</ol>
+<p><code>outerWidth(true)</code>方法返回元素的宽度（包括内边距、边框和外边距）<br><code>outerHeight(true)</code>方法返回元素的高度（包括内边距、边框和外边距）</p>
+<h4 id="jQuery-遍历-向上"><a href="#jQuery-遍历-向上" class="headerlink" title="jQuery 遍历-向上"></a>jQuery 遍历-向上</h4><p><code>jQuery parent()</code>方法<br>该方法返回被选元素的直接父元素，只会向上一级对DOM树进行遍历<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(document).ready(function()&#123;&#10;&#9;$(&#34;span&#34;).parent();&#10;&#125;);&#10;//&#35813;&#20363;&#23376;&#36820;&#22238;&#27599;&#20010;&#60;span&#62;&#20803;&#32032;&#30340;&#30452;&#25509;&#29238;&#20803;&#32032;</span><br></pre></td></tr></table></figure></p>
+<p><code>jQuery parents()</code>方法<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(document).ready(function()&#123;&#10;  $(&#34;span&#34;).parents(&#34;ul&#34;);&#10;&#125;);&#10;//&#35813;&#20363;&#23376;&#36820;&#22238;&#25152;&#26377;&#60;span&#62;&#20803;&#32032;&#30340;&#25152;&#26377;&#31062;&#20808;&#65292;&#24182;&#19988;&#23427;&#26159;&#60;ul&#62;&#20803;&#32032;</span><br></pre></td></tr></table></figure></p>
+<p><code>jQuery parentsUntil()</code>方法<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(document).ready(function()&#123;&#10;&#9;$(&#34;span&#34;).parentsUntil(&#34;div&#34;);&#10;&#125;);</span><br></pre></td></tr></table></figure></p>
+<h4 id="jQuery-遍历-向下"><a href="#jQuery-遍历-向下" class="headerlink" title="jQuery 遍历-向下"></a>jQuery 遍历-向下</h4><p><code>jQuery children()</code>方法<br>返回被选择元素的直接子元素<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(document).ready(function()&#123;&#10;&#9;$(&#34;div&#34;).children(&#34;p.1&#34;);&#10;&#125;);&#10;//&#35813;&#20363;&#23376;&#36820;&#22238;&#31867;&#22411;&#21517;&#20026;&#8220;1&#8221;&#30340;&#25152;&#26377;&#60;p&#62;&#20803;&#32032;&#65292;&#24182;&#19988;&#20182;&#20204;&#26159;&#60;div&#62;&#30340;&#30452;&#25509;&#23376;&#20803;&#32032;</span><br></pre></td></tr></table></figure></p>
+<p><code>jQuery find()</code> 方法<br>返回被选元素的后代元素，一直向下直接到最后一个后代</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(document).ready(function()&#123;&#10;&#9;$(&#34;div&#34;).find(&#34;span&#34;);&#10;&#125;);&#10;//&#35813;&#20363;&#23376;&#36820;&#22238;&#23646;&#20110;&#60;div&#62;&#21518;&#20195;&#30340;&#25152;&#26377;&#60;span&#62;&#20803;&#32032;</span><br></pre></td></tr></table></figure>
+<h4 id="jQuery-遍历-同胞"><a href="#jQuery-遍历-同胞" class="headerlink" title="jQuery 遍历-同胞"></a>jQuery 遍历-同胞</h4><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">siblings()&#10;next()&#10;nextAll()&#10;nextUntil()&#10;prev()&#10;prevAll()&#10;prevUntil()</span><br></pre></td></tr></table></figure>
+<p><code>jQuery siblings()</code>方法<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(document).ready(function()&#123;&#10;&#9;$(&#34;h2&#34;).siblings(&#34;p&#34;);&#10;&#125;);&#10;//&#35813;&#20363;&#23376;&#36820;&#22238;&#23646;&#20110;&#60;h2&#62;&#30340;&#21516;&#32990;&#20803;&#32032;&#30340;&#25152;&#26377;&#60;p&#62;&#20803;&#32032;</span><br></pre></td></tr></table></figure></p>
+<p><code>jQuery next()</code>方法<br>该方法返回被选元素的下一个同胞元素，只返回一个元素<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(document).ready(function()&#123;&#10;&#9;$(&#34;h2&#34;).next();&#10;&#125;);&#10;//&#35813;&#20363;&#23376;&#36820;&#22238;&#60;h2&#62;&#30340;&#19979;&#19968;&#20010;&#21516;&#32990;&#20803;&#32032;</span><br></pre></td></tr></table></figure></p>
+<p><code>jQuery nextAll()</code>方法<br><code>nextAll()</code>方法返回被选元素的所有跟随的同胞元素</p>
+<p><code>jQuery nextUntil()</code>方法<br><code>nextUntil()</code>返回介于两个给定参数之间的所有跟随的同胞元素<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(document).ready(function()&#123;&#10;&#9;$(&#34;h2&#34;).nextUntil(&#34;h6&#34;);&#10;&#125;);&#10;//&#35813;&#20363;&#23376;&#36820;&#22238;&#20171;&#20110;&#60;h2&#62;&#19982;&#60;h6&#62;&#20803;&#32032;&#20043;&#38388;&#30340;&#25152;&#26377;&#21516;&#32990;&#20803;&#32032;</span><br></pre></td></tr></table></figure></p>
+<h4 id="jQuery-遍历-过滤"><a href="#jQuery-遍历-过滤" class="headerlink" title="jQuery 遍历-过滤"></a>jQuery 遍历-过滤</h4><p><code>first()</code>、<code>last()</code>、<code>eq()</code>、<code>fliter()</code>、<code>not()</code><br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(document).ready(function()&#123;&#10;  $(&#34;div p&#34;).first();&#10;&#125;);&#10;//&#19978;&#38754;&#30340;&#20363;&#23376;&#36873;&#21462;&#39318;&#20010; &#60;div&#62; &#20803;&#32032;&#20869;&#37096;&#30340;&#31532;&#19968;&#20010; &#60;p&#62; &#20803;&#32032;&#10;&#10;$(document).ready(function()&#123;&#10;  $(&#34;div p&#34;).last();&#10;&#125;);&#10;//&#19978;&#38754;&#30340;&#20363;&#23376;&#36873;&#25321;&#26368;&#21518;&#19968;&#20010; &#60;div&#62; &#20803;&#32032;&#20013;&#30340;&#26368;&#21518;&#19968;&#20010; &#60;p&#62; &#20803;&#32032;</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="doctype">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">script</span> <span class="attribute">src</span>=<span class="value">"/jquery/jquery-1.11.1.min.js"</span>&gt;</span><span class="undefined"></span><br><span class="line"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">script</span>&gt;</span><span class="javascript"></span><br><span class="line">$(<span class="built_in">document</span>).ready(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  $(<span class="string">"p"</span>).eq(<span class="number">1</span>).css(<span class="string">"background-color"</span>,<span class="string">"yellow"</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="title">h1</span>&gt;</span>欢迎来到我的主页<span class="tag">&lt;/<span class="title">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">p</span>&gt;</span>我是唐老鸭 (index 0)。<span class="tag">&lt;/<span class="title">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">p</span>&gt;</span>唐老鸭 (index 1)。<span class="tag">&lt;/<span class="title">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">p</span>&gt;</span>我住在 Duckburg (index 2)。<span class="tag">&lt;/<span class="title">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">p</span>&gt;</span>我最好的朋友是米老鼠 (index 3)。<span class="tag">&lt;/<span class="title">p</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="title">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">html</span>&gt;</span></span><br><span class="line"></span><br><span class="line">//eq() 方法返回被选元素中带有指定索引号的元素。</span><br></pre></td></tr></table></figure>
+<p><code>filter()</code> 方法匹配所有符合标准的元素 而<code>not()</code>方法则相反</p>
+<h3 id="jQuery-AJAX"><a href="#jQuery-AJAX" class="headerlink" title="jQuery-AJAX"></a>jQuery-AJAX</h3><p>AJAX = 异步JavaScript 和 XML (Asynchronous JavaScript and XML)</p>
+<p>在不重载整个网页的情况下，AJAX通过后台加载数据并在网页上显示</p>
+<h4 id="jQuery-load-方法"><a href="#jQuery-load-方法" class="headerlink" title="jQuery load() 方法"></a>jQuery load() 方法</h4><p><code>load()</code>方法从服务器加载数据，并且把返回的数据放入被选元素中</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(selector).load(URL,data,callback);</span><br></pre></td></tr></table></figure>
+<p>URL:必须，规定了希望加载的URL<br>data:可选，规定与请求一起发送的查询字符串键/值对集合<br>callback:可选，<code>load()</code>方法完成后所执行的函数名称<br>回调函数可以设置不同的参数:<br>responseTxt - 包含调用成功时的结果内容<br>statusTXT - 包含调用的状态<br>xhr - 包含 XMLHttpRequest 对象</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(&#34;button&#34;).click(function()&#123;&#10;  $(&#34;#div1&#34;).load(&#34;demo_test.txt&#34;,function(responseTxt,statusTxt,xhr)&#123;&#10;    if(statusTxt==&#34;success&#34;)&#10;      alert(&#34;&#22806;&#37096;&#20869;&#23481;&#21152;&#36733;&#25104;&#21151;&#65281;&#34;);&#10;    if(statusTxt==&#34;error&#34;)&#10;      alert(&#34;Error: &#34;+xhr.status+&#34;: &#34;+xhr.statusText);&#10;  &#125;);&#10;&#125;);</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/jQuery/" rel="tag">#jQuery</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/02/24/Python爬虫-1/" rel="next" title="Python爬虫(1)">
+                <i class="fa fa-chevron-left"></i> Python爬虫(1)
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/02/27/jQuery学习笔记-1/"
+           data-title="jQuery学习笔记-1" data-url="http://yoursite.com/2016/02/27/jQuery学习笔记-1/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/avatar.jpg"
+               alt="TsingLight" />
+          <p class="site-author-name" itemprop="name">TsingLight</p>
+          <p class="site-description motion-element" itemprop="description">Personal Blog</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">11</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+          
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/tsinglight" target="_blank">
+                  
+                    <i class="fa fa-globe"></i> github
+                  
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator">
+            <i class="fa fa-angle-double-up"></i>
+          </div>
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#jQuery"><span class="nav-number">1.</span> <span class="nav-text">jQuery</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#添加jQuery库"><span class="nav-number">1.0.1.</span> <span class="nav-text">添加jQuery库</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#jQuery语法："><span class="nav-number">1.1.</span> <span class="nav-text">jQuery语法：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#文档就绪函数"><span class="nav-number">1.1.1.</span> <span class="nav-text">文档就绪函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#jQuery属性选择器"><span class="nav-number">1.1.2.</span> <span class="nav-text">jQuery属性选择器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#jQuery-CSS选择器"><span class="nav-number">1.1.3.</span> <span class="nav-text">jQuery CSS选择器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#jQuery名称冲突"><span class="nav-number">1.1.4.</span> <span class="nav-text">jQuery名称冲突</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#jQuery-效果"><span class="nav-number">1.2.</span> <span class="nav-text">jQuery 效果</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#隐藏-显示"><span class="nav-number">1.2.0.1.</span> <span class="nav-text">隐藏/显示</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#淡入淡出效果"><span class="nav-number">1.2.0.2.</span> <span class="nav-text">淡入淡出效果</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#滑动效果"><span class="nav-number">1.2.0.3.</span> <span class="nav-text">滑动效果</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#jQuery自定义动画"><span class="nav-number">1.2.0.4.</span> <span class="nav-text">jQuery自定义动画</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#jQuery-animate-操作多个属性"><span class="nav-number">1.2.0.4.1.</span> <span class="nav-text">jQuery animate() 操作多个属性</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#jQuery-animate-使用相对值"><span class="nav-number">1.2.0.4.2.</span> <span class="nav-text">jQuery animate() 使用相对值</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#jQuery-animate-使用队列功能"><span class="nav-number">1.2.0.4.3.</span> <span class="nav-text">jQuery animate() 使用队列功能</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#jQuery-stop-方法，用于在动画或者效果完成之前对它们进行停止-适用于所有jQuery效果函数"><span class="nav-number">1.2.0.4.4.</span> <span class="nav-text">jQuery stop()方法，用于在动画或者效果完成之前对它们进行停止,适用于所有jQuery效果函数</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#jQuery-Chaining"><span class="nav-number">1.2.0.4.5.</span> <span class="nav-text">jQuery-Chaining</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#jQuery获得内容和属性"><span class="nav-number">1.2.0.5.</span> <span class="nav-text">jQuery获得内容和属性</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#jQuery获得内容-text-、html-、val"><span class="nav-number">1.2.0.5.1.</span> <span class="nav-text">jQuery获得内容  text()、html()、val()</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#jQuery获得属性-attr"><span class="nav-number">1.2.0.5.2.</span> <span class="nav-text">jQuery获得属性 attr()</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#jQuery添加"><span class="nav-number">1.2.0.6.</span> <span class="nav-text">jQuery添加</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#jQuery-删除"><span class="nav-number">1.2.0.7.</span> <span class="nav-text">jQuery 删除</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#jQuery-获取并设置CSS类"><span class="nav-number">1.2.0.8.</span> <span class="nav-text">jQuery 获取并设置CSS类</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#jQuery-尺寸"><span class="nav-number">1.2.0.8.1.</span> <span class="nav-text">jQuery 尺寸</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#jQuery-遍历-向上"><span class="nav-number">1.2.0.9.</span> <span class="nav-text">jQuery 遍历-向上</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#jQuery-遍历-向下"><span class="nav-number">1.2.0.10.</span> <span class="nav-text">jQuery 遍历-向下</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#jQuery-遍历-同胞"><span class="nav-number">1.2.0.11.</span> <span class="nav-text">jQuery 遍历-同胞</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#jQuery-遍历-过滤"><span class="nav-number">1.2.0.12.</span> <span class="nav-text">jQuery 遍历-过滤</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#jQuery-AJAX"><span class="nav-number">1.2.1.</span> <span class="nav-text">jQuery-AJAX</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#jQuery-load-方法"><span class="nav-number">1.2.1.1.</span> <span class="nav-text">jQuery load() 方法</span></a></li></ol></li></ol></li></ol></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator">
+            <i class="fa fa-angle-double-down"></i>
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">TsingLight</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+
+      </div>
+    </footer>
+
+    <div class="back-to-top"></div>
+  </div>
+
+  
+
+
+  
+
+
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=0.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=0.5.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=0.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=0.5.0"></script>
+
+
+
+  
+  
+<script type="text/javascript" src="/js/src/scrollspy.js?v=0.5.0"></script>
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 1 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = NexT.utils.escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    NexT.motion.middleWares.sidebar = function () {
+      var $tocContent = $('.post-toc-content');
+
+      if (CONFIG.sidebar === 'post') {
+        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+          NexT.utils.displaySidebar();
+        }
+      }
+    };
+  });
+</script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=0.5.0"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"tsinglight"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+  
+
+
+
+
+
+  
+  
+
+  
+  
+
+
+</body>
+</html>
