@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="技巧," />
 
 
 
@@ -57,16 +57,37 @@
 
 
 
-<meta name="description" content="Personal Blog">
+<meta name="description" content="先说原理：    天大的校园网是IPV4和IPV6双栈接入的，而信网中心对于IPV6产生的流量是不计费的，这个方法的原理就是租用支持IPV6的服务器，在服务器端搭建shadowsocks，以代理的方式访问IPV4，从而避免高额流量。（顺带可以翻墙）但是不代表这个方法是完全免费不要钱的！
+
+ipv6是什么
+
+IPv6是一个相对于IPv4的概念，IPv4即我们现在通常说的IP(Internet Pro">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Digital + Shadowsocks 实现免流量上网（天大亲测可用）">
+<meta property="og:title" content="Digital + Shadowsocks 部署代理&翻墙&校园网免流量">
 <meta property="og:url" content="http://yoursite.com/2016/02/29/Digital-Shadowsocks-实现免流量上网（天大亲测可用）/index.html">
 <meta property="og:site_name" content="TsingLight's Blog">
-<meta property="og:description" content="Personal Blog">
-<meta property="og:updated_time" content="2016-02-29T01:06:14.237Z">
+<meta property="og:description" content="先说原理：    天大的校园网是IPV4和IPV6双栈接入的，而信网中心对于IPV6产生的流量是不计费的，这个方法的原理就是租用支持IPV6的服务器，在服务器端搭建shadowsocks，以代理的方式访问IPV4，从而避免高额流量。（顺带可以翻墙）但是不代表这个方法是完全免费不要钱的！
+
+ipv6是什么
+
+IPv6是一个相对于IPv4的概念，IPv4即我们现在通常说的IP(Internet Pro">
+<meta property="og:image" content="http://http://1.3tslight.sinaapp.com/uploads/ss-1.jpg">
+<meta property="og:image" content="http://http://1.3tslight.sinaapp.com/uploads/ss-2.jpg">
+<meta property="og:image" content="http://http://1.3tslight.sinaapp.com/uploads/ss-3.jpg">
+<meta property="og:image" content="http://http://1.3tslight.sinaapp.com/uploads/ss-4.jpg">
+<meta property="og:image" content="http://http://1.3tslight.sinaapp.com/uploads/ss-5.jpg">
+<meta property="og:image" content="http://http://1.3tslight.sinaapp.com/uploads/ss-6.jpg">
+<meta property="og:image" content="http://http://1.3tslight.sinaapp.com/uploads/ss-8.jpg">
+<meta property="og:image" content="http://http://1.3tslight.sinaapp.com/uploads/ss-9.jpg">
+<meta property="og:image" content="http://http://1.3tslight.sinaapp.com/uploads/ss-10.jpg">
+<meta property="og:updated_time" content="2016-02-29T09:17:48.265Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Digital + Shadowsocks 实现免流量上网（天大亲测可用）">
-<meta name="twitter:description" content="Personal Blog">
+<meta name="twitter:title" content="Digital + Shadowsocks 部署代理&翻墙&校园网免流量">
+<meta name="twitter:description" content="先说原理：    天大的校园网是IPV4和IPV6双栈接入的，而信网中心对于IPV6产生的流量是不计费的，这个方法的原理就是租用支持IPV6的服务器，在服务器端搭建shadowsocks，以代理的方式访问IPV4，从而避免高额流量。（顺带可以翻墙）但是不代表这个方法是完全免费不要钱的！
+
+ipv6是什么
+
+IPv6是一个相对于IPv4的概念，IPv4即我们现在通常说的IP(Internet Pro">
 
 
 
@@ -84,7 +105,7 @@
   };
 </script>
 
-  <title> Digital + Shadowsocks 实现免流量上网（天大亲测可用） | TsingLight's Blog </title>
+  <title> Digital + Shadowsocks 部署代理&翻墙&校园网免流量 | TsingLight's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -214,7 +235,7 @@
             
             
               
-                Digital + Shadowsocks 实现免流量上网（天大亲测可用）
+                Digital + Shadowsocks 部署代理&翻墙&校园网免流量
               
             
           </h1>
@@ -259,11 +280,37 @@
       
 
       
-        
+        <p>先说原理：<br>    天大的校园网是IPV4和IPV6双栈接入的，而信网中心对于IPV6产生的流量是不计费的，这个方法的原理就是租用支持IPV6的服务器，在服务器端搭建shadowsocks，以代理的方式访问IPV4，从而避免高额流量。（顺带可以翻墙）但是不代表这个方法是完全免费不要钱的！</p>
+<blockquote>
+<p>ipv6是什么</p>
+<blockquote>
+<p>IPv6是一个相对于IPv4的概念，IPv4即我们现在通常说的IP(Internet Protocol)，而v4\v6中的v就是Version。IP是一种协议，它是用于Internet网络中数据交换的一种协议，即电脑之间共同遵守的规定，这个规定能指引数据在网线中到达指定的地方。而数据是怎么知道指定的电脑是哪一台呢？这就要靠IP地址,而传统的IP地址只有四节，一节只有0-255的选择，在电脑和移动端飞速增多的当下早就不够用啦。而新技术IPv6协议下的地址有八节，每一节还是四个十六进制位，即0-ffff，<br>天大从IPv4协议走就是我们熟知的按流量计费的模式，而从IPv6走学校是不用登录且不收费！而且IPv6协议下的校园网实际的速度会更快。<br>另外还有一点福利是，著名的GFW，也就是俗称的“墙”是位于IPv4上的，如果你走IPv6连接则不会存在网站被墙的问题。</p>
+</blockquote>
+</blockquote>
+<p>首先你需要选择一个服务器提供商，这个教程里我用的是<a href="http://www.digitalocean.com" target="_blank" rel="external">www.digitalocean.com</a> 然后创建账号,登陆<br><img src="http://http://1.3tslight.sinaapp.com/uploads/ss-1.jpg" alt="Login"><br>如果你是GitHub的学生用户，github提供了50刀优惠金额，(附带其他各种开发工具各种优惠)<br><a href="https://education.github.com/pack" target="_blank" rel="external">GitHub Student Packet</a>但是领取完你需要用你的PayPal充值5美元到你的digital ocean账户上验证该账户</p>
+<p>登陆后，点击右上角的“create droplets”<br><img src="http://http://1.3tslight.sinaapp.com/uploads/ss-2.jpg" alt="create droplets"><br>选择Ubuntu-$5 per/month - San Francisco（旧金山机房对大陆IP有速度优化）<br><code>Select additional options</code>部分   <code>ipv6</code>项目必须勾选，其他看个人喜好<br><code>Add your SSH keys</code>这里你需要配置你的SSH key，也可以不配置，看个人<br>如果你配置好了SSH，只要有public key就可以登录你的服务器，没有配置SSH的话，DigitalOcean会自动发送给你一个很复杂的密码作为登录口令，登录名是root<br><img src="http://http://1.3tslight.sinaapp.com/uploads/ss-3.jpg" alt="create droplets finish"><br>之后打开你建立好的droplets，点击Console Access 进入服务端控制程序<br>弹出的命令行提示你输入密码，就是你邮箱中DigitalOcean发送的口令<br>接下来输入以下命令安装shadowsocks</p>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">adp-<span class="built_in">get</span> install <span class="keyword">python</span>-gevent <span class="keyword">python</span>-pip</span><br><span class="line">pip install shadowsocks</span><br></pre></td></tr></table></figure>
+<p>到这里shadowsocks就建立完成<br>之后我们需要在服务器本地/etc目录下建立一个文件，文件名为 shadowsocks.json<br>输入如下命令<br><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">cd</span> /etc</span><br><span class="line"><span class="keyword">vi</span> /etc/shadowsocks.json</span><br></pre></td></tr></table></figure></p>
+<p>这里还需要针对ipv6修改一下shadowsocks的配置文件，内容如下：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    "<span class="attribute">server</span>":<span class="value"><span class="string">"::"</span></span>,</span><br><span class="line">    "<span class="attribute">server_port</span>":<span class="value"><span class="number">8388</span></span>,</span><br><span class="line">    "<span class="attribute">local_address</span>": <span class="value"><span class="string">"127.0.0.1"</span></span>,</span><br><span class="line">    "<span class="attribute">local_port</span>":<span class="value"><span class="number">1080</span></span>,</span><br><span class="line">    "<span class="attribute">password</span>":<span class="value"><span class="string">"mypassword"</span></span>,</span><br><span class="line">    "<span class="attribute">timeout</span>":<span class="value"><span class="number">300</span></span>,</span><br><span class="line">    "<span class="attribute">method</span>":<span class="value"><span class="string">"aes-256-cfb"</span></span>,</span><br><span class="line">    "<span class="attribute">fast_open</span>": <span class="value"><span class="literal">false</span></span><br><span class="line"></span>&#125;</span><br></pre></td></tr></table></figure>
+<p>输入完毕后，按ESC-输入   :wq!<br>即可保存并退出（记得打冒号）<br>代码的含义是：<br>“server”同时监听所有IP地址（v4和v6)<br>““”server_port”：服务器端口 默认8388 你可以自己修改<br>“local_address”: “127.0.0.1”,<br>“local_port”:1080,设置本地IP和端口，不用改<br>“password”:”mypassword” 这里写你自己需要的用户名<br>“timeout”:300 设置超时等待时间<br>“method”:”aes-256-cfb” 设置加密方式<br>“fast_open”: false  是否使用TCP_FASTOPEN这个不用管</p>
+<p>最后输入<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssserver -c /etc/shadowsocks.json -d start</span><br></pre></td></tr></table></figure></p>
+<p>后台启动ShadowSocks服务</p>
+<p>然后你需要下载shadowsocks客户端，<br><a href="http://www.ishadowsocks.com" target="_blank" rel="external">ishadowsocks</a><br>这里下载<br>输入你的服务器IP和端口以及密码，单机确定即可</p>
+<p>这里有一点：<br>Digital Ocean提供的Droplets支持IPV6，也就是说服务器本身存在两个IP地址<br>你需要自己填写上相应的IPV6地址才可以实现免流量，如果你填写的是服务器的IPV4地址，则只是翻墙，依旧计算流量。</p>
+<p>在控制台输入<code>ifconfig</code>即可，与windows的<code>ipconfig</code>不同<br>如图所示<br><img src="http://http://1.3tslight.sinaapp.com/uploads/ss-4.jpg" alt="Login"></p>
+<p>最后你可以测试一下<br>首先连上1_tjuwlan，但是别登陆<br><img src="http://http://1.3tslight.sinaapp.com/uploads/ss-5.jpg" alt="Login"><br><img src="http://http://1.3tslight.sinaapp.com/uploads/ss-6.jpg" alt="Login"><br>设置好服务器ip和端口，启动代理服务<br><img src="http://http://1.3tslight.sinaapp.com/uploads/ss-8.jpg" alt="Login"><br><img src="http://http://1.3tslight.sinaapp.com/uploads/ss-9.jpg" alt="Login"><br>成功，试试YouTube<br><img src="http://http://1.3tslight.sinaapp.com/uploads/ss-10.jpg" alt="Login"><br>成功，教程到此结束</p>
+
       
     </div>
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/技巧/" rel="tag">#技巧</a>
+          
+        </div>
       
 
       
@@ -307,7 +354,7 @@
   <div class="comments" id="comments">
     
       <div class="ds-thread" data-thread-key="2016/02/29/Digital-Shadowsocks-实现免流量上网（天大亲测可用）/"
-           data-title="Digital + Shadowsocks 实现免流量上网（天大亲测可用）" data-url="http://yoursite.com/2016/02/29/Digital-Shadowsocks-实现免流量上网（天大亲测可用）/">
+           data-title="Digital + Shadowsocks 部署代理&翻墙&校园网免流量" data-url="http://yoursite.com/2016/02/29/Digital-Shadowsocks-实现免流量上网（天大亲测可用）/">
       </div>
     
   </div>
@@ -352,7 +399,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">13</span>
+              <span class="site-state-item-count">14</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -362,7 +409,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-count">9</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

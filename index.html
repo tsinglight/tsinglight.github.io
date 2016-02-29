@@ -199,15 +199,96 @@
 
     
     
+
+    
       
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/02/29/JSON学习笔记/" itemprop="url">
+                  JSON学习笔记
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-02-29T11:44:16+08:00" content="2016-02-29">
+              2016-02-29
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/02/29/JSON学习笔记/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/02/29/JSON学习笔记/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
       
-        
-        
-        
       
 
       
-    
+        
+          
+            
+          
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
 
     
       
@@ -344,6 +425,975 @@
 
 
     
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/02/29/Digital-Shadowsocks-实现免流量上网（天大亲测可用）/" itemprop="url">
+                  Digital + Shadowsocks 部署代理&翻墙&校园网免流量
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-02-29T09:06:14+08:00" content="2016-02-29">
+              2016-02-29
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/02/29/Digital-Shadowsocks-实现免流量上网（天大亲测可用）/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/02/29/Digital-Shadowsocks-实现免流量上网（天大亲测可用）/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>先说原理：<br>    天大的校园网是IPV4和IPV6双栈接入的，而信网中心对于IPV6产生的流量是不计费的，这个方法的原理就是租用支持IPV6的服务器，在服务器端搭建shadowsocks，以代理的方式访问IPV4，从而避免高额流量。（顺带可以翻墙）但是不代表这个方法是完全免费不要钱的！</p>
+<blockquote>
+<p>ipv6是什么</p>
+<blockquote>
+<p>IPv6是一个相对于IPv4的概念，IPv4即我们现在通常说的IP(Internet Protocol)，而v4\v6中的v就是Version。IP是一种协议，它是用于Internet网络中数据交换的一种协议，即电脑之间共同遵守的规定，这个规定能指引数据在网线中到达指定的地方。而数据是怎么知道指定的电脑是哪一台呢？这就要靠IP地址,而传统的IP地址只有四节，一节只有0-255的选择，在电脑和移动端飞速增多的当下早就不够用啦。而新技术IPv6协议下的地址有八节，每一节还是四个十六进制位，即0-ffff，<br>天大从IPv4协议走就是我们熟知的按流量计费的模式，而从IPv6走学校是不用登录且不收费！而且IPv6协议下的校园网实际的速度会更快。<br>另外还有一点福利是，著名的GFW，也就是俗称的“墙”是位于IPv4上的，如果你走IPv6连接则不会存在网站被墙的问题。</p>
+</blockquote>
+</blockquote>
+<p>首先你需要选择一个服务器提供商，这个教程里我用的是<a href="http://www.digitalocean.com" target="_blank" rel="external">www.digitalocean.com</a> 然后创建账号,登陆<br><img src="http://http://1.3tslight.sinaapp.com/uploads/ss-1.jpg" alt="Login"><br>如果你是GitHub的学生用户，github提供了50刀优惠金额，(附带其他各种开发工具各种优惠)<br><a href="https://education.github.com/pack" target="_blank" rel="external">GitHub Student Packet</a>但是领取完你需要用你的PayPal充值5美元到你的digital ocean账户上验证该账户</p>
+<p>登陆后，点击右上角的“create droplets”<br><img src="http://http://1.3tslight.sinaapp.com/uploads/ss-2.jpg" alt="create droplets"><br>选择Ubuntu-$5 per/month - San Francisco（旧金山机房对大陆IP有速度优化）<br><code>Select additional options</code>部分   <code>ipv6</code>项目必须勾选，其他看个人喜好<br><code>Add your SSH keys</code>这里你需要配置你的SSH key，也可以不配置，看个人<br>如果你配置好了SSH，只要有public key就可以登录你的服务器，没有配置SSH的话，DigitalOcean会自动发送给你一个很复杂的密码作为登录口令，登录名是root<br><img src="http://http://1.3tslight.sinaapp.com/uploads/ss-3.jpg" alt="create droplets finish"><br>之后打开你建立好的droplets，点击Console Access 进入服务端控制程序<br>弹出的命令行提示你输入密码，就是你邮箱中DigitalOcean发送的口令<br>接下来输入以下命令安装shadowsocks</p>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">adp-<span class="built_in">get</span> install <span class="keyword">python</span>-gevent <span class="keyword">python</span>-pip</span><br><span class="line">pip install shadowsocks</span><br></pre></td></tr></table></figure>
+<p>到这里shadowsocks就建立完成<br>之后我们需要在服务器本地/etc目录下建立一个文件，文件名为 shadowsocks.json<br>输入如下命令<br><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">cd</span> /etc</span><br><span class="line"><span class="keyword">vi</span> /etc/shadowsocks.json</span><br></pre></td></tr></table></figure></p>
+<p>这里还需要针对ipv6修改一下shadowsocks的配置文件，内容如下：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    "<span class="attribute">server</span>":<span class="value"><span class="string">"::"</span></span>,</span><br><span class="line">    "<span class="attribute">server_port</span>":<span class="value"><span class="number">8388</span></span>,</span><br><span class="line">    "<span class="attribute">local_address</span>": <span class="value"><span class="string">"127.0.0.1"</span></span>,</span><br><span class="line">    "<span class="attribute">local_port</span>":<span class="value"><span class="number">1080</span></span>,</span><br><span class="line">    "<span class="attribute">password</span>":<span class="value"><span class="string">"mypassword"</span></span>,</span><br><span class="line">    "<span class="attribute">timeout</span>":<span class="value"><span class="number">300</span></span>,</span><br><span class="line">    "<span class="attribute">method</span>":<span class="value"><span class="string">"aes-256-cfb"</span></span>,</span><br><span class="line">    "<span class="attribute">fast_open</span>": <span class="value"><span class="literal">false</span></span><br><span class="line"></span>&#125;</span><br></pre></td></tr></table></figure>
+<p>输入完毕后，按ESC-输入   :wq!<br>即可保存并退出（记得打冒号）<br>代码的含义是：<br>“server”同时监听所有IP地址（v4和v6)<br>““”server_port”：服务器端口 默认8388 你可以自己修改<br>“local_address”: “127.0.0.1”,<br>“local_port”:1080,设置本地IP和端口，不用改<br>“password”:”mypassword” 这里写你自己需要的用户名<br>“timeout”:300 设置超时等待时间<br>“method”:”aes-256-cfb” 设置加密方式<br>“fast_open”: false  是否使用TCP_FASTOPEN这个不用管</p>
+<p>最后输入<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssserver -c /etc/shadowsocks.json -d start</span><br></pre></td></tr></table></figure></p>
+<p>后台启动ShadowSocks服务</p>
+<p>然后你需要下载shadowsocks客户端，<br><a href="http://www.ishadowsocks.com" target="_blank" rel="external">ishadowsocks</a><br>这里下载<br>输入你的服务器IP和端口以及密码，单机确定即可</p>
+<p>这里有一点：<br>Digital Ocean提供的Droplets支持IPV6，也就是说服务器本身存在两个IP地址<br>你需要自己填写上相应的IPV6地址才可以实现免流量，如果你填写的是服务器的IPV4地址，则只是翻墙，依旧计算流量。</p>
+<p>在控制台输入<code>ifconfig</code>即可，与windows的<code>ipconfig</code>不同<br>如图所示<br><img src="http://http://1.3tslight.sinaapp.com/uploads/ss-4.jpg" alt="Login"></p>
+<p>最后你可以测试一下<br>首先连上1_tjuwlan，但是别登陆<br><img src="http://http://1.3tslight.sinaapp.com/uploads/ss-5.jpg" alt="Login"><br><img src="http://http://1.3tslight.sinaapp.com/uploads/ss-6.jpg" alt="Login"><br>设置好服务器ip和端口，启动代理服务<br><img src="http://http://1.3tslight.sinaapp.com/uploads/ss-8.jpg" alt="Login"><br><img src="http://http://1.3tslight.sinaapp.com/uploads/ss-9.jpg" alt="Login"><br>成功，试试YouTube<br><img src="http://http://1.3tslight.sinaapp.com/uploads/ss-10.jpg" alt="Login"><br>成功，教程到此结束</p>
+
+          
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/02/27/jQuery学习笔记-1/" itemprop="url">
+                  jQuery学习笔记-1
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-02-27T00:06:06+08:00" content="2016-02-27">
+              2016-02-27
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/02/27/jQuery学习笔记-1/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/02/27/jQuery学习笔记-1/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="jQuery"><a href="#jQuery" class="headerlink" title="jQuery"></a>jQuery</h1><h3 id="添加jQuery库"><a href="#添加jQuery库" class="headerlink" title="添加jQuery库"></a>添加jQuery库</h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#60;head&#62;&#10;&#60;scprit type = &#34;text/javascrpit&#34; src = &#34;jquery.js&#34;&#62;&#60;/script&#62;&#10;&#60;/head&#62;&#10;//&#60;script&#62;&#26631;&#31614;&#24212;&#35813;&#20301;&#20110;&#60;head&#62;&#37096;&#20998;</span><br></pre></td></tr></table></figure>
+<h2 id="jQuery语法："><a href="#jQuery语法：" class="headerlink" title="jQuery语法："></a>jQuery语法：</h2><p>基础语法:<code>$(selector).action</code></p>
+<ul>
+<li>美元符号定义jQuery</li>
+<li>选择符号查询和查找HTML元素</li>
+<li>jQuery的action（）执行对元素的操作</li>
+</ul>
+<h3 id="文档就绪函数"><a href="#文档就绪函数" class="headerlink" title="文档就绪函数"></a>文档就绪函数</h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(document).ready(function()&#123;&#10;---jQuery function go here---&#10;&#125;)</span><br></pre></td></tr></table></figure>
+<p>这是为了防止文档在完全就绪前去运行jQuery代码</p>
+<h3 id="jQuery属性选择器"><a href="#jQuery属性选择器" class="headerlink" title="jQuery属性选择器"></a>jQuery属性选择器</h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(&#34;[href]&#34;) &#36873;&#21462;&#25152;&#26377;&#24102;&#26377;href&#23646;&#24615;&#30340;&#20803;&#32032;&#10;$(&#34;[href=&#39;#&#39;]&#34;) &#36873;&#21462;&#25152;&#26377;&#24102;&#26377;href &#20540;&#31561;&#20110;#&#30340;&#20803;&#32032;&#10;$(&#34;[href!=&#39;#&#39;]&#34;) &#36873;&#21462;&#25152;&#26377;href&#20540;&#19981;&#31561;&#20110;#&#30340;&#20803;&#32032;&#10;$(&#34;[href$=&#39;.jpg&#39;]&#34;) &#36873;&#21462;&#25152;&#26377;href&#30340;&#20540;&#20197;&#34;.jpg&#34;&#32467;&#23614;&#30340;&#20803;&#32032;</span><br></pre></td></tr></table></figure>
+<h3 id="jQuery-CSS选择器"><a href="#jQuery-CSS选择器" class="headerlink" title="jQuery CSS选择器"></a>jQuery CSS选择器</h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(&#34;p&#34;).css(&#34;background-color&#34;,&#34;red&#34;);</span><br></pre></td></tr></table></figure>
+<h3 id="jQuery名称冲突"><a href="#jQuery名称冲突" class="headerlink" title="jQuery名称冲突"></a>jQuery名称冲突</h3><p>JavaScript库中的某些函数也会使用$<br>jQuery 使用名为noConflict()的方法来解决该问题</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var jq = jQuery.noConflict()</span><br></pre></td></tr></table></figure>
+<h2 id="jQuery-效果"><a href="#jQuery-效果" class="headerlink" title="jQuery 效果"></a>jQuery 效果</h2><h4 id="隐藏-显示"><a href="#隐藏-显示" class="headerlink" title="隐藏/显示"></a>隐藏/显示</h4><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(selector).hide(speed,callback);&#10;$(selector).show(speed,callback);</span><br></pre></td></tr></table></figure>
+<p><code>speen</code>规定了隐藏/显示的速度:<code>slow</code>`fast<code>\自定义毫秒</code>callback` 隐藏或显示完成后所执行的函数名</p>
+<p><code>toggle()</code>切换隐藏/显示</p>
+<h4 id="淡入淡出效果"><a href="#淡入淡出效果" class="headerlink" title="淡入淡出效果"></a>淡入淡出效果</h4><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(selector).fadeIn(speed,callback)&#10;$(selector).fadeOut(speed,callback)&#10;$(selector).fadeToggle(speed,callback)</span><br></pre></td></tr></table></figure>
+<p><code>jQuery fadeTo()</code>方法，允许渐变为给定的不透明度<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(selector).fadeTo(speed.opacity,callback);</span><br></pre></td></tr></table></figure></p>
+<h4 id="滑动效果"><a href="#滑动效果" class="headerlink" title="滑动效果"></a>滑动效果</h4><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(selector).slideDown(speed,callback);&#10;$(selector).slideUp(speed,callback);&#10;$(selector).slideToggle();</span><br></pre></td></tr></table></figure>
+<h4 id="jQuery自定义动画"><a href="#jQuery自定义动画" class="headerlink" title="jQuery自定义动画"></a>jQuery自定义动画</h4><p><code>jquery animate()</code>方法用于创建自定义动画<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(selector).animate(&#123;params&#125;,speed,callback);</span><br></pre></td></tr></table></figure></p>
+<p><code>params</code>参数定义形成动画的CSS属性，必须项<br><code>speed</code>参数规定动画效果的时间长度，可选<br><code>callback</code>参数规定动画完成后执行的函数名称，可选。</p>
+<h5 id="jQuery-animate-操作多个属性"><a href="#jQuery-animate-操作多个属性" class="headerlink" title="jQuery animate() 操作多个属性"></a>jQuery animate() 操作多个属性</h5><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(&#34;button&#34;).click(function())&#123;&#10;&#9;$(&#34;div&#34;).animate(&#123;&#10;&#9;&#9;left:&#39;250px&#39;,&#10;&#9;&#9;opacity:&#39;0.5&#39;,&#10;&#9;&#9;height:&#39;150px&#39;,&#10;&#9;&#9;width:&#39;150px&#39;&#10;&#9;&#10;&#9;&#125;);&#10;&#125;);&#10;&#10;//&#20351;&#29992;animate()&#26102;&#65292;&#24517;&#39035;&#20351;&#29992;Camel&#26631;&#35760;&#20070;&#20889;&#25152;&#26377;&#30340;&#23646;&#24615;&#21517;&#65292;&#22914;paddingLeft&#32780;&#38750;padding-let&#10;//&#21516;&#26102;&#65292;&#33394;&#24425;&#21160;&#30011;&#24182;&#19981;&#21253;&#21547;&#22312;&#26680;&#24515;jQuery&#24211;&#20013;</span><br></pre></td></tr></table></figure>
+<h5 id="jQuery-animate-使用相对值"><a href="#jQuery-animate-使用相对值" class="headerlink" title="jQuery animate() 使用相对值"></a>jQuery animate() 使用相对值</h5><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(&#34;button&#34;).click(function)&#123;&#10;&#9;$(&#34;div&#34;).animate(&#123;&#10;&#9;&#9;left:&#39;250px&#39;,&#10;&#9;&#9;height:&#39;+=150px&#39;,&#10;&#9;&#9;width:&#39;150px&#39;&#10;&#9;&#125;);&#10;&#125;);</span><br></pre></td></tr></table></figure>
+<h5 id="jQuery-animate-使用队列功能"><a href="#jQuery-animate-使用队列功能" class="headerlink" title="jQuery animate() 使用队列功能"></a>jQuery animate() 使用队列功能</h5><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(&#34;button&#34;).click(function)&#123;&#10;&#9;var div=$(&#34;div&#34;);&#10;&#9;div.animate(&#123;height:&#39;300px&#39;,opacityL&#39;0.4&#39;&#125;,&#34;slow&#34;);&#10;&#9;div.animate(&#123;width:&#39;300px&#39;,opacity:&#39;0.8&#39;&#125;,&#34;slow&#34;);&#10;&#9;div.animate(&#123;height:&#39;100px&#39;,opacity:&#39;0.4&#39;&#125;,&#34;slow&#34;);&#10;&#9;div.animate(&#123;width:&#39;100px&#39;,opacity:&#39;0.8&#39;&#125;,&#34;slow&#34;);&#9;&#10;&#125;);</span><br></pre></td></tr></table></figure>
+<h5 id="jQuery-stop-方法，用于在动画或者效果完成之前对它们进行停止-适用于所有jQuery效果函数"><a href="#jQuery-stop-方法，用于在动画或者效果完成之前对它们进行停止-适用于所有jQuery效果函数" class="headerlink" title="jQuery stop()方法，用于在动画或者效果完成之前对它们进行停止,适用于所有jQuery效果函数"></a>jQuery stop()方法，用于在动画或者效果完成之前对它们进行停止,适用于所有jQuery效果函数</h5><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(selector).stop(stopAll,goToEnd);&#10;//stopAll&#21442;&#25968;&#35268;&#23450;&#26159;&#21542;&#24212;&#35813;&#28165;&#38500;&#21160;&#30011;&#38431;&#21015;,&#21487;&#36873;&#12290;&#10;//goToEnd&#21442;&#25968;&#35268;&#23450;&#26159;&#21542;&#31435;&#21363;&#23436;&#25104;&#24403;&#21069;&#21160;&#30011;&#65292;&#40664;&#35748;false&#65292;&#21487;&#36873;</span><br></pre></td></tr></table></figure>
+<h5 id="jQuery-Chaining"><a href="#jQuery-Chaining" class="headerlink" title="jQuery-Chaining"></a>jQuery-Chaining</h5><p>通过jQuery，您可以把动作/方法连接起来。<br>Chaining 允许我们在一条语句中允许多个jQuery方法（在相同的元素上）。<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(&#34;#p1&#34;).css(&#34;color&#34;,&#34;red&#34;).slideUp(2000).slideDown(2000);&#10;//&#25110;&#32773;&#20889;&#25104;&#10;$(&#34;#p1&#34;).css(&#34;color&#34;,&#34;red&#34;)&#10;&#9;.slideUp(2000)&#10;&#9;.slideDown(2000);</span><br></pre></td></tr></table></figure></p>
+<h4 id="jQuery获得内容和属性"><a href="#jQuery获得内容和属性" class="headerlink" title="jQuery获得内容和属性"></a>jQuery获得内容和属性</h4><h5 id="jQuery获得内容-text-、html-、val"><a href="#jQuery获得内容-text-、html-、val" class="headerlink" title="jQuery获得内容  text()、html()、val()"></a>jQuery获得内容  <code>text()</code>、<code>html()</code>、<code>val()</code></h5><p>text() 设置或返回所选择元素的文本内容<br>html() 设置或返回所选择元素的内容(包括HTML标记)<br>val() 设置或返回表单字段的值</p>
+<h5 id="jQuery获得属性-attr"><a href="#jQuery获得属性-attr" class="headerlink" title="jQuery获得属性 attr()"></a>jQuery获得属性 attr()</h5><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(&#34;button&#34;).click(function()&#123;&#10;&#9;alret($(&#34;#w3s&#34;).attr(&#34;href&#34;));&#10;&#10;&#125;);</span><br></pre></td></tr></table></figure>
+<h4 id="jQuery添加"><a href="#jQuery添加" class="headerlink" title="jQuery添加"></a>jQuery添加</h4><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">append()//&#22312;&#34987;&#36873;&#25321;&#20803;&#32032;&#32467;&#23614;&#25554;&#20837;&#20869;&#23481;&#10;perpend()//&#22312;&#34987;&#36873;&#25321;&#20803;&#32032;&#30340;&#24320;&#22836;&#25554;&#20837;&#20869;&#23481;&#10;after()//&#22312;&#34987;&#36873;&#25321;&#20803;&#32032;&#20043;&#21518;&#25554;&#20837;&#20869;&#23481;&#10;before()//&#22312;&#34987;&#36873;&#25321;&#20803;&#32032;&#20043;&#21069;&#25554;&#20837;&#20869;&#23481;</span><br></pre></td></tr></table></figure>
+<h4 id="jQuery-删除"><a href="#jQuery-删除" class="headerlink" title="jQuery 删除"></a>jQuery 删除</h4><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">remove() //&#21024;&#38500;&#34987;&#36873;&#20803;&#32032;&#21450;&#20854;&#23376;&#20803;&#32032;&#10;empty() //&#20174;&#34987;&#36873;&#20803;&#32032;&#20013;&#21024;&#38500;&#23376;&#20803;&#32032;</span><br></pre></td></tr></table></figure>
+<p>过滤被删除的元素<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(&#34;p&#34;).remove(&#34;.italic&#34;);&#10;//&#35813;&#20363;&#23376;&#21024;&#38500;&#25152;&#26377; class=&#34;italic&#34;&#30340;&#60;p&#62;&#20803;&#32032;</span><br></pre></td></tr></table></figure></p>
+<h4 id="jQuery-获取并设置CSS类"><a href="#jQuery-获取并设置CSS类" class="headerlink" title="jQuery 获取并设置CSS类"></a>jQuery 获取并设置CSS类</h4><p>jQuery操作CSS<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">addClass() //&#21521;&#34987;&#36873;&#20013;&#30340;&#20803;&#32032;&#20013;&#28155;&#21152;&#19968;&#20010;&#25110;&#22810;&#20010;&#31867;&#10;removeClass() //&#20174;&#34987;&#36873;&#20803;&#32032;&#20013;&#21024;&#38500;&#19968;&#20010;&#25110;&#22810;&#20010;&#31867;&#10;toggleClass() //&#23545;&#34987;&#36873;&#25321;&#20803;&#32032;&#36827;&#34892;&#28155;&#21152;/&#21024;&#38500;&#31867;&#30340;&#20999;&#25442;&#25805;&#20316;&#10;css()   //&#35774;&#32622;&#25110;&#36820;&#22238;&#26679;&#24335;&#23646;&#24615;</span><br></pre></td></tr></table></figure></p>
+<h5 id="jQuery-尺寸"><a href="#jQuery-尺寸" class="headerlink" title="jQuery 尺寸"></a>jQuery 尺寸</h5><ol>
+<li>width()和height()方法<br>width()方法设置或返回元素的宽度（不包括内边距、边框或者外边距）<br>height()方法设置或返回元素的高度(不包括内边距边框或外边距)</li>
+</ol>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(&#34;button&#34;).click(function)&#123;&#10;&#9;var txt=&#34;&#34;&#10;&#9;txt += &#34;Width:&#34; + $(&#34;#div1&#34;).width() + &#34;&#60;/br&#62;&#34;;&#10;&#9;txt += &#34;Height:&#34; + $(&#34;#div1&#34;).height();&#10;&#9;$(&#34;#div1&#34;).html(txt);&#10;&#125;);</span><br></pre></td></tr></table></figure>
+<ol>
+<li><p>innerWidth()和innerHeight()方法用于创建自定义动画<br>innerWidth()返回元素的宽度（包括内边距）<br>innerHeight()方法返回元素的高度（包括内边距）</p>
+</li>
+<li><p>outerWidth()和outerHeight()方法<br>outerWidth()返回元素的宽度（包括内边距和边框）<br>outerHeight()返回元素的高度（包括内边距和边框）</p>
+</li>
+</ol>
+<p><code>outerWidth(true)</code>方法返回元素的宽度（包括内边距、边框和外边距）<br><code>outerHeight(true)</code>方法返回元素的高度（包括内边距、边框和外边距）</p>
+<h4 id="jQuery-遍历-向上"><a href="#jQuery-遍历-向上" class="headerlink" title="jQuery 遍历-向上"></a>jQuery 遍历-向上</h4><p><code>jQuery parent()</code>方法<br>该方法返回被选元素的直接父元素，只会向上一级对DOM树进行遍历<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(document).ready(function()&#123;&#10;&#9;$(&#34;span&#34;).parent();&#10;&#125;);&#10;//&#35813;&#20363;&#23376;&#36820;&#22238;&#27599;&#20010;&#60;span&#62;&#20803;&#32032;&#30340;&#30452;&#25509;&#29238;&#20803;&#32032;</span><br></pre></td></tr></table></figure></p>
+<p><code>jQuery parents()</code>方法<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(document).ready(function()&#123;&#10;  $(&#34;span&#34;).parents(&#34;ul&#34;);&#10;&#125;);&#10;//&#35813;&#20363;&#23376;&#36820;&#22238;&#25152;&#26377;&#60;span&#62;&#20803;&#32032;&#30340;&#25152;&#26377;&#31062;&#20808;&#65292;&#24182;&#19988;&#23427;&#26159;&#60;ul&#62;&#20803;&#32032;</span><br></pre></td></tr></table></figure></p>
+<p><code>jQuery parentsUntil()</code>方法<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(document).ready(function()&#123;&#10;&#9;$(&#34;span&#34;).parentsUntil(&#34;div&#34;);&#10;&#125;);</span><br></pre></td></tr></table></figure></p>
+<h4 id="jQuery-遍历-向下"><a href="#jQuery-遍历-向下" class="headerlink" title="jQuery 遍历-向下"></a>jQuery 遍历-向下</h4><p><code>jQuery children()</code>方法<br>返回被选择元素的直接子元素<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(document).ready(function()&#123;&#10;&#9;$(&#34;div&#34;).children(&#34;p.1&#34;);&#10;&#125;);&#10;//&#35813;&#20363;&#23376;&#36820;&#22238;&#31867;&#22411;&#21517;&#20026;&#8220;1&#8221;&#30340;&#25152;&#26377;&#60;p&#62;&#20803;&#32032;&#65292;&#24182;&#19988;&#20182;&#20204;&#26159;&#60;div&#62;&#30340;&#30452;&#25509;&#23376;&#20803;&#32032;</span><br></pre></td></tr></table></figure></p>
+<p><code>jQuery find()</code> 方法<br>返回被选元素的后代元素，一直向下直接到最后一个后代</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(document).ready(function()&#123;&#10;&#9;$(&#34;div&#34;).find(&#34;span&#34;);&#10;&#125;);&#10;//&#35813;&#20363;&#23376;&#36820;&#22238;&#23646;&#20110;&#60;div&#62;&#21518;&#20195;&#30340;&#25152;&#26377;&#60;span&#62;&#20803;&#32032;</span><br></pre></td></tr></table></figure>
+<h4 id="jQuery-遍历-同胞"><a href="#jQuery-遍历-同胞" class="headerlink" title="jQuery 遍历-同胞"></a>jQuery 遍历-同胞</h4><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">siblings()&#10;next()&#10;nextAll()&#10;nextUntil()&#10;prev()&#10;prevAll()&#10;prevUntil()</span><br></pre></td></tr></table></figure>
+<p><code>jQuery siblings()</code>方法<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(document).ready(function()&#123;&#10;&#9;$(&#34;h2&#34;).siblings(&#34;p&#34;);&#10;&#125;);&#10;//&#35813;&#20363;&#23376;&#36820;&#22238;&#23646;&#20110;&#60;h2&#62;&#30340;&#21516;&#32990;&#20803;&#32032;&#30340;&#25152;&#26377;&#60;p&#62;&#20803;&#32032;</span><br></pre></td></tr></table></figure></p>
+<p><code>jQuery next()</code>方法<br>该方法返回被选元素的下一个同胞元素，只返回一个元素<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(document).ready(function()&#123;&#10;&#9;$(&#34;h2&#34;).next();&#10;&#125;);&#10;//&#35813;&#20363;&#23376;&#36820;&#22238;&#60;h2&#62;&#30340;&#19979;&#19968;&#20010;&#21516;&#32990;&#20803;&#32032;</span><br></pre></td></tr></table></figure></p>
+<p><code>jQuery nextAll()</code>方法<br><code>nextAll()</code>方法返回被选元素的所有跟随的同胞元素</p>
+<p><code>jQuery nextUntil()</code>方法<br><code>nextUntil()</code>返回介于两个给定参数之间的所有跟随的同胞元素<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(document).ready(function()&#123;&#10;&#9;$(&#34;h2&#34;).nextUntil(&#34;h6&#34;);&#10;&#125;);&#10;//&#35813;&#20363;&#23376;&#36820;&#22238;&#20171;&#20110;&#60;h2&#62;&#19982;&#60;h6&#62;&#20803;&#32032;&#20043;&#38388;&#30340;&#25152;&#26377;&#21516;&#32990;&#20803;&#32032;</span><br></pre></td></tr></table></figure></p>
+<h4 id="jQuery-遍历-过滤"><a href="#jQuery-遍历-过滤" class="headerlink" title="jQuery 遍历-过滤"></a>jQuery 遍历-过滤</h4><p><code>first()</code>、<code>last()</code>、<code>eq()</code>、<code>fliter()</code>、<code>not()</code><br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(document).ready(function()&#123;&#10;  $(&#34;div p&#34;).first();&#10;&#125;);&#10;//&#19978;&#38754;&#30340;&#20363;&#23376;&#36873;&#21462;&#39318;&#20010; &#60;div&#62; &#20803;&#32032;&#20869;&#37096;&#30340;&#31532;&#19968;&#20010; &#60;p&#62; &#20803;&#32032;&#10;&#10;$(document).ready(function()&#123;&#10;  $(&#34;div p&#34;).last();&#10;&#125;);&#10;//&#19978;&#38754;&#30340;&#20363;&#23376;&#36873;&#25321;&#26368;&#21518;&#19968;&#20010; &#60;div&#62; &#20803;&#32032;&#20013;&#30340;&#26368;&#21518;&#19968;&#20010; &#60;p&#62; &#20803;&#32032;</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="doctype">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">script</span> <span class="attribute">src</span>=<span class="value">"/jquery/jquery-1.11.1.min.js"</span>&gt;</span><span class="undefined"></span><br><span class="line"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">script</span>&gt;</span><span class="javascript"></span><br><span class="line">$(<span class="built_in">document</span>).ready(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  $(<span class="string">"p"</span>).eq(<span class="number">1</span>).css(<span class="string">"background-color"</span>,<span class="string">"yellow"</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="title">h1</span>&gt;</span>欢迎来到我的主页<span class="tag">&lt;/<span class="title">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">p</span>&gt;</span>我是唐老鸭 (index 0)。<span class="tag">&lt;/<span class="title">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">p</span>&gt;</span>唐老鸭 (index 1)。<span class="tag">&lt;/<span class="title">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">p</span>&gt;</span>我住在 Duckburg (index 2)。<span class="tag">&lt;/<span class="title">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">p</span>&gt;</span>我最好的朋友是米老鼠 (index 3)。<span class="tag">&lt;/<span class="title">p</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="title">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">html</span>&gt;</span></span><br><span class="line"></span><br><span class="line">//eq() 方法返回被选元素中带有指定索引号的元素。</span><br></pre></td></tr></table></figure>
+<p><code>filter()</code> 方法匹配所有符合标准的元素 而<code>not()</code>方法则相反</p>
+<h3 id="jQuery-AJAX"><a href="#jQuery-AJAX" class="headerlink" title="jQuery-AJAX"></a>jQuery-AJAX</h3><p>AJAX = 异步JavaScript 和 XML (Asynchronous JavaScript and XML)</p>
+<p>在不重载整个网页的情况下，AJAX通过后台加载数据并在网页上显示</p>
+<h4 id="jQuery-load-方法"><a href="#jQuery-load-方法" class="headerlink" title="jQuery load() 方法"></a>jQuery load() 方法</h4><p><code>load()</code>方法从服务器加载数据，并且把返回的数据放入被选元素中</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(selector).load(URL,data,callback);</span><br></pre></td></tr></table></figure>
+<p>URL:必须，规定了希望加载的URL<br>data:可选，规定与请求一起发送的查询字符串键/值对集合<br>callback:可选，<code>load()</code>方法完成后所执行的函数名称<br>回调函数可以设置不同的参数:<br>responseTxt - 包含调用成功时的结果内容<br>statusTXT - 包含调用的状态<br>xhr - 包含 XMLHttpRequest 对象</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(&#34;button&#34;).click(function()&#123;&#10;  $(&#34;#div1&#34;).load(&#34;demo_test.txt&#34;,function(responseTxt,statusTxt,xhr)&#123;&#10;    if(statusTxt==&#34;success&#34;)&#10;      alert(&#34;&#22806;&#37096;&#20869;&#23481;&#21152;&#36733;&#25104;&#21151;&#65281;&#34;);&#10;    if(statusTxt==&#34;error&#34;)&#10;      alert(&#34;Error: &#34;+xhr.status+&#34;: &#34;+xhr.statusText);&#10;  &#125;);&#10;&#125;);</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/02/24/Python爬虫-1/" itemprop="url">
+                  Python爬虫(1)
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-02-24T19:28:20+08:00" content="2016-02-24">
+              2016-02-24
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/02/24/Python爬虫-1/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/02/24/Python爬虫-1/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">urlopen(url,data,timeout)</span><br></pre></td></tr></table></figure>
+<p>data默认为空，<code>timeout</code>默认为`socket._GLOBAL_DEFAULT_TIMEOUT<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">print</span> response.read()</span><br><span class="line">//response对象有个read方法</span><br></pre></td></tr></table></figure></p>
+<h3 id="构造request"><a href="#构造request" class="headerlink" title="构造request"></a>构造request</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> urllib2</span><br><span class="line"></span><br><span class="line">request = urllib2.Request(<span class="string">"http://www.baidu.com"</span>)</span><br><span class="line">response = urllib2.urlopen(request)</span><br><span class="line"><span class="keyword">print</span> response.read()</span><br></pre></td></tr></table></figure>
+<h3 id="post和get数据传送"><a href="#post和get数据传送" class="headerlink" title="post和get数据传送"></a>post和get数据传送</h3><p>get方式是直接以链接形式访问，连接中包含了所有的参数，而post则不会在网上显示所有参数</p>
+<h4 id="post方式"><a href="#post方式" class="headerlink" title="post方式"></a>post方式</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> urllib</span><br><span class="line"><span class="keyword">import</span> urllib2</span><br><span class="line"></span><br><span class="line">values=&#123;<span class="string">"username"</span>:<span class="string">"xxxxxxx@xx.com"</span>,<span class="string">"password"</span>:<span class="string">"xxxxxx"</span>&#125;</span><br><span class="line">data = urllib.urlencode(values)</span><br><span class="line">url = <span class="string">"https://passport.csdn.net/account/login?from=http://my.csdn.net/my/mycsdn"</span></span><br><span class="line">request = urllib2.Request(url,data)</span><br><span class="line">response = urllib2.urlopen(request)</span><br><span class="line"><span class="keyword">print</span> response.read()</span><br></pre></td></tr></table></figure>
+<h4 id="get方式"><a href="#get方式" class="headerlink" title="get方式"></a>get方式</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">imoprt urllib</span><br><span class="line"><span class="keyword">import</span> urllib2</span><br><span class="line">values=&#123;&#125;</span><br><span class="line">values[<span class="string">'username'</span>]=<span class="string">"xxxxxxx@xx.com"</span></span><br><span class="line">values[<span class="string">'password'</span>]=<span class="string">"xxxxxx"</span></span><br><span class="line">data = urllib.urlencode(values)</span><br><span class="line">url = <span class="string">"http://passport.csdn.net/account/login"</span></span><br><span class="line">geturl = url + <span class="string">"?"</span> + data</span><br><span class="line">request = urllib2.Request(geturl)</span><br><span class="line">response = urllib2.urlopen(request)</span><br><span class="line"><span class="keyword">print</span> response.read()</span><br></pre></td></tr></table></figure>
+<h1 id="python正则表达式"><a href="#python正则表达式" class="headerlink" title="python正则表达式"></a>python正则表达式</h1><blockquote>
+<p>正则表达式是对字符串操作的一种逻辑公式，用事先定义好的一些特定字符以及这些特定字符的组合组成一个规则字符串，这个规则字符串用来表达对字符串的一种过滤逻辑</p>
+</blockquote>
+<ol>
+<li>python中的原始类型字符串<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> re</span><br><span class="line">string = <span class="string">'This is a \nnormal string'</span></span><br><span class="line">rawString = <span class="string">r'This is a \nraw string'</span></span><br><span class="line"><span class="keyword">print</span> string</span><br><span class="line"><span class="keyword">print</span> rawString</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>输出为<br><figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">This is <span class="operator">a</span> </span><br><span class="line"><span class="keyword">normal</span> <span class="keyword">string</span></span><br><span class="line">This is <span class="operator">a</span> \nraw <span class="keyword">string</span></span><br></pre></td></tr></table></figure></p>
+<ol>
+<li>使用re.match查找-匹配<br>match()只有当被搜索字符串的开头匹配模式的时候他才能查找到匹配对象<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">match = re.match(<span class="string">r'dog'</span>,<span class="string">'dog cat dog'</span>)</span><br><span class="line"><span class="keyword">print</span> match.group(<span class="number">0</span>)</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">re.match(<span class="string">r'dog'</span>,<span class="string">'dog cat dog'</span>)</span><br><span class="line">match = re.match(<span class="string">r'cat'</span>,<span class="string">'dog cat dog'</span>)</span><br><span class="line"><span class="keyword">print</span> match.group(<span class="number">0</span>)</span><br></pre></td></tr></table></figure>
+<ol>
+<li>使用re.search查找匹配任意位置<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">match = re.search(<span class="string">r'cat'</span>,<span class="string">'dog cat dog'</span>)</span><br><span class="line"><span class="keyword">print</span> match.group(<span class="number">0</span>)</span><br><span class="line">&gt;&gt;cat</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>但是search()方法会在它找到一个匹配项后就停止查找</p>
+<ol>
+<li><p>使用re.findall匹配所有对象</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line">match = re.findall(<span class="string">r'dog'</span>,<span class="string">'dog cat dog'</span>)</span><br><span class="line"><span class="keyword">print</span> match</span><br><span class="line"></span><br><span class="line">&gt;&gt;[<span class="string">'dog'</span>,<span class="string">'dog'</span>]</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>match.start和match.end方法</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="prompt">&gt;&gt;&gt; </span>match = re.search(<span class="string">r'dog'</span>,<span class="string">'dog cat dog'</span>)</span><br><span class="line"><span class="prompt">&gt;&gt;&gt; </span>match.start()</span><br><span class="line"><span class="number">0</span></span><br><span class="line"><span class="prompt">&gt;&gt;&gt; </span>match.end()</span><br><span class="line"><span class="number">3</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>match.group 通过数字分组</p>
+</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> re</span><br><span class="line">contactInfo = <span class="string">'Doe, John: 555-1212'</span></span><br><span class="line">match = re.search(<span class="string">r'(\w+), (\w+): (\S+)'</span>, contactInfo)</span><br><span class="line"><span class="keyword">print</span> match.group(<span class="number">1</span>)</span><br><span class="line"><span class="keyword">print</span> match.group(<span class="number">2</span>)</span><br><span class="line"><span class="keyword">print</span> match.group(<span class="number">3</span>)</span><br><span class="line"><span class="keyword">print</span> match.group(<span class="number">0</span>)</span><br></pre></td></tr></table></figure>
+<p>输出为<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Doe</span><br><span class="line">John</span><br><span class="line"><span class="number">555</span>-<span class="number">1212</span></span><br><span class="line">Doe, John: <span class="number">555</span>-<span class="number">1212</span></span><br></pre></td></tr></table></figure></p>
+<ol>
+<li>使用 match.group 通过别名来分组</li>
+</ol>
+<p>有时当一个正则表达式有很多歌分组的时候，通过组的出现次序来定位就变得很困难，而Python允许通过下面的语句来实现组名<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> re</span><br><span class="line">contactInfo = <span class="string">'Doe, Johnn: 555-1212'</span></span><br><span class="line">match = re.search(<span class="string">r'(?P&lt;last&gt;\w+), (?P&lt;first&gt;\w+): (?P&lt;phone&gt;\S+)'</span>, contactInfo)</span><br><span class="line"><span class="keyword">print</span> match.group(<span class="string">'last'</span>)</span><br><span class="line"><span class="prompt">&gt;&gt;&gt; </span>Doe</span><br></pre></td></tr></table></figure></p>
+<p>但是findall()方法不返回分组对象，它也可以使用分组。类似，findall()方法返回的是一个元素的集合。</p>
+<h3 id="Beautiful-Soup用法"><a href="#Beautiful-Soup用法" class="headerlink" title="Beautiful Soup用法"></a>Beautiful Soup用法</h3><blockquote>
+<p>beautiful soup 是Python的一个库，主要功能是从网页抓取数据<br>Beautiful Soup提供一些简单的、python式的函数用来处理导航、搜索、修改分析树等功能。它是一个工具箱，通过解析文档为用户提供需要抓取的数据，因为简单，所以不需要多少代码就可以写出一个完整的应用程序。<br>Beautiful Soup自动将输入文档转换为Unicode编码，输出文档转换为utf-8编码。你不需要考虑编码方式，除非文档没有指定一个编码方式，这时，Beautiful Soup就不能自动识别编码方式了。然后，你仅仅需要说明一下原始编码方式就可以了。<br>Beautiful Soup已成为和lxml、html6lib一样出色的python解释器，为用户灵活地提供不同的解析策略或强劲的速度。</p>
+</blockquote>
+
+          
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/02/23/HTML-meta标签/" itemprop="url">
+                  HTML-meta标签
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-02-23T08:34:02+08:00" content="2016-02-23">
+              2016-02-23
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/02/23/HTML-meta标签/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/02/23/HTML-meta标签/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>昨晚开始试着写网页，在用JavaScript写一个导航栏的时候，碰到了一个问题<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="doctype">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">title</span>&gt;</span>清月<span class="tag">&lt;/<span class="title">title</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="title">link</span> <span class="attribute">rel</span>=<span class="value">"stylesheet"</span> <span class="attribute">type</span>=<span class="value">"text/css"</span> <span class="attribute">herf</span>=<span class="value">"/css/style.css"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">head</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="title">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">header</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">h1</span>&gt;</span>TsingLight  Page<span class="tag">&lt;/<span class="title">h1</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="title">ul</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="title">li</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"http://1.3tslight.applinzi.com/"</span>&gt;</span>首页<span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="title">li</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"http://1.3tslight.applinzi.com/"</span>&gt;</span>文章<span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="title">li</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"http://1.3tslight.applinzi.com/"</span>&gt;</span>博客<span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="title">li</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"http://1.3tslight.applinzi.com/"</span>&gt;</span>摄影<span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="title">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="title">header</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="title">img</span> <span class="attribute">src</span>=<span class="value">"/image/11.jpg"</span> <span class="attribute">width</span>=<span class="value">1900</span>  <span class="attribute">height</span>=<span class="value">536</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="title">html</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>这样写出来的导航栏，显示的中文却是乱码。原因就在于少了一句<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;head&gt;</span><br><span class="line">	<span class="xml"><span class="tag">&lt;<span class="title">meta</span> <span class="attribute">charset</span>=<span class="value">"utf-8"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">head</span>&gt;</span></span></span><br></pre></td></tr></table></figure></p>
+<p>加上这一句即可</p>
+<p>但是meta标签不仅仅只是这个用处</p>
+<blockquote>
+<p>meta是HTML语言head区域的一个辅助性标签，它的作用有：搜索引擎优化（SEO），定义页面使用语言，自动刷新并且指向新的页面，实现网页转换时候的动态效果，控制页面的缓冲，网页定级评价，控制页面显示的窗口等。</p>
+</blockquote>
+<h4 id="meta标签"><a href="#meta标签" class="headerlink" title="meta标签"></a>meta标签</h4><p>meta标签有两个属性：<code>http-equiv</code>和<code>name</code>属性</p>
+<h5 id="1-name属性"><a href="#1-name属性" class="headerlink" title="1. name属性"></a>1. name属性</h5><p>name属性主要用于描述网页<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">meta</span> <span class="attribute">name</span>=<span class="value">"参数"</span> <span class="attribute">content</span>=<span class="value">"具体数值"</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<ol>
+<li><p>Keywords(关键字)<br>keyword告诉搜索引擎此网页的关键字</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;meta name=<span class="string">"keywords"</span> content=<span class="string">"blabla,blabla,blabla"</span>&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Description(网站内容描述)</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;meta name=<span class="string">"description"</span> content=<span class="string">"blabla, blabla, blabla"</span>&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>robots(机器人向导)<br>说明哪些页面是需要索引的，哪些页面不需要索引<br>此时，content的参数有<code>all</code>,<code>none</code>,<code>index</code>,<code>noindex</code>,<code>follow</code>,<code>nofollow</code></p>
+<h6 id="信息参数为all：文件将被检索，且页面上的链接可以被查询；"><a href="#信息参数为all：文件将被检索，且页面上的链接可以被查询；" class="headerlink" title="信息参数为all：文件将被检索，且页面上的链接可以被查询；"></a>信息参数为all：文件将被检索，且页面上的链接可以被查询；</h6><h6 id="信息参数为none：文件将不被检索，且页面上的链接不可以被查询；"><a href="#信息参数为none：文件将不被检索，且页面上的链接不可以被查询；" class="headerlink" title="信息参数为none：文件将不被检索，且页面上的链接不可以被查询；"></a>信息参数为none：文件将不被检索，且页面上的链接不可以被查询；</h6><h6 id="信息参数为index：文件将被检索；"><a href="#信息参数为index：文件将被检索；" class="headerlink" title="信息参数为index：文件将被检索；"></a>信息参数为index：文件将被检索；</h6><h6 id="信息参数为follow：页面上的链接可以被查询；"><a href="#信息参数为follow：页面上的链接可以被查询；" class="headerlink" title="信息参数为follow：页面上的链接可以被查询；"></a>信息参数为follow：页面上的链接可以被查询；</h6><h6 id="信息参数为noindex：文件将不被检索，但页面上的链接可以被查询；"><a href="#信息参数为noindex：文件将不被检索，但页面上的链接可以被查询；" class="headerlink" title="信息参数为noindex：文件将不被检索，但页面上的链接可以被查询；"></a>信息参数为noindex：文件将不被检索，但页面上的链接可以被查询；</h6><h6 id="信息参数为nofollow：文件将被检索，但页面上的链接不可以被查询；"><a href="#信息参数为nofollow：文件将被检索，但页面上的链接不可以被查询；" class="headerlink" title="信息参数为nofollow：文件将被检索，但页面上的链接不可以被查询；"></a>信息参数为nofollow：文件将被检索，但页面上的链接不可以被查询；</h6></li>
+<li><p>Author(作者)</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;meta name=<span class="string">"author"</span> content<span class="string">"TsingLight,TsingLight@tju.edu.cn"</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Generator(网站是用什么软件制作的)</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;meta name=<span class="string">"generator"</span> content=<span class="string">"blablabla"</span>&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Copyright(版权信息)</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;meta name=<span class="string">"copyright"</span> content=<span class="string">"blablabla"</span>&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<hr>
+<h4 id="2-http-equiv属性"><a href="#2-http-equiv属性" class="headerlink" title="2.http-equiv属性"></a>2.http-equiv属性</h4><ol>
+<li><p>Expires（期限）<br>用于设定网页的到期时间，网页过期后必须到服务器重新传输</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;meta http-equiv=<span class="string">"expires"</span> content=<span class="string">"Fre,12Jan201600:00:00GMT"</span>&gt;</span><br><span class="line"><span class="comment">//必须使用GMT时间格式</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Pragma(cache模式)<br>禁止浏览器从本地计算机的缓冲中访问页面内容</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;meta http-equiv=<span class="string">"Pragma"</span> content=<span class="string">"no-cache"</span>&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Refresh(刷新)</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;meta http-equiv=<span class="string">"Refresh"</span> content=<span class="string">"2;URL=http://www.baidu.com"</span>&gt;</span><br><span class="line"><span class="comment">//值得注意的是引号的位置</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Set-Cookie(Cookie设定)</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;meta http-equiv=<span class="string">"Set-Cookie"</span> content=<span class="string">"cookie value=xxx;expires=Friday,12-Jan-201600:00:00GMT;path=/"</span>&gt;</span><br><span class="line"><span class="comment">//如果网页过期，就删除储存的cookie</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Window-target(显示窗口的设定)<br>强制页面在当前窗口以独立页面显示</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;meta http-equiv=<span class="string">"Window-target"</span> content=<span class="string">"_top"</span>&gt;</span><br><span class="line"><span class="comment">//用来防止别人在框架里调用自己的页面</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>content-Type(显示字符集的设定)<br>设定页面使用的字符集</p>
+<h6 id="meta标签的charset的信息参数如GB2312时，代表说明网站是采用的编码是简体中文；"><a href="#meta标签的charset的信息参数如GB2312时，代表说明网站是采用的编码是简体中文；" class="headerlink" title="meta标签的charset的信息参数如GB2312时，代表说明网站是采用的编码是简体中文；"></a>meta标签的charset的信息参数如GB2312时，代表说明网站是采用的编码是简体中文；</h6><h6 id="meta标签的charset的信息参数如BIG5时，代表说明网站是采用的编码是繁体中文；"><a href="#meta标签的charset的信息参数如BIG5时，代表说明网站是采用的编码是繁体中文；" class="headerlink" title="meta标签的charset的信息参数如BIG5时，代表说明网站是采用的编码是繁体中文；"></a>meta标签的charset的信息参数如BIG5时，代表说明网站是采用的编码是繁体中文；</h6><h6 id="meta标签的charset的信息参数如iso-2022-jp时，代表说明网站是采用的编码是日文；"><a href="#meta标签的charset的信息参数如iso-2022-jp时，代表说明网站是采用的编码是日文；" class="headerlink" title="meta标签的charset的信息参数如iso-2022-jp时，代表说明网站是采用的编码是日文；"></a>meta标签的charset的信息参数如iso-2022-jp时，代表说明网站是采用的编码是日文；</h6><h6 id="meta标签的charset的信息参数如ks-c-5601时，代表说明网站是采用的编码是韩文；"><a href="#meta标签的charset的信息参数如ks-c-5601时，代表说明网站是采用的编码是韩文；" class="headerlink" title="meta标签的charset的信息参数如ks_c_5601时，代表说明网站是采用的编码是韩文；"></a>meta标签的charset的信息参数如ks_c_5601时，代表说明网站是采用的编码是韩文；</h6><h6 id="meta标签的charset的信息参数如ISO-8859-1时，代表说明网站是采用的编码是英文；"><a href="#meta标签的charset的信息参数如ISO-8859-1时，代表说明网站是采用的编码是英文；" class="headerlink" title="meta标签的charset的信息参数如ISO-8859-1时，代表说明网站是采用的编码是英文；"></a>meta标签的charset的信息参数如ISO-8859-1时，代表说明网站是采用的编码是英文；</h6><h6 id="meta标签的charset的信息参数如UTF-8时，代表世界通用的语言编码；"><a href="#meta标签的charset的信息参数如UTF-8时，代表世界通用的语言编码；" class="headerlink" title="meta标签的charset的信息参数如UTF-8时，代表世界通用的语言编码；"></a>meta标签的charset的信息参数如UTF-8时，代表世界通用的语言编码；</h6><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;meta http-equiv=<span class="string">"content-Type"</span> content=<span class="string">"text/html;charset=gb2312"</span>&gt;</span><br><span class="line"><span class="comment">//在HTML5中，以下的写法就够了</span></span><br><span class="line">&lt;meta charset=<span class="string">"gb2312"</span>&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>content-Language</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;meta http-equiv=<span class="string">"content-Language"</span> content=<span class="string">"zh-cn"</span>/&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>imagetoolbar<br>制定是否显示图片工具栏,false不显示，true显示</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;meta http-equiv=<span class="string">"imagetoolbar"</span> content=<span class="string">"false"</span>/&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Content-Script-Type<br>说明页面脚本的类型</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;meta http-equiv=<span class="string">"Content-Script-Type"</span> content=<span class="string">"text/javascript"</span>&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+
+          
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/02/22/基于SIFT的算法的全景图像拼接程序（C-）/" itemprop="url">
+                  基于SIFT算法的全景图像拼接程序（C++）
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-02-22T23:20:19+08:00" content="2016-02-22">
+              2016-02-22
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/02/22/基于SIFT的算法的全景图像拼接程序（C-）/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/02/22/基于SIFT的算法的全景图像拼接程序（C-）/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>程序运行环境： visual studio 2013  +  openCV 2.4.9</p>
+<p>此程序使用sift算法进行图像的全景拼接，主要有以下几个步骤</p>
+<ol>
+<li>读取两张图片,提取sift特征</li>
+<li>使用kd-tree和BBF算法进行特征点匹配</li>
+<li>利用RANSAC算法筛选匹配点，计算变换矩阵</li>
+<li>图像融合</li>
+</ol>
+<hr>
+<p>SIFT特征提取<br>main()函数源码 如下：<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br><span class="line">271</span><br><span class="line">272</span><br><span class="line">273</span><br><span class="line">274</span><br><span class="line">275</span><br><span class="line">276</span><br><span class="line">277</span><br><span class="line">278</span><br><span class="line">279</span><br><span class="line">280</span><br><span class="line">281</span><br><span class="line">282</span><br><span class="line">283</span><br><span class="line">284</span><br><span class="line">285</span><br><span class="line">286</span><br><span class="line">287</span><br><span class="line">288</span><br><span class="line">289</span><br><span class="line">290</span><br><span class="line">291</span><br><span class="line">292</span><br><span class="line">293</span><br><span class="line">294</span><br><span class="line">295</span><br><span class="line">296</span><br><span class="line">297</span><br><span class="line">298</span><br><span class="line">299</span><br><span class="line">300</span><br><span class="line">301</span><br><span class="line">302</span><br><span class="line">303</span><br><span class="line">304</span><br><span class="line">305</span><br><span class="line">306</span><br><span class="line">307</span><br><span class="line">308</span><br><span class="line">309</span><br><span class="line">310</span><br><span class="line">311</span><br><span class="line">312</span><br><span class="line">313</span><br><span class="line">314</span><br><span class="line">315</span><br><span class="line">316</span><br><span class="line">317</span><br><span class="line">318</span><br><span class="line">319</span><br><span class="line">320</span><br><span class="line">321</span><br><span class="line">322</span><br><span class="line">323</span><br><span class="line">324</span><br><span class="line">325</span><br><span class="line">326</span><br><span class="line">327</span><br><span class="line">328</span><br><span class="line">329</span><br><span class="line">330</span><br><span class="line">331</span><br><span class="line">332</span><br><span class="line">333</span><br><span class="line">334</span><br><span class="line">335</span><br><span class="line">336</span><br><span class="line">337</span><br><span class="line">338</span><br><span class="line">339</span><br><span class="line">340</span><br><span class="line">341</span><br><span class="line">342</span><br><span class="line">343</span><br><span class="line">344</span><br><span class="line">345</span><br><span class="line">346</span><br><span class="line">347</span><br><span class="line">348</span><br><span class="line">349</span><br><span class="line">350</span><br><span class="line">351</span><br><span class="line">352</span><br><span class="line">353</span><br><span class="line">354</span><br><span class="line">355</span><br><span class="line">356</span><br><span class="line">357</span><br><span class="line">358</span><br><span class="line">359</span><br><span class="line">360</span><br><span class="line">361</span><br><span class="line">362</span><br><span class="line">363</span><br><span class="line">364</span><br><span class="line">365</span><br><span class="line">366</span><br><span class="line">367</span><br><span class="line">368</span><br><span class="line">369</span><br><span class="line">370</span><br><span class="line">371</span><br><span class="line">372</span><br><span class="line">373</span><br><span class="line">374</span><br><span class="line">375</span><br><span class="line">376</span><br><span class="line">377</span><br><span class="line">378</span><br><span class="line">379</span><br><span class="line">380</span><br><span class="line">381</span><br><span class="line">382</span><br><span class="line">383</span><br><span class="line">384</span><br><span class="line">385</span><br><span class="line">386</span><br><span class="line">387</span><br><span class="line">388</span><br><span class="line">389</span><br><span class="line">390</span><br><span class="line">391</span><br><span class="line">392</span><br><span class="line">393</span><br><span class="line">394</span><br><span class="line">395</span><br><span class="line">396</span><br><span class="line">397</span><br><span class="line">398</span><br><span class="line">399</span><br><span class="line">400</span><br><span class="line">401</span><br><span class="line">402</span><br><span class="line">403</span><br><span class="line">404</span><br><span class="line">405</span><br><span class="line">406</span><br><span class="line">407</span><br><span class="line">408</span><br><span class="line">409</span><br><span class="line">410</span><br><span class="line">411</span><br><span class="line">412</span><br><span class="line">413</span><br><span class="line">414</span><br><span class="line">415</span><br><span class="line">416</span><br><span class="line">417</span><br><span class="line">418</span><br><span class="line">419</span><br><span class="line">420</span><br><span class="line">421</span><br><span class="line">422</span><br><span class="line">423</span><br><span class="line">424</span><br><span class="line">425</span><br><span class="line">426</span><br><span class="line">427</span><br><span class="line">428</span><br><span class="line">429</span><br><span class="line">430</span><br><span class="line">431</span><br><span class="line">432</span><br><span class="line">433</span><br><span class="line">434</span><br><span class="line">435</span><br><span class="line">436</span><br><span class="line">437</span><br><span class="line">438</span><br><span class="line">439</span><br><span class="line">440</span><br><span class="line">441</span><br><span class="line">442</span><br><span class="line">443</span><br><span class="line">444</span><br><span class="line">445</span><br><span class="line">446</span><br><span class="line">447</span><br><span class="line">448</span><br><span class="line">449</span><br><span class="line">450</span><br><span class="line">451</span><br><span class="line">452</span><br><span class="line">453</span><br><span class="line">454</span><br><span class="line">455</span><br><span class="line">456</span><br><span class="line">457</span><br><span class="line">458</span><br><span class="line">459</span><br><span class="line">460</span><br><span class="line">461</span><br><span class="line">462</span><br><span class="line">463</span><br><span class="line">464</span><br><span class="line">465</span><br><span class="line">466</span><br><span class="line">467</span><br><span class="line">468</span><br><span class="line">469</span><br><span class="line">470</span><br><span class="line">471</span><br><span class="line">472</span><br><span class="line">473</span><br><span class="line">474</span><br><span class="line">475</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;windows.h&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">define</span> KDTREE_BBF_MAX_NN_CHKS <span class="number">200</span>  </span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">define</span> NN_SQ_DIST_RATIO_THR <span class="number">0.49</span> </span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;cv.h&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;highgui.h&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;cxcore.h&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;C:\Users\Tsing-Light\Documents\Visual Studio 2013\Projects\SIFT Source Code\ConsoleApplication1\imgfeatures.h&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span><span class="string">&lt;C:\Users\Tsing-Light\Documents\Visual Studio 2013\Projects\SIFT Source Code\ConsoleApplication1\min_pq.h&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span><span class="string">&lt;C:\Users\Tsing-Light\Documents\Visual Studio 2013\Projects\SIFT Source Code\ConsoleApplication1\kdtree.h&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span><span class="string">&lt;C:\Users\Tsing-Light\Documents\Visual Studio 2013\Projects\SIFT Source Code\ConsoleApplication1\utils.h&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span><span class="string">&lt;C:\Users\Tsing-Light\Documents\Visual Studio 2013\Projects\SIFT Source Code\ConsoleApplication1\sift.h&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span><span class="string">&lt;C:\Users\Tsing-Light\Documents\Visual Studio 2013\Projects\SIFT Source Code\ConsoleApplication1\xform.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> cv;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//特征提取和匹配  </span></span><br><span class="line"><span class="function"><span class="keyword">extern</span> IplImage* <span class="title">expand_imgs</span><span class="params">(IplImage* img1, IplImage* img2)</span></span><br><span class="line"></span>&#123;</span><br><span class="line">	IplImage* expanded = cvCreateImage(cvSize(</span><br><span class="line">		img1-&gt;width + img2-&gt;width, MAX(img1-&gt;height, img2-&gt;height)),</span><br><span class="line">		IPL_DEPTH_8U, <span class="number">3</span>);</span><br><span class="line"></span><br><span class="line">	cvZero(expanded);</span><br><span class="line">	cvSetImageROI(expanded, cvRect(<span class="number">0</span>, <span class="number">0</span>, img1-&gt;width, img1-&gt;height));</span><br><span class="line">	cvAdd(img1, expanded, expanded, <span class="literal">NULL</span>);</span><br><span class="line">	cvSetImageROI(expanded, cvRect(img1-&gt;width, <span class="number">0</span>, img2-&gt;width, img2-&gt;height));</span><br><span class="line">	cvAdd(img2, expanded, expanded, <span class="literal">NULL</span>);</span><br><span class="line">	cvResetImageROI(expanded);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> expanded;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">match</span><span class="params">(IplImage *img1, IplImage *img2)</span></span><br><span class="line"></span>&#123;</span><br><span class="line">	IplImage *img1_Feat = cvCloneImage(img1);<span class="comment">//复制图1，深拷贝，用来画特征点  </span></span><br><span class="line">	IplImage *img2_Feat = cvCloneImage(img2);<span class="comment">//复制图2，深拷贝，用来画特征点  </span></span><br><span class="line">	IplImage *stacked = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">struct</span> feature *feat1, *feat2;<span class="comment">//feat1：图1的特征点数组，feat2：图2的特征点数组  </span></span><br><span class="line">	<span class="keyword">int</span> n1, n2;<span class="comment">//n1:图1中的特征点个数，n2：图2中的特征点个数  </span></span><br><span class="line">	<span class="keyword">struct</span> feature *feat;<span class="comment">//每个特征点  </span></span><br><span class="line">	<span class="keyword">struct</span> kd_node *kd_root;<span class="comment">//k-d树的树根  </span></span><br><span class="line">	<span class="keyword">struct</span> feature **nbrs;<span class="comment">//当前特征点的最近邻点数组  </span></span><br><span class="line">	<span class="keyword">int</span> matchNum;<span class="comment">//经距离比值法筛选后的匹配点对的个数  </span></span><br><span class="line">	<span class="keyword">struct</span> feature **inliers;<span class="comment">//精RANSAC筛选后的内点数组  </span></span><br><span class="line">	<span class="keyword">int</span> n_inliers;<span class="comment">//经RANSAC算法筛选后的内点个数,即feat1中具有符合要求的特征点的个数  </span></span><br><span class="line">	stacked = expand_imgs(img1, img2);</span><br><span class="line"></span><br><span class="line">	<span class="comment">//默认提取的是LOWE格式的SIFT特征点  </span></span><br><span class="line">	<span class="comment">//提取并显示第1幅图片上的特征点  </span></span><br><span class="line">	n1 = sift_features(img1, &amp;feat1);<span class="comment">//检测图1中的SIFT特征点,n1是图1的特征点个数  </span></span><br><span class="line">	export_features(<span class="string">"feature1.txt"</span>, feat1, n1);<span class="comment">//将特征向量数据写入到文件  </span></span><br><span class="line">	draw_features(img1_Feat, feat1, n1);<span class="comment">//画出特征点  </span></span><br><span class="line">	cvShowImage(<span class="string">"img1_Feat"</span>, img1_Feat);<span class="comment">//显示  </span></span><br><span class="line"></span><br><span class="line">	<span class="comment">//提取并显示第2幅图片上的特征点  </span></span><br><span class="line">	n2 = sift_features(img2, &amp;feat2);<span class="comment">//检测图2中的SIFT特征点，n2是图2的特征点个数  </span></span><br><span class="line">	export_features(<span class="string">"feature2.txt"</span>, feat2, n2);<span class="comment">//将特征向量数据写入到文件  </span></span><br><span class="line">	draw_features(img2_Feat, feat2, n2);<span class="comment">//画出特征点  </span></span><br><span class="line">	cvShowImage(<span class="string">"img2_Feat"</span>, img2_Feat);<span class="comment">//显示  </span></span><br><span class="line"></span><br><span class="line">	<span class="comment">//根据图1的特征点集feat1建立k-d树，返回k-d树根给kd_root</span></span><br><span class="line">	kd_root = kdtree_build(feat1, n1);</span><br><span class="line"></span><br><span class="line">	Point pt1, pt2;<span class="comment">//连线的两个端点</span></span><br><span class="line">	<span class="keyword">double</span> d0, d1;<span class="comment">//feat2中每个特征点到最近邻和次近邻的距离</span></span><br><span class="line">	matchNum = <span class="number">0</span>;<span class="comment">//经距离比值法筛选后的匹配点对的个数</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">//遍历特征点集feat2，针对feat2中每个特征点feat，选取符合距离比值条件的匹配点，放到feat的fwd_match域中</span></span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n2; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		feat = feat2 + i;<span class="comment">//第i个特征点的指针</span></span><br><span class="line">		<span class="comment">//在kd_root中搜索目标点feat的2个最近邻点，存放在nbrs中，返回实际找到的近邻点个数</span></span><br><span class="line">		<span class="keyword">int</span> k = kdtree_bbf_knn(kd_root, feat, <span class="number">2</span>, &amp;nbrs, KDTREE_BBF_MAX_NN_CHKS);</span><br><span class="line">		<span class="keyword">if</span> (k == <span class="number">2</span>)</span><br><span class="line">		&#123;</span><br><span class="line">			d0 = descr_dist_sq(feat, nbrs[<span class="number">0</span>]);<span class="comment">//feat与最近邻点的距离的平方</span></span><br><span class="line">			d1 = descr_dist_sq(feat, nbrs[<span class="number">1</span>]);<span class="comment">//feat与次近邻点的距离的平方</span></span><br><span class="line">			<span class="comment">//若d0和d1的比值小于阈值NN_SQ_DIST_RATIO_THR，则接受此匹配，否则剔除</span></span><br><span class="line">			<span class="keyword">if</span> (d0 &lt; d1 * NN_SQ_DIST_RATIO_THR)</span><br><span class="line">			&#123;   <span class="comment">//将目标点feat和最近邻点作为匹配点对</span></span><br><span class="line">				pt2 = Point(cvRound(feat-&gt;x), cvRound(feat-&gt;y));<span class="comment">//图2中点的坐标</span></span><br><span class="line">				pt1 = Point(cvRound(nbrs[<span class="number">0</span>]-&gt;x), cvRound(nbrs[<span class="number">0</span>]-&gt;y));<span class="comment">//图1中点的坐标(feat的最近邻点)</span></span><br><span class="line">				pt2.x += img1-&gt;width;<span class="comment">//由于两幅图是左右排列的，pt2的横坐标加上图1的宽度，作为连线的终点</span></span><br><span class="line">				cvLine(stacked, pt1, pt2, CV_RGB(<span class="number">255</span>, <span class="number">0</span>, <span class="number">255</span>), <span class="number">1</span>, <span class="number">8</span>, <span class="number">0</span>);<span class="comment">//画出连线</span></span><br><span class="line">				matchNum++;<span class="comment">//统计匹配点对的个数</span></span><br><span class="line">				feat2[i].fwd_match = nbrs[<span class="number">0</span>];<span class="comment">//使点feat的fwd_match域指向其对应的匹配点</span></span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="built_in">free</span>(nbrs);<span class="comment">//释放近邻数组</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">//显示并保存经距离比值法筛选后的匹配图</span></span><br><span class="line">	cvNamedWindow(<span class="string">"IMG_MATCH1"</span>);<span class="comment">//创建窗口</span></span><br><span class="line">	cvShowImage(<span class="string">"IMG_MATCH1"</span>, stacked);<span class="comment">//显示</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	<span class="comment">//---------------------------------------------------------------------------(2)利用k-d tree和BBF算法进行特征匹配查找，并根据最近邻和次近邻距离比值进行初步筛选</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">//利用RANSAC算法筛选匹配点,计算变换矩阵H，</span></span><br><span class="line">	<span class="comment">//无论img1和img2的左右顺序，计算出的H永远是将feat2中的特征点变换为其匹配点，即将img2中的点变换为img1中的对应点</span></span><br><span class="line">	</span><br><span class="line">	IplImage *stacked_ransac;</span><br><span class="line">	stacked_ransac = expand_imgs(img1, img2);</span><br><span class="line">	</span><br><span class="line">	CvMat* H;</span><br><span class="line">	</span><br><span class="line">	H = ransac_xform(feat2, n2, FEATURE_FWD_MATCH, lsq_homog, <span class="number">4</span>, <span class="number">0.01</span>, homog_xfer_err, <span class="number">3.0</span>, &amp;inliers, &amp;n_inliers);</span><br><span class="line">		</span><br><span class="line">		</span><br><span class="line">		<span class="comment">//遍历经RANSAC算法筛选后的特征点集合inliers，找到每个特征点的匹配点，画出连线</span></span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i&lt;n_inliers; i++)</span><br><span class="line">		&#123;</span><br><span class="line">			feat = inliers[i];<span class="comment">//第i个特征点</span></span><br><span class="line">			pt2 = Point(cvRound(feat-&gt;x), cvRound(feat-&gt;y));<span class="comment">//图2中点的坐标</span></span><br><span class="line">			pt1 = Point(cvRound(feat-&gt;fwd_match-&gt;x), cvRound(feat-&gt;fwd_match-&gt;y));<span class="comment">//图1中点的坐标(feat的匹配点)</span></span><br><span class="line">			<span class="comment">//qDebug()&lt;&lt;"pt2:("&lt;&lt;pt2.x&lt;&lt;","&lt;&lt;pt2.y&lt;&lt;")---&gt;pt1:("&lt;&lt;pt1.x&lt;&lt;","&lt;&lt;pt1.y&lt;&lt;")";//输出对应点对</span></span><br><span class="line"></span><br><span class="line">			pt2.x += img1-&gt;width;<span class="comment">//由于两幅图是左右排列的，pt2的横坐标加上图1的宽度，作为连线的终点</span></span><br><span class="line">			cvLine(stacked_ransac, pt1, pt2, CV_RGB(<span class="number">255</span>, <span class="number">0</span>, <span class="number">255</span>), <span class="number">1</span>, <span class="number">8</span>, <span class="number">0</span>);<span class="comment">//在匹配图上画出连线</span></span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		cvNamedWindow(<span class="string">"IMG_MATCH2"</span>);<span class="comment">//创建窗口</span></span><br><span class="line">		cvShowImage(<span class="string">"IMG_MATCH2"</span>, stacked_ransac);<span class="comment">//显示经RANSAC算法筛选后的匹配图</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">		<span class="comment">//-----------------------------------------------------------------------------------------------3----------------------</span></span><br><span class="line">		<span class="comment">//若能成功计算出变换矩阵，即两幅图中有共同区域，才可以进行全景拼接</span></span><br><span class="line">		<span class="keyword">if</span> (H)</span><br><span class="line">		&#123;</span><br><span class="line">			IplImage *xformed, *xformed_simple;</span><br><span class="line">			CvPoint rightTop, rightBottom, leftTop, leftBottom;</span><br><span class="line">			<span class="comment">//-----------------------------------------------------------------------</span></span><br><span class="line">			<span class="comment">//计算图2的四个角经矩阵H变换后的坐标</span></span><br><span class="line">			<span class="keyword">double</span> v2[] = &#123;</span><br><span class="line">				<span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span></span><br><span class="line">			&#125;;<span class="comment">//左上角</span></span><br><span class="line">			<span class="keyword">double</span> v1[<span class="number">3</span>];<span class="comment">//变换后的坐标值</span></span><br><span class="line">			CvMat V2 = cvMat(<span class="number">3</span>, <span class="number">1</span>, CV_64FC1, v2);</span><br><span class="line">			CvMat V1 = cvMat(<span class="number">3</span>, <span class="number">1</span>, CV_64FC1, v1);</span><br><span class="line">			cvGEMM(H, &amp;V2, <span class="number">1</span>, <span class="number">0</span>, <span class="number">1</span>, &amp;V1);<span class="comment">//矩阵乘法</span></span><br><span class="line">			leftTop.x = cvRound(v1[<span class="number">0</span>] / v1[<span class="number">2</span>]);</span><br><span class="line">			leftTop.y = cvRound(v1[<span class="number">1</span>] / v1[<span class="number">2</span>]);</span><br><span class="line">			<span class="comment">//cvCircle(xformed,leftTop,7,CV_RGB(255,0,0),2);</span></span><br><span class="line"></span><br><span class="line">			<span class="comment">//将v2中数据设为左下角坐标</span></span><br><span class="line">			v2[<span class="number">0</span>] = <span class="number">0</span>;</span><br><span class="line">			v2[<span class="number">1</span>] = img2-&gt;height;</span><br><span class="line">			V2 = cvMat(<span class="number">3</span>, <span class="number">1</span>, CV_64FC1, v2);</span><br><span class="line">			V1 = cvMat(<span class="number">3</span>, <span class="number">1</span>, CV_64FC1, v1);</span><br><span class="line">			cvGEMM(H, &amp;V2, <span class="number">1</span>, <span class="number">0</span>, <span class="number">1</span>, &amp;V1);</span><br><span class="line">			leftBottom.x = cvRound(v1[<span class="number">0</span>] / v1[<span class="number">2</span>]);</span><br><span class="line">			leftBottom.y = cvRound(v1[<span class="number">1</span>] / v1[<span class="number">2</span>]);</span><br><span class="line">			<span class="comment">//cvCircle(xformed,leftBottom,7,CV_RGB(255,0,0),2);</span></span><br><span class="line"></span><br><span class="line">			<span class="comment">//将v2中数据设为右上角坐标</span></span><br><span class="line">			v2[<span class="number">0</span>] = img2-&gt;width;</span><br><span class="line">			v2[<span class="number">1</span>] = <span class="number">0</span>;</span><br><span class="line">			V2 = cvMat(<span class="number">3</span>, <span class="number">1</span>, CV_64FC1, v2);</span><br><span class="line">			V1 = cvMat(<span class="number">3</span>, <span class="number">1</span>, CV_64FC1, v1);</span><br><span class="line">			cvGEMM(H, &amp;V2, <span class="number">1</span>, <span class="number">0</span>, <span class="number">1</span>, &amp;V1);</span><br><span class="line">			rightTop.x = cvRound(v1[<span class="number">0</span>] / v1[<span class="number">2</span>]);</span><br><span class="line">			rightTop.y = cvRound(v1[<span class="number">1</span>] / v1[<span class="number">2</span>]);</span><br><span class="line">			<span class="comment">//cvCircle(xformed,rightTop,7,CV_RGB(255,0,0),2);</span></span><br><span class="line"></span><br><span class="line">			<span class="comment">//将v2中数据设为右下角坐标</span></span><br><span class="line">			v2[<span class="number">0</span>] = img2-&gt;width;</span><br><span class="line">			v2[<span class="number">1</span>] = img2-&gt;height;</span><br><span class="line">			V2 = cvMat(<span class="number">3</span>, <span class="number">1</span>, CV_64FC1, v2);</span><br><span class="line">			V1 = cvMat(<span class="number">3</span>, <span class="number">1</span>, CV_64FC1, v1);</span><br><span class="line">			cvGEMM(H, &amp;V2, <span class="number">1</span>, <span class="number">0</span>, <span class="number">1</span>, &amp;V1);</span><br><span class="line">			rightBottom.x = cvRound(v1[<span class="number">0</span>] / v1[<span class="number">2</span>]);</span><br><span class="line">			rightBottom.y = cvRound(v1[<span class="number">1</span>] / v1[<span class="number">2</span>]);</span><br><span class="line">			<span class="comment">//cvCircle(xformed,rightBottom,7,CV_RGB(255,0,0),2);</span></span><br><span class="line"></span><br><span class="line">			<span class="comment">//------------------------------------------------------------</span></span><br><span class="line">			<span class="comment">//拼接图像，img1是左图，img2是右图</span></span><br><span class="line">			<span class="comment">//为拼接结果图xformed分配空间,高度为图1图2高度的较小者，根据图2右上角和右下角变换后的点的位置决定拼接图的宽度</span></span><br><span class="line">			xformed = cvCreateImage(cvSize(MIN(rightTop.x, rightBottom.x), MIN(img1-&gt;height, img2-&gt;height)), IPL_DEPTH_8U, <span class="number">3</span>);</span><br><span class="line">			<span class="comment">//用变换矩阵H对右图img2做投影变换(变换后会有坐标右移)，结果放到xformed中</span></span><br><span class="line">			cvWarpPerspective(img2, xformed, H, CV_INTER_LINEAR + CV_WARP_FILL_OUTLIERS, cvScalarAll(<span class="number">0</span>));</span><br><span class="line">			cvNamedWindow(<span class="string">"IMG_MOSAIC_TEMP"</span>); <span class="comment">//显示临时图,即只将图2变换后的图</span></span><br><span class="line">			cvShowImage(<span class="string">"IMG_MOSAIC_TEMP"</span>, xformed);</span><br><span class="line"></span><br><span class="line">			<span class="comment">//简易拼接法：直接将将左图img1叠加到xformed的左边</span></span><br><span class="line">			xformed_simple = cvCloneImage(xformed);<span class="comment">//简易拼接图，克隆自xformed</span></span><br><span class="line">			cvSetImageROI(xformed_simple, cvRect(<span class="number">0</span>, <span class="number">0</span>, img1-&gt;width, img1-&gt;height));</span><br><span class="line">			cvSetImageROI(img1, cvRect(<span class="number">0</span>, <span class="number">0</span>, img1-&gt;width , img1-&gt;height));</span><br><span class="line">			cvAddWeighted(img1, <span class="number">1</span>, xformed_simple, <span class="number">0</span>, <span class="number">0</span>, xformed_simple);</span><br><span class="line">			cvResetImageROI(xformed_simple);</span><br><span class="line">			cvNamedWindow(<span class="string">"IMG_MOSAIC_SIMPLE"</span>);<span class="comment">//创建窗口</span></span><br><span class="line">			cvShowImage(<span class="string">"IMG_MOSAIC_SIMPLE"</span>, xformed_simple);<span class="comment">//显示简易拼接图</span></span><br><span class="line">			</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">			<span class="comment">//采用加权平均的方法融合重叠区域</span></span><br><span class="line">			<span class="comment">//处理后的拼接图，克隆自xformed</span></span><br><span class="line">			IplImage *xformed_proc;</span><br><span class="line">			xformed_proc = cvCloneImage(xformed);</span><br><span class="line"></span><br><span class="line">			<span class="comment">//重叠区域左边的部分完全取自图1</span></span><br><span class="line">			cvSetImageROI(img1, cvRect(<span class="number">0</span>, <span class="number">0</span>, MIN(leftTop.x, leftBottom.x), xformed_proc-&gt;height));</span><br><span class="line">			cvSetImageROI(xformed, cvRect(<span class="number">0</span>, <span class="number">0</span>, MIN(leftTop.x, leftBottom.x), xformed_proc-&gt;height));</span><br><span class="line">			cvSetImageROI(xformed_proc, cvRect(<span class="number">0</span>, <span class="number">0</span>, MIN(leftTop.x, leftBottom.x), xformed_proc-&gt;height));</span><br><span class="line">			cvAddWeighted(img1, <span class="number">1</span>, xformed, <span class="number">0</span>, <span class="number">0</span>, xformed_proc);</span><br><span class="line">			cvResetImageROI(img1);</span><br><span class="line">			cvResetImageROI(xformed);</span><br><span class="line">			cvResetImageROI(xformed_proc);</span><br><span class="line">			cvNamedWindow(<span class="string">"IMG_MOSAIC_BEFORE_FUSION"</span>);</span><br><span class="line">			cvShowImage(<span class="string">"IMG_MOSAIC_BEFORE_FUSION"</span>, xformed_proc);<span class="comment">//显示融合之前的拼接图</span></span><br><span class="line"></span><br><span class="line">			</span><br><span class="line">			<span class="keyword">int</span> start = MIN(leftTop.x, leftBottom.x);<span class="comment">//开始位置，即重叠区域的左边界</span></span><br><span class="line">			<span class="keyword">double</span> processWidth = img1-&gt;width - start;<span class="comment">//重叠区域的宽度</span></span><br><span class="line">			<span class="keyword">double</span> alpha = <span class="number">1</span>;<span class="comment">//img1中像素的权重</span></span><br><span class="line">			<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i&lt;xformed_proc-&gt;height; i++)<span class="comment">//遍历行</span></span><br><span class="line">			&#123;</span><br><span class="line">				<span class="keyword">const</span> uchar * pixel_img1 = ((uchar *)(img1-&gt;imageData + img1-&gt;widthStep * i));<span class="comment">//img1中第i行数据的指针</span></span><br><span class="line">				<span class="keyword">const</span> uchar * pixel_xformed = ((uchar *)(xformed-&gt;imageData + xformed-&gt;widthStep * i));<span class="comment">//xformed中第i行数据的指针</span></span><br><span class="line">				uchar * pixel_xformed_proc = ((uchar *)(xformed_proc-&gt;imageData + xformed_proc-&gt;widthStep * i));<span class="comment">//xformed_proc中第i行数据的指针</span></span><br><span class="line">				<span class="keyword">for</span> (<span class="keyword">int</span> j = start; j&lt;img1-&gt;width; j++)<span class="comment">//遍历重叠区域的列</span></span><br><span class="line">				&#123;</span><br><span class="line">					<span class="comment">//如果遇到图像xformed中无像素的黑点，则完全拷贝图1中的数据</span></span><br><span class="line">					<span class="keyword">if</span> (pixel_xformed[j * <span class="number">3</span>] &lt; <span class="number">50</span> &amp;&amp; pixel_xformed[j * <span class="number">3</span> + <span class="number">1</span>] &lt; <span class="number">50</span> &amp;&amp; pixel_xformed[j * <span class="number">3</span> + <span class="number">2</span>] &lt; <span class="number">50</span>)</span><br><span class="line">					&#123;</span><br><span class="line">						alpha = <span class="number">1</span>;</span><br><span class="line">					&#125;</span><br><span class="line">					<span class="keyword">else</span></span><br><span class="line">					&#123;   <span class="comment">//img1中像素的权重，与当前处理点距重叠区域左边界的距离成正比</span></span><br><span class="line">						alpha = (processWidth - (j - start)) / processWidth;</span><br><span class="line">					&#125;</span><br><span class="line">					pixel_xformed_proc[j * <span class="number">3</span>] = pixel_img1[j * <span class="number">3</span>] * alpha + pixel_xformed[j * <span class="number">3</span>] * (<span class="number">1</span> - alpha);<span class="comment">//B通道</span></span><br><span class="line">					pixel_xformed_proc[j * <span class="number">3</span> + <span class="number">1</span>] = pixel_img1[j * <span class="number">3</span> + <span class="number">1</span>] * alpha + pixel_xformed[j * <span class="number">3</span> + <span class="number">1</span>] * (<span class="number">1</span> - alpha);<span class="comment">//G通道</span></span><br><span class="line">					pixel_xformed_proc[j * <span class="number">3</span> + <span class="number">2</span>] = pixel_img1[j * <span class="number">3</span> + <span class="number">2</span>] * alpha + pixel_xformed[j * <span class="number">3</span> + <span class="number">2</span>] * (<span class="number">1</span> - alpha);<span class="comment">//R通道</span></span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">			cvNamedWindow(<span class="string">"IMG_MOSAIC_PROC"</span>);<span class="comment">//创建窗口</span></span><br><span class="line">			cvShowImage(<span class="string">"IMG_MOSAIC_PROC"</span>, xformed_proc);<span class="comment">//显示处理后的拼接图</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">			</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">MatchFourPictures</span><span class="params">(IplImage* img1,IplImage* img2,IplImage* img3,IplImage* img4)</span></span><br><span class="line"></span>&#123;</span><br><span class="line">	IplImage *img1_Feat = cvCloneImage(img1);<span class="comment">//复制图1，深拷贝，用来画特征点  </span></span><br><span class="line">	IplImage *img2_Feat = cvCloneImage(img2);<span class="comment">//复制图2，深拷贝，用来画特征点 </span></span><br><span class="line">	IplImage *img3_Feat = cvCloneImage(img3);<span class="comment">//复制图1，深拷贝，用来画特征点  </span></span><br><span class="line">	IplImage *stacked = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">struct</span> feature *feat1, *feat2,*feat3;<span class="comment">//feat1：图1的特征点数组，feat2：图2的特征点数组  </span></span><br><span class="line">	<span class="keyword">int</span> n1, n2,n3;<span class="comment">//n1:图1中的特征点个数，n2：图2中的特征点个数  </span></span><br><span class="line">	<span class="keyword">struct</span> feature *feat;<span class="comment">//每个特征点  </span></span><br><span class="line">	<span class="keyword">struct</span> kd_node *kd_root;<span class="comment">//k-d树的树根  </span></span><br><span class="line">	<span class="keyword">struct</span> feature **nbrs;<span class="comment">//当前特征点的最近邻点数组  </span></span><br><span class="line">	<span class="keyword">int</span> matchNum;<span class="comment">//经距离比值法筛选后的匹配点对的个数  </span></span><br><span class="line">	<span class="keyword">struct</span> feature **inliers;<span class="comment">//精RANSAC筛选后的内点数组  </span></span><br><span class="line">	<span class="keyword">int</span> n_inliers;<span class="comment">//经RANSAC算法筛选后的内点个数,即feat1中具有符合要求的特征点的个数  </span></span><br><span class="line">	stacked = expand_imgs(img1, img2);</span><br><span class="line"></span><br><span class="line">	<span class="comment">//默认提取的是LOWE格式的SIFT特征点  </span></span><br><span class="line">	<span class="comment">//提取并显示第1幅图片上的特征点  </span></span><br><span class="line">	n1 = sift_features(img1, &amp;feat1);<span class="comment">//检测图1中的SIFT特征点,n1是图1的特征点个数  </span></span><br><span class="line">	export_features(<span class="string">"feature1.txt"</span>, feat1, n1);<span class="comment">//将特征向量数据写入到文件  </span></span><br><span class="line">	draw_features(img1_Feat, feat1, n1);<span class="comment">//画出特征点  </span></span><br><span class="line">	cvShowImage(<span class="string">"img1_Feat"</span>, img1_Feat);<span class="comment">//显示  </span></span><br><span class="line"></span><br><span class="line">	<span class="comment">//提取并显示第2幅图片上的特征点  </span></span><br><span class="line">	n2 = sift_features(img2, &amp;feat2);<span class="comment">//检测图2中的SIFT特征点，n2是图2的特征点个数  </span></span><br><span class="line">	export_features(<span class="string">"feature2.txt"</span>, feat2, n2);<span class="comment">//将特征向量数据写入到文件  </span></span><br><span class="line">	draw_features(img2_Feat, feat2, n2);<span class="comment">//画出特征点  </span></span><br><span class="line">	cvShowImage(<span class="string">"img2_Feat"</span>, img2_Feat);<span class="comment">//显示  </span></span><br><span class="line"></span><br><span class="line">	n3 = sift_features(img3, &amp;feat3);<span class="comment">//检测图1中的SIFT特征点,n1是图1的特征点个数  </span></span><br><span class="line">	export_features(<span class="string">"feature3.txt"</span>, feat3, n3);<span class="comment">//将特征向量数据写入到文件  </span></span><br><span class="line">	draw_features(img3_Feat, feat3, n3);<span class="comment">//画出特征点  </span></span><br><span class="line">	cvShowImage(<span class="string">"img3_Feat"</span>, img3_Feat);<span class="comment">//显示  </span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	<span class="comment">//根据图1的特征点集feat1建立k-d树，返回k-d树根给kd_root</span></span><br><span class="line">	kd_root = kdtree_build(feat1, n1);</span><br><span class="line"></span><br><span class="line">	Point pt1, pt2;<span class="comment">//连线的两个端点</span></span><br><span class="line">	<span class="keyword">double</span> d0, d1;<span class="comment">//feat2中每个特征点到最近邻和次近邻的距离</span></span><br><span class="line">	matchNum = <span class="number">0</span>;<span class="comment">//经距离比值法筛选后的匹配点对的个数</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">//遍历特征点集feat2，针对feat2中每个特征点feat，选取符合距离比值条件的匹配点，放到feat的fwd_match域中</span></span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n2; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		feat = feat2 + i;<span class="comment">//第i个特征点的指针</span></span><br><span class="line">		<span class="comment">//在kd_root中搜索目标点feat的2个最近邻点，存放在nbrs中，返回实际找到的近邻点个数</span></span><br><span class="line">		<span class="keyword">int</span> k = kdtree_bbf_knn(kd_root, feat, <span class="number">2</span>, &amp;nbrs, KDTREE_BBF_MAX_NN_CHKS);</span><br><span class="line">		<span class="keyword">if</span> (k == <span class="number">2</span>)</span><br><span class="line">		&#123;</span><br><span class="line">			d0 = descr_dist_sq(feat, nbrs[<span class="number">0</span>]);<span class="comment">//feat与最近邻点的距离的平方</span></span><br><span class="line">			d1 = descr_dist_sq(feat, nbrs[<span class="number">1</span>]);<span class="comment">//feat与次近邻点的距离的平方</span></span><br><span class="line">			<span class="comment">//若d0和d1的比值小于阈值NN_SQ_DIST_RATIO_THR，则接受此匹配，否则剔除</span></span><br><span class="line">			<span class="keyword">if</span> (d0 &lt; d1 * NN_SQ_DIST_RATIO_THR)</span><br><span class="line">			&#123;   <span class="comment">//将目标点feat和最近邻点作为匹配点对</span></span><br><span class="line">				pt2 = Point(cvRound(feat-&gt;x), cvRound(feat-&gt;y));<span class="comment">//图2中点的坐标</span></span><br><span class="line">				pt1 = Point(cvRound(nbrs[<span class="number">0</span>]-&gt;x), cvRound(nbrs[<span class="number">0</span>]-&gt;y));<span class="comment">//图1中点的坐标(feat的最近邻点)</span></span><br><span class="line">				pt2.x += img1-&gt;width;<span class="comment">//由于两幅图是左右排列的，pt2的横坐标加上图1的宽度，作为连线的终点</span></span><br><span class="line">				cvLine(stacked, pt1, pt2, CV_RGB(<span class="number">255</span>, <span class="number">0</span>, <span class="number">255</span>), <span class="number">1</span>, <span class="number">8</span>, <span class="number">0</span>);<span class="comment">//画出连线</span></span><br><span class="line">				matchNum++;<span class="comment">//统计匹配点对的个数</span></span><br><span class="line">				feat2[i].fwd_match = nbrs[<span class="number">0</span>];<span class="comment">//使点feat的fwd_match域指向其对应的匹配点</span></span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="built_in">free</span>(nbrs);<span class="comment">//释放近邻数组</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">//显示并保存经距离比值法筛选后的匹配图</span></span><br><span class="line">	cvNamedWindow(<span class="string">"IMG_MATCH1"</span>);<span class="comment">//创建窗口</span></span><br><span class="line">	cvShowImage(<span class="string">"IMG_MATCH1"</span>, stacked);<span class="comment">//显示</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	<span class="comment">//---------------------------------------------------------------------------(2)利用k-d tree和BBF算法进行特征匹配查找，并根据最近邻和次近邻距离比值进行初步筛选</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">//利用RANSAC算法筛选匹配点,计算变换矩阵H，</span></span><br><span class="line">	<span class="comment">//无论img1和img2的左右顺序，计算出的H永远是将feat2中的特征点变换为其匹配点，即将img2中的点变换为img1中的对应点</span></span><br><span class="line"></span><br><span class="line">	IplImage *stacked_ransac;</span><br><span class="line">	stacked_ransac = expand_imgs(img1, img2);</span><br><span class="line"></span><br><span class="line">	CvMat* H;</span><br><span class="line"></span><br><span class="line">	H = ransac_xform(feat2, n2, FEATURE_FWD_MATCH, lsq_homog, <span class="number">4</span>, <span class="number">0.01</span>, homog_xfer_err, <span class="number">3.0</span>, &amp;inliers, &amp;n_inliers);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	<span class="comment">//遍历经RANSAC算法筛选后的特征点集合inliers，找到每个特征点的匹配点，画出连线</span></span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i&lt;n_inliers; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		feat = inliers[i];<span class="comment">//第i个特征点</span></span><br><span class="line">		pt2 = Point(cvRound(feat-&gt;x), cvRound(feat-&gt;y));<span class="comment">//图2中点的坐标</span></span><br><span class="line">		pt1 = Point(cvRound(feat-&gt;fwd_match-&gt;x), cvRound(feat-&gt;fwd_match-&gt;y));<span class="comment">//图1中点的坐标(feat的匹配点)</span></span><br><span class="line">		<span class="comment">//qDebug()&lt;&lt;"pt2:("&lt;&lt;pt2.x&lt;&lt;","&lt;&lt;pt2.y&lt;&lt;")---&gt;pt1:("&lt;&lt;pt1.x&lt;&lt;","&lt;&lt;pt1.y&lt;&lt;")";//输出对应点对</span></span><br><span class="line"></span><br><span class="line">		pt2.x += img1-&gt;width;<span class="comment">//由于两幅图是左右排列的，pt2的横坐标加上图1的宽度，作为连线的终点</span></span><br><span class="line">		<span class="comment">//cvLine(stacked_ransac, pt1, pt2, CV_RGB(255, 0, 255), 1, 8, 0);//在匹配图上画出连线</span></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	cvNamedWindow(<span class="string">"IMG_MATCH2"</span>);<span class="comment">//创建窗口</span></span><br><span class="line">	cvShowImage(<span class="string">"IMG_MATCH2"</span>, stacked_ransac);<span class="comment">//显示经RANSAC算法筛选后的匹配图</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	<span class="comment">//-----------------------------------------------------------------------------------------------3----------------------</span></span><br><span class="line">	<span class="comment">//若能成功计算出变换矩阵，即两幅图中有共同区域，才可以进行全景拼接</span></span><br><span class="line">	<span class="keyword">if</span> (<span class="number">1</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		IplImage *xformed, *xformed_simple;</span><br><span class="line">		CvPoint rightTop, rightBottom, leftTop, leftBottom;</span><br><span class="line">		<span class="comment">//-----------------------------------------------------------------------</span></span><br><span class="line">		<span class="comment">//计算图2的四个角经矩阵H变换后的坐标</span></span><br><span class="line">		<span class="keyword">double</span> v2[] = &#123;</span><br><span class="line">			<span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span></span><br><span class="line">		&#125;;<span class="comment">//左上角</span></span><br><span class="line">		<span class="keyword">double</span> v1[<span class="number">3</span>];<span class="comment">//变换后的坐标值</span></span><br><span class="line">		CvMat V2 = cvMat(<span class="number">3</span>, <span class="number">1</span>, CV_64FC1, v2);</span><br><span class="line">		CvMat V1 = cvMat(<span class="number">3</span>, <span class="number">1</span>, CV_64FC1, v1);</span><br><span class="line">		cvGEMM(H, &amp;V2, <span class="number">1</span>, <span class="number">0</span>, <span class="number">1</span>, &amp;V1);<span class="comment">//矩阵乘法</span></span><br><span class="line">		leftTop.x = cvRound(v1[<span class="number">0</span>] / v1[<span class="number">2</span>]);</span><br><span class="line">		leftTop.y = cvRound(v1[<span class="number">1</span>] / v1[<span class="number">2</span>]);</span><br><span class="line">		<span class="comment">//cvCircle(xformed,leftTop,7,CV_RGB(255,0,0),2);</span></span><br><span class="line"></span><br><span class="line">		<span class="comment">//将v2中数据设为左下角坐标</span></span><br><span class="line">		v2[<span class="number">0</span>] = <span class="number">0</span>;</span><br><span class="line">		v2[<span class="number">1</span>] = img2-&gt;height;</span><br><span class="line">		V2 = cvMat(<span class="number">3</span>, <span class="number">1</span>, CV_64FC1, v2);</span><br><span class="line">		V1 = cvMat(<span class="number">3</span>, <span class="number">1</span>, CV_64FC1, v1);</span><br><span class="line">		cvGEMM(H, &amp;V2, <span class="number">1</span>, <span class="number">0</span>, <span class="number">1</span>, &amp;V1);</span><br><span class="line">		leftBottom.x = cvRound(v1[<span class="number">0</span>] / v1[<span class="number">2</span>]);</span><br><span class="line">		leftBottom.y = cvRound(v1[<span class="number">1</span>] / v1[<span class="number">2</span>]);</span><br><span class="line">		<span class="comment">//cvCircle(xformed,leftBottom,7,CV_RGB(255,0,0),2);</span></span><br><span class="line"></span><br><span class="line">		<span class="comment">//将v2中数据设为右上角坐标</span></span><br><span class="line">		v2[<span class="number">0</span>] = img2-&gt;width;</span><br><span class="line">		v2[<span class="number">1</span>] = <span class="number">0</span>;</span><br><span class="line">		V2 = cvMat(<span class="number">3</span>, <span class="number">1</span>, CV_64FC1, v2);</span><br><span class="line">		V1 = cvMat(<span class="number">3</span>, <span class="number">1</span>, CV_64FC1, v1);</span><br><span class="line">		cvGEMM(H, &amp;V2, <span class="number">1</span>, <span class="number">0</span>, <span class="number">1</span>, &amp;V1);</span><br><span class="line">		rightTop.x = cvRound(v1[<span class="number">0</span>] / v1[<span class="number">2</span>]);</span><br><span class="line">		rightTop.y = cvRound(v1[<span class="number">1</span>] / v1[<span class="number">2</span>]);</span><br><span class="line">		<span class="comment">//cvCircle(xformed,rightTop,7,CV_RGB(255,0,0),2);</span></span><br><span class="line"></span><br><span class="line">		<span class="comment">//将v2中数据设为右下角坐标</span></span><br><span class="line">		v2[<span class="number">0</span>] = img2-&gt;width;</span><br><span class="line">		v2[<span class="number">1</span>] = img2-&gt;height;</span><br><span class="line">		V2 = cvMat(<span class="number">3</span>, <span class="number">1</span>, CV_64FC1, v2);</span><br><span class="line">		V1 = cvMat(<span class="number">3</span>, <span class="number">1</span>, CV_64FC1, v1);</span><br><span class="line">		cvGEMM(H, &amp;V2, <span class="number">1</span>, <span class="number">0</span>, <span class="number">1</span>, &amp;V1);</span><br><span class="line">		rightBottom.x = cvRound(v1[<span class="number">0</span>] / v1[<span class="number">2</span>]);</span><br><span class="line">		rightBottom.y = cvRound(v1[<span class="number">1</span>] / v1[<span class="number">2</span>]);</span><br><span class="line">		<span class="comment">//cvCircle(xformed,rightBottom,7,CV_RGB(255,0,0),2);</span></span><br><span class="line"></span><br><span class="line">		<span class="comment">//------------------------------------------------------------</span></span><br><span class="line">		<span class="comment">//拼接图像，img1是左图，img2是右图</span></span><br><span class="line">		<span class="comment">//为拼接结果图xformed分配空间,高度为图1图2高度的较小者，根据图2右上角和右下角变换后的点的位置决定拼接图的宽度</span></span><br><span class="line">		xformed = cvCreateImage(cvSize(MIN(rightTop.x, rightBottom.x), MIN(img1-&gt;height, img2-&gt;height)), IPL_DEPTH_8U, <span class="number">3</span>);</span><br><span class="line">		<span class="comment">//用变换矩阵H对右图img2做投影变换(变换后会有坐标右移)，结果放到xformed中</span></span><br><span class="line">		cvWarpPerspective(img2, xformed, H, CV_INTER_LINEAR + CV_WARP_FILL_OUTLIERS, cvScalarAll(<span class="number">0</span>));</span><br><span class="line">		cvNamedWindow(<span class="string">"IMG_MOSAIC_TEMP"</span>); <span class="comment">//显示临时图,即只将图2变换后的图</span></span><br><span class="line">		cvShowImage(<span class="string">"IMG_MOSAIC_TEMP"</span>, xformed);</span><br><span class="line"></span><br><span class="line">		<span class="comment">//简易拼接法：直接将将左图img1叠加到xformed的左边</span></span><br><span class="line">		xformed_simple = cvCloneImage(xformed);<span class="comment">//简易拼接图，克隆自xformed</span></span><br><span class="line">		cvSetImageROI(xformed_simple, cvRect(<span class="number">0</span>, <span class="number">0</span>, img1-&gt;width, img1-&gt;height));</span><br><span class="line">		cvAddWeighted(img1, <span class="number">1</span>, xformed_simple, <span class="number">0</span>, <span class="number">0</span>, xformed_simple);</span><br><span class="line">		cvResetImageROI(xformed_simple);</span><br><span class="line">		cvNamedWindow(<span class="string">"IMG_MOSAIC_SIMPLE"</span>);<span class="comment">//创建窗口</span></span><br><span class="line">		cvShowImage(<span class="string">"IMG_MOSAIC_SIMPLE"</span>, xformed_simple);<span class="comment">//显示简易拼接图</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">		<span class="comment">//采用加权平均的方法融合重叠区域</span></span><br><span class="line">		<span class="comment">//处理后的拼接图，克隆自xformed</span></span><br><span class="line">		IplImage *xformed_proc;</span><br><span class="line">		xformed_proc = cvCloneImage(xformed);</span><br><span class="line"></span><br><span class="line">		<span class="comment">//重叠区域左边的部分完全取自图1</span></span><br><span class="line">		cvSetImageROI(img1, cvRect(<span class="number">0</span>, <span class="number">0</span>, MIN(leftTop.x, leftBottom.x), xformed_proc-&gt;height));</span><br><span class="line">		cvSetImageROI(xformed, cvRect(<span class="number">0</span>, <span class="number">0</span>, MIN(leftTop.x, leftBottom.x), xformed_proc-&gt;height));</span><br><span class="line">		cvSetImageROI(xformed_proc, cvRect(<span class="number">0</span>, <span class="number">0</span>, MIN(leftTop.x, leftBottom.x), xformed_proc-&gt;height));</span><br><span class="line">		cvAddWeighted(img1, <span class="number">1</span>, xformed, <span class="number">0</span>, <span class="number">0</span>, xformed_proc);</span><br><span class="line">		cvResetImageROI(img1);</span><br><span class="line">		cvResetImageROI(xformed);</span><br><span class="line">		cvResetImageROI(xformed_proc);</span><br><span class="line">		cvNamedWindow(<span class="string">"IMG_MOSAIC_BEFORE_FUSION"</span>);</span><br><span class="line">		cvShowImage(<span class="string">"IMG_MOSAIC_BEFORE_FUSION"</span>, xformed_proc);<span class="comment">//显示融合之前的拼接图</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">		<span class="keyword">int</span> start = MIN(leftTop.x, leftBottom.x);<span class="comment">//开始位置，即重叠区域的左边界</span></span><br><span class="line">		<span class="keyword">double</span> processWidth = img1-&gt;width - start;<span class="comment">//重叠区域的宽度</span></span><br><span class="line">		<span class="keyword">double</span> alpha = <span class="number">1</span>;<span class="comment">//img1中像素的权重</span></span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i&lt;xformed_proc-&gt;height; i++)<span class="comment">//遍历行</span></span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">const</span> uchar * pixel_img1 = ((uchar *)(img1-&gt;imageData + img1-&gt;widthStep * i));<span class="comment">//img1中第i行数据的指针</span></span><br><span class="line">			<span class="keyword">const</span> uchar * pixel_xformed = ((uchar *)(xformed-&gt;imageData + xformed-&gt;widthStep * i));<span class="comment">//xformed中第i行数据的指针</span></span><br><span class="line">			uchar * pixel_xformed_proc = ((uchar *)(xformed_proc-&gt;imageData + xformed_proc-&gt;widthStep * i));<span class="comment">//xformed_proc中第i行数据的指针</span></span><br><span class="line">			<span class="keyword">for</span> (<span class="keyword">int</span> j = start; j&lt;img1-&gt;width; j++)<span class="comment">//遍历重叠区域的列</span></span><br><span class="line">			&#123;</span><br><span class="line">				<span class="comment">//如果遇到图像xformed中无像素的黑点，则完全拷贝图1中的数据</span></span><br><span class="line">				<span class="keyword">if</span> (pixel_xformed[j * <span class="number">3</span>] &lt; <span class="number">50</span> &amp;&amp; pixel_xformed[j * <span class="number">3</span> + <span class="number">1</span>] &lt; <span class="number">50</span> &amp;&amp; pixel_xformed[j * <span class="number">3</span> + <span class="number">2</span>] &lt; <span class="number">50</span>)</span><br><span class="line">				&#123;</span><br><span class="line">					alpha = <span class="number">1</span>;</span><br><span class="line">				&#125;</span><br><span class="line">				<span class="keyword">else</span></span><br><span class="line">				&#123;   <span class="comment">//img1中像素的权重，与当前处理点距重叠区域左边界的距离成正比</span></span><br><span class="line">					alpha = (processWidth - (j - start)) / processWidth;</span><br><span class="line">				&#125;</span><br><span class="line">				pixel_xformed_proc[j * <span class="number">3</span>] = pixel_img1[j * <span class="number">3</span>] * alpha + pixel_xformed[j * <span class="number">3</span>] * (<span class="number">1</span> - alpha);<span class="comment">//B通道</span></span><br><span class="line">				pixel_xformed_proc[j * <span class="number">3</span> + <span class="number">1</span>] = pixel_img1[j * <span class="number">3</span> + <span class="number">1</span>] * alpha + pixel_xformed[j * <span class="number">3</span> + <span class="number">1</span>] * (<span class="number">1</span> - alpha);<span class="comment">//G通道</span></span><br><span class="line">				pixel_xformed_proc[j * <span class="number">3</span> + <span class="number">2</span>] = pixel_img1[j * <span class="number">3</span> + <span class="number">2</span>] * alpha + pixel_xformed[j * <span class="number">3</span> + <span class="number">2</span>] * (<span class="number">1</span> - alpha);<span class="comment">//R通道</span></span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		cvNamedWindow(<span class="string">"IMG_MOSAIC_PROC"</span>);<span class="comment">//创建窗口</span></span><br><span class="line">		cvShowImage(<span class="string">"IMG_MOSAIC_PROC"</span>, xformed_proc);<span class="comment">//显示处理后的拼接图</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span><br><span class="line"></span>&#123;</span><br><span class="line">	IplImage* img1;</span><br><span class="line">	IplImage* img2;</span><br><span class="line">	img1 = cvLoadImage(<span class="string">"8.jpg"</span>);</span><br><span class="line">	img2 = cvLoadImage(<span class="string">"9.jpg"</span>);</span><br><span class="line">	match(img1, img2);</span><br><span class="line">	waitKey();</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/02/20/JavaScript学习笔记-2/" itemprop="url">
+                  JavaScript学习笔记(2)
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-02-20T13:21:53+08:00" content="2016-02-20">
+              2016-02-20
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/02/20/JavaScript学习笔记-2/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/02/20/JavaScript学习笔记-2/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="JavaScript数字属性和方法"><a href="#JavaScript数字属性和方法" class="headerlink" title="JavaScript数字属性和方法"></a>JavaScript数字属性和方法</h3><h4 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h4><ul>
+<li>MAX VALUE</li>
+<li>MIN VALUE</li>
+<li>NEGATIVE INFINITIVE</li>
+<li>POSITIVE INFINITIVE</li>
+<li>NaN</li>
+<li>protorype</li>
+<li>constructor</li>
+</ul>
+<h4 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h4><ul>
+<li>toExponential()</li>
+<li>toFixed()</li>
+<li>toPrecision()</li>
+<li>toString()</li>
+<li>valueOf()</li>
+</ul>
+<h3 id="JavaScript-时间"><a href="#JavaScript-时间" class="headerlink" title="JavaScript 时间"></a>JavaScript 时间</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//以下实例展示了如何在网页上显示一个时钟</span></span><br><span class="line">&lt;html&gt;</span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="title">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">script</span> <span class="attribute">type</span>=<span class="value">"text/javascript"</span>&gt;</span><span class="handlebars"><span class="xml"></span><br><span class="line">function startTime()</span><br><span class="line">&#123;</span><br><span class="line">var today = new Date()</span><br><span class="line">var h = today.getHours()</span><br><span class="line">var m = today.getMinutes()</span><br><span class="line">var s = today.getSeconds()</span><br><span class="line">//add a zero in front of numbers <span class="tag">&lt;<span class="title">10</span></span><br><span class="line"><span class="attribute">m</span> = <span class="attribute">checkTime</span>(<span class="attribute">m</span>)</span><br><span class="line"><span class="attribute">s</span> = <span class="attribute">checkTime</span>(<span class="attribute">s</span>)</span><br><span class="line"><span class="attribute">document.getElementById</span>('<span class="attribute">txt</span>')<span class="attribute">.innerHTML</span> = <span class="attribute">h</span>+"<span class="attribute">:</span>"+"+<span class="attribute">m</span>+"<span class="attribute">:</span>"+<span class="attribute">s</span></span><br><span class="line"><span class="attribute">t</span>=<span class="value">setTimeout('startTime()',500)</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="attribute">function</span> <span class="attribute">checkTime</span>(<span class="attribute">i</span>)</span><br><span class="line">&#123;</span><br><span class="line"><span class="attribute">if</span> (<span class="attribute">i</span>&lt;<span class="attribute">10</span>)</span><br><span class="line">	&#123;<span class="attribute">i</span>=<span class="value">"0"</span><span class="value">+i&#125;</span></span><br><span class="line">	<span class="attribute">return</span> <span class="attribute">i</span></span><br><span class="line">&#125;</span><br><span class="line"></span></span></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">head</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="title">body</span> <span class="attribute">onload</span>=<span class="value">"startTime()"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">id</span>=<span class="value">"txt"</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">html</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+<h4 id="操作日期"><a href="#操作日期" class="headerlink" title="操作日期"></a>操作日期</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> myDate = <span class="keyword">new</span> <span class="built_in">Date</span>()</span><br><span class="line">myDate.setFullYear(<span class="number">2008</span>,<span class="number">7</span>,<span class="number">9</span>)</span><br></pre></td></tr></table></figure>
+<h4 id="Tip：-表示月份的参数应该介于0-11-上面的例子设置后得到的日期为2008年8月9日"><a href="#Tip：-表示月份的参数应该介于0-11-上面的例子设置后得到的日期为2008年8月9日" class="headerlink" title="Tip： 表示月份的参数应该介于0-11  上面的例子设置后得到的日期为2008年8月9日"></a>Tip： 表示月份的参数应该介于0-11  上面的例子设置后得到的日期为2008年8月9日</h4><h3 id="JavaScript-RegExp对象"><a href="#JavaScript-RegExp对象" class="headerlink" title="JavaScript RegExp对象"></a>JavaScript RegExp对象</h3><figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//RegExp对象用于规定在文本中检索的内容</span></span><br></pre></td></tr></table></figure>
+<h4 id="定义RegExp"><a href="#定义RegExp" class="headerlink" title="定义RegExp"></a>定义RegExp</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> patt1=<span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="string">"e"</span>);</span><br></pre></td></tr></table></figure>
+<p>RegExp对象有三个方法： <code>test()</code>、<code>exec()</code>、以及<code>compile()</code></p>
+<h3 id="JavaScript-BOM（浏览器对象模型）"><a href="#JavaScript-BOM（浏览器对象模型）" class="headerlink" title="JavaScript BOM（浏览器对象模型）"></a>JavaScript BOM（浏览器对象模型）</h3><p>BOM(Broser Object Model)</p>
+<h4 id="Windows对相关"><a href="#Windows对相关" class="headerlink" title="Windows对相关"></a>Windows对相关</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.open()</span><br><span class="line"><span class="built_in">window</span>.close()</span><br><span class="line"><span class="built_in">window</span>.moveTo()</span><br><span class="line"><span class="built_in">window</span>.reseizeTo()</span><br></pre></td></tr></table></figure>
+<h4 id="Window-Location"><a href="#Window-Location" class="headerlink" title="Window Location"></a>Window Location</h4><h5 id="window-location-对象在编写时可以不用window这个前缀"><a href="#window-location-对象在编写时可以不用window这个前缀" class="headerlink" title="window.location 对象在编写时可以不用window这个前缀"></a>window.location 对象在编写时可以不用window这个前缀</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">location.hostname <span class="comment">//返回主机域名</span></span><br><span class="line">location.pathname<span class="comment">//返回当前页面的路径和文件名</span></span><br><span class="line">location.port<span class="comment">//返回主机端口</span></span><br><span class="line">location.protocol  <span class="comment">//返回所使用的web协议</span></span><br><span class="line">location.herf   <span class="comment">//返回(当前整个页面的)URL</span></span><br><span class="line">location.assign   <span class="comment">//加载新的文档</span></span><br></pre></td></tr></table></figure>
+<h3 id="JavaScript记时"><a href="#JavaScript记时" class="headerlink" title="JavaScript记时"></a>JavaScript记时</h3><p><code>setTimeout()</code><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> t=setTimeout(<span class="string">"javascript语句"</span>,毫秒数)</span><br></pre></td></tr></table></figure></p>
+<p><code>clearTimeout()</code><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">clearTimeout(setTimeout_variable)</span><br></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/02/17/JavaScript-HTML-DOM-2/" itemprop="url">
+                  JavaScript HTML DOM (2)
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-02-17T23:07:05+08:00" content="2016-02-17">
+              2016-02-17
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/02/17/JavaScript-HTML-DOM-2/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/02/17/JavaScript-HTML-DOM-2/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <hr>
+<h2 id="添加和删除节点"><a href="#添加和删除节点" class="headerlink" title="添加和删除节点"></a>添加和删除节点</h2><hr>
+<p>添加分成3步：</p>
+<ol>
+<li>创建元素</li>
+<li>创建节点追加到元素上</li>
+<li>向已有的元素追加创建的新元素<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=<span class="string">"div1"</span>&gt;</span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="title">p</span> <span class="attribute">id</span>=<span class="value">"p1"</span>&gt;</span> 这是一个段落<span class="tag">&lt;/<span class="title">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">p</span> <span class="attribute">id</span>=<span class="value">"p2"</span>&gt;</span> 这是另一个段落<span class="tag">&lt;/<span class="title">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="title">script</span>&gt;</span><span class="javascript"></span><br><span class="line"><span class="keyword">var</span> para=<span class="built_in">document</span>.createElement(<span class="string">"p"</span>);</span><br><span class="line"><span class="keyword">var</span> node=<span class="built_in">document</span>.createTextNode(<span class="string">"这是新的段落"</span>);</span><br><span class="line">para.appendChild(node);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> element=<span class="built_in">document</span>.getElementById(<span class="string">"div1"</span>);</span><br><span class="line">element.appendChild(para);</span><br><span class="line"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>删除节点有两步:</p>
+<ol>
+<li>找到其父元素</li>
+<li>删除父元素的子元素（即要删除的元素）</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> child=<span class="built_in">document</span>.getElementById(<span class="string">"p1"</span>);</span><br><span class="line">child.parentNode.removeChild(child);</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/02/17/JavaScript-HTML-DOM-1/" itemprop="url">
+                  JavaScript HTML DOM(1)
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-02-17T22:51:43+08:00" content="2016-02-17">
+              2016-02-17
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/02/17/JavaScript-HTML-DOM-1/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/02/17/JavaScript-HTML-DOM-1/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="JavaScript-HTML-DOM"><a href="#JavaScript-HTML-DOM" class="headerlink" title="JavaScript HTML DOM"></a>JavaScript HTML DOM</h1><p>DOM：Document Object Model</p>
+<p>JavaScript可以通过三种方法查找HTML元素</p>
+<ul>
+<li>通过ID名</li>
+<li>通过标签名</li>
+<li>通过类名</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//通过标签名查找HTML元素</span></span><br><span class="line"><span class="keyword">var</span> x=<span class="built_in">document</span>.getElementById(<span class="string">"main"</span>);</span><br><span class="line"><span class="keyword">var</span> y=x.getElementsByTagName(<span class="string">"p"</span>);</span><br><span class="line"><span class="comment">//查找id=main的元素，再在其中找所有&lt;p&gt;元素</span></span><br></pre></td></tr></table></figure>
+<h4 id="改变HTML的属性"><a href="#改变HTML的属性" class="headerlink" title="改变HTML的属性"></a>改变HTML的属性</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.getElementById(id).attribute=<span class="keyword">new</span> value</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="title">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="title">img</span> <span class="attribute">id</span>=<span class="value">"image"</span> <span class="attribute">src</span>=<span class="value">"smiley.gif"</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="title">script</span>&gt;</span><span class="javascript"></span><br><span class="line"><span class="built_in">document</span>.getElementById(<span class="string">"image"</span>).src=<span class="string">"landscape.jpg"</span>;</span><br><span class="line"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="title">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">html</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+<h4 id="改变HTML的样式"><a href="#改变HTML的样式" class="headerlink" title="改变HTML的样式"></a>改变HTML的样式</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.getElementById(id).style.property=<span class="keyword">new</span> style</span><br></pre></td></tr></table></figure>
+<h4 id="onload-和-onunload-事件"><a href="#onload-和-onunload-事件" class="headerlink" title="onload 和 onunload 事件"></a>onload 和 onunload 事件</h4><p>onload 和 onunload 事件会在用户进入或离开页面时被触发。<br>onload 事件可用于检测访问者的浏览器类型和浏览器版本，并基于这些信息来加载网页的正确版本。<br>onload 和 onunload 事件可用于处理 cookie。</p>
+<pre><code class="javascript">&lt;body onload=<span class="string">"checkCookies()"</span>&gt;
+</code></pre>
+
+          
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
 
   </section>
 
@@ -390,7 +1440,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">13</span>
+              <span class="site-state-item-count">14</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -400,7 +1450,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-count">9</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

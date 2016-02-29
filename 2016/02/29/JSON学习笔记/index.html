@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="CSS," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -57,22 +57,16 @@
 
 
 
-<meta name="description" content="CSS后代选择器：后代选择器又称为包含选择器，可以选择作为某后代的元素
-比如我想对h1元素中的em元素应用样式1h1 em&amp;#123;color:red;&amp;#125;
-此操作会把作为h1元素后代的em元素的文本变红，其他不收到影响12&amp;lt;h1&amp;gt;This is a &amp;lt;em&amp;gt;important&amp;lt;/em&amp;gt; heading&amp;lt;/h1&amp;gt;&amp;lt;p&amp;gt;This">
+<meta name="description" content="Personal Blog">
 <meta property="og:type" content="article">
-<meta property="og:title" content="CSS学习笔记(1)-CSS选择器">
-<meta property="og:url" content="http://yoursite.com/2016/02/17/CSS学习笔记(1)/index.html">
+<meta property="og:title" content="JSON学习笔记">
+<meta property="og:url" content="http://yoursite.com/2016/02/29/JSON学习笔记/index.html">
 <meta property="og:site_name" content="TsingLight's Blog">
-<meta property="og:description" content="CSS后代选择器：后代选择器又称为包含选择器，可以选择作为某后代的元素
-比如我想对h1元素中的em元素应用样式1h1 em&amp;#123;color:red;&amp;#125;
-此操作会把作为h1元素后代的em元素的文本变红，其他不收到影响12&amp;lt;h1&amp;gt;This is a &amp;lt;em&amp;gt;important&amp;lt;/em&amp;gt; heading&amp;lt;/h1&amp;gt;&amp;lt;p&amp;gt;This">
-<meta property="og:updated_time" content="2016-02-17T08:55:18.974Z">
+<meta property="og:description" content="Personal Blog">
+<meta property="og:updated_time" content="2016-02-29T03:44:16.294Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="CSS学习笔记(1)-CSS选择器">
-<meta name="twitter:description" content="CSS后代选择器：后代选择器又称为包含选择器，可以选择作为某后代的元素
-比如我想对h1元素中的em元素应用样式1h1 em&amp;#123;color:red;&amp;#125;
-此操作会把作为h1元素后代的em元素的文本变红，其他不收到影响12&amp;lt;h1&amp;gt;This is a &amp;lt;em&amp;gt;important&amp;lt;/em&amp;gt; heading&amp;lt;/h1&amp;gt;&amp;lt;p&amp;gt;This">
+<meta name="twitter:title" content="JSON学习笔记">
+<meta name="twitter:description" content="Personal Blog">
 
 
 
@@ -90,7 +84,7 @@
   };
 </script>
 
-  <title> CSS学习笔记(1)-CSS选择器 | TsingLight's Blog </title>
+  <title> JSON学习笔记 | TsingLight's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -220,7 +214,7 @@
             
             
               
-                CSS学习笔记(1)-CSS选择器
+                JSON学习笔记
               
             
           </h1>
@@ -232,8 +226,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-02-17T15:19:58+08:00" content="2016-02-17">
-              2016-02-17
+            <time itemprop="dateCreated" datetime="2016-02-29T11:44:16+08:00" content="2016-02-29">
+              2016-02-29
             </time>
           </span>
 
@@ -243,8 +237,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/02/17/CSS学习笔记(1)/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/02/17/CSS学习笔记(1)/" itemprop="commentsCount"></span>
+                <a href="/2016/02/29/JSON学习笔记/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/02/29/JSON学习笔记/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -265,44 +259,24 @@
       
 
       
-        <h3 id="CSS后代选择器："><a href="#CSS后代选择器：" class="headerlink" title="CSS后代选择器："></a>CSS后代选择器：</h3><p>后代选择器又称为包含选择器，可以选择作为某后代的元素</p>
-<p>比如我想对h1元素中的em元素应用样式<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">h1 em&#123;color:red;&#125;</span><br></pre></td></tr></table></figure></p>
-<p>此操作会把作为h1元素后代的em元素的文本变红，其他不收到影响<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">h1</span>&gt;</span>This is a <span class="tag">&lt;<span class="title">em</span>&gt;</span>important<span class="tag">&lt;/<span class="title">em</span>&gt;</span> heading<span class="tag">&lt;/<span class="title">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">p</span>&gt;</span>This is a <span class="tag">&lt;<span class="title">em</span>&gt;</span> important<span class="tag">&lt;/<span class="title">em</span>&gt;</span> prargraph.<span class="tag">&lt;/<span class="title">p</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
-<h3 id="CSS子元素选择器"><a href="#CSS子元素选择器" class="headerlink" title="CSS子元素选择器:"></a>CSS子元素选择器:</h3><p>只能选择作为某元素子元素的元素。<br>例：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">h1&gt;strong&#123;color:red;&#125;</span><br></pre></td></tr></table></figure></p>
-<p>此规则会令h1下面的两个strong元素变红,但是第二个h1元素的子元素因为是em所以不受影响<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">h1</span>&gt;</span>This is <span class="tag">&lt;<span class="title">strong</span>&gt;</span>very<span class="tag">&lt;/<span class="title">strong</span>&gt;</span><span class="tag">&lt;<span class="title">strong</span>&gt;</span>very<span class="tag">&lt;/<span class="title">strong</span>&gt;</span>important.<span class="tag">&lt;/<span class="title">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">h1</span>&gt;</span>This is <span class="tag">&lt;<span class="title">em</span>&gt;</span>really<span class="tag">&lt;<span class="title">strong</span>&gt;</span>very<span class="tag">&lt;/<span class="title">strong</span>&gt;</span><span class="tag">&lt;/<span class="title">em</span>&gt;</span>important.<span class="tag">&lt;/<span class="title">h1</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
-<h3 id="结合后代选择器和子选择器"><a href="#结合后代选择器和子选择器" class="headerlink" title="结合后代选择器和子选择器"></a>结合后代选择器和子选择器</h3><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">table</span><span class="class">.company</span> td&gt;p</span><br></pre></td></tr></table></figure>
-<p>选择作为td元素子元素的所有p元素，这个td元素继承于table元素，table元素有一个包含company的class属性</p>
-<h3 id="CSS相邻兄弟选择器"><a href="#CSS相邻兄弟选择器" class="headerlink" title="CSS相邻兄弟选择器:"></a>CSS相邻兄弟选择器:</h3><p>可以①选择紧接在另一个元素后的元素②二者有相同的父元素<br>例如，如果要增加紧接在 h1 元素后出现的段落的上边距，可以这样写<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">h1 + p &#123;margin-top:50px;&#125;</span><br></pre></td></tr></table></figure></p>
-<h3 id="相邻兄弟结合符还可以结合其他结合符："><a href="#相邻兄弟结合符还可以结合其他结合符：" class="headerlink" title="相邻兄弟结合符还可以结合其他结合符："></a>相邻兄弟结合符还可以结合其他结合符：</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">html &gt; body table + ul &#123;margin-top:20px;&#125;</span><br></pre></td></tr></table></figure>
-<p>选择紧接在 table 元素后出现的所有兄弟 ul 元素，该 table 元素包含在一个 body 元素中，body 元素本身是 html 元素的子元素。</p>
-
+        
       
     </div>
 
     <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/CSS/" rel="tag">#CSS</a>
-          
-        </div>
       
 
       
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/02/15/用Git-Hexo搭建个人Blog/" rel="next" title="用Git+Hexo搭建个人Blog">
-                <i class="fa fa-chevron-left"></i> 用Git+Hexo搭建个人Blog
+              <a href="/2016/02/29/AJAX学习笔记/" rel="next" title="AJAX学习笔记">
+                <i class="fa fa-chevron-left"></i> AJAX学习笔记
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/02/17/CSS学习笔记-2/" rel="prev" title="CSS学习笔记(2)">
-                CSS学习笔记(2) <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -328,8 +302,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/02/17/CSS学习笔记(1)/"
-           data-title="CSS学习笔记(1)-CSS选择器" data-url="http://yoursite.com/2016/02/17/CSS学习笔记(1)/">
+      <div class="ds-thread" data-thread-key="2016/02/29/JSON学习笔记/"
+           data-title="JSON学习笔记" data-url="http://yoursite.com/2016/02/29/JSON学习笔记/">
       </div>
     
   </div>
@@ -427,7 +401,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#CSS后代选择器："><span class="nav-number">1.</span> <span class="nav-text">CSS后代选择器：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CSS子元素选择器"><span class="nav-number">2.</span> <span class="nav-text">CSS子元素选择器:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#结合后代选择器和子选择器"><span class="nav-number">3.</span> <span class="nav-text">结合后代选择器和子选择器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CSS相邻兄弟选择器"><span class="nav-number">4.</span> <span class="nav-text">CSS相邻兄弟选择器:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#相邻兄弟结合符还可以结合其他结合符："><span class="nav-number">5.</span> <span class="nav-text">相邻兄弟结合符还可以结合其他结合符：</span></a></li></ol></div>
+              <p class="post-toc-empty">此文章未包含目录</p>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
