@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="AJAX," />
 
 
 
@@ -57,15 +57,16 @@
 
 
 
-<meta name="description" content="Personal Blog">
-<meta property="og:type" content="website">
-<meta property="og:title" content="TsingLight's Blog">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="先看一个实例1&amp;#60;html&amp;#62;&amp;#10;&amp;#60;head&amp;#62;&amp;#10;&amp;#60;script type = &amp;#34;text/javascript&amp;#34;&amp;#62;&amp;#10;function loadXMLDoc()&amp;#10;&amp;#123;&amp;#10;&amp;#10;&amp;#125;&amp;#10;&amp;#60;/script&amp;#62;&amp;#10;&amp;#60;/head&amp;#62;&amp;#10;&amp;#60;b">
+<meta property="og:type" content="article">
+<meta property="og:title" content="AJAX学习笔记">
+<meta property="og:url" content="http://yoursite.com/2016/02/29/AJAX学习笔记/index.html">
 <meta property="og:site_name" content="TsingLight's Blog">
-<meta property="og:description" content="Personal Blog">
+<meta property="og:description" content="先看一个实例1&amp;#60;html&amp;#62;&amp;#10;&amp;#60;head&amp;#62;&amp;#10;&amp;#60;script type = &amp;#34;text/javascript&amp;#34;&amp;#62;&amp;#10;function loadXMLDoc()&amp;#10;&amp;#123;&amp;#10;&amp;#10;&amp;#125;&amp;#10;&amp;#60;/script&amp;#62;&amp;#10;&amp;#60;/head&amp;#62;&amp;#10;&amp;#60;b">
+<meta property="og:updated_time" content="2016-02-29T02:52:53.051Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="TsingLight's Blog">
-<meta name="twitter:description" content="Personal Blog">
+<meta name="twitter:title" content="AJAX学习笔记">
+<meta name="twitter:description" content="先看一个实例1&amp;#60;html&amp;#62;&amp;#10;&amp;#60;head&amp;#62;&amp;#10;&amp;#60;script type = &amp;#34;text/javascript&amp;#34;&amp;#62;&amp;#10;function loadXMLDoc()&amp;#10;&amp;#123;&amp;#10;&amp;#10;&amp;#125;&amp;#10;&amp;#60;/script&amp;#62;&amp;#10;&amp;#60;/head&amp;#62;&amp;#10;&amp;#60;b">
 
 
 
@@ -83,7 +84,7 @@
   };
 </script>
 
-  <title> TsingLight's Blog </title>
+  <title> AJAX学习笔记 | TsingLight's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -112,9 +113,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left 
-   page-home 
- ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -193,24 +192,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
 
+  <div id="posts" class="posts-expand">
     
-
-    
-    
-      
-      
-        
-        
-        
-      
-
-      
-    
-
-    
-      
 
   
   
@@ -230,10 +214,7 @@
             
             
               
-                
-                <a class="post-title-link" href="/2016/02/29/AJAX学习笔记/" itemprop="url">
-                  AJAX学习笔记
-                </a>
+                AJAX学习笔记
               
             
           </h1>
@@ -278,9 +259,7 @@
       
 
       
-        
-          
-            <p>先看一个实例<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#60;html&#62;&#10;&#60;head&#62;&#10;&#60;script type = &#34;text/javascript&#34;&#62;&#10;function loadXMLDoc()&#10;&#123;&#10;&#10;&#125;&#10;&#60;/script&#62;&#10;&#60;/head&#62;&#10;&#60;body&#62;&#10;&#10;&#60;div id=&#34;myDiv&#34;&#62;&#60;h3&#62;Let AJAX change this text&#60;/h3&#62;&#60;/div&#62;&#10;&#60;button type=&#34;button&#34; onclick=&#34;loadXMLDoc()&#34;&#62;Change Content&#60;/button&#62;&#10;&#10;&#60;/body&#62;&#10;&#60;/html&#62;</span><br></pre></td></tr></table></figure></p>
+        <p>先看一个实例<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#60;html&#62;&#10;&#60;head&#62;&#10;&#60;script type = &#34;text/javascript&#34;&#62;&#10;function loadXMLDoc()&#10;&#123;&#10;&#10;&#125;&#10;&#60;/script&#62;&#10;&#60;/head&#62;&#10;&#60;body&#62;&#10;&#10;&#60;div id=&#34;myDiv&#34;&#62;&#60;h3&#62;Let AJAX change this text&#60;/h3&#62;&#60;/div&#62;&#10;&#60;button type=&#34;button&#34; onclick=&#34;loadXMLDoc()&#34;&#62;Change Content&#60;/button&#62;&#10;&#10;&#60;/body&#62;&#10;&#60;/html&#62;</span><br></pre></td></tr></table></figure></p>
 <h3 id="AJAX-XHR"><a href="#AJAX-XHR" class="headerlink" title="AJAX-XHR"></a>AJAX-XHR</h3><p>XHR:XMLHttpRequest对象<br>XMLHttpRequest对象用于在后台与服务器交换数据，这就意味着它可以在不重新加载网页的情况下，对网页的某部分进行更新。</p>
 <h4 id="创建XMLHttpRequest对象"><a href="#创建XMLHttpRequest对象" class="headerlink" title="创建XMLHttpRequest对象"></a>创建XMLHttpRequest对象</h4><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">variable=new XMLHttpRequest();&#10;//&#32769;&#29256;&#26412;&#30340; Internet Explorer &#65288;IE5 &#21644; IE6&#65289;&#20351;&#29992; ActiveX &#23545;&#35937;&#65306;&#10;variable=new ActiveXObject(&#34;Microsoft.XMLHTTP&#34;);</span><br></pre></td></tr></table></figure>
 <p>对于浏览器兼容问题:<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var xmlhttp;&#10;if(window.XMLHttpRequest)&#10;&#9;&#123;//code for IE7+,FireFox,Chrome,Opera,Safari&#10;&#9;xmlhttp=new XMLHttpRequest();&#10;&#9;&#125;&#10;else&#10;&#9;&#123;&#10;&#9;xmlhttp=new ActiveXobject(&#34;Microsoft.XMLHTTP&#34;);&#10;&#9;&#125;</span><br></pre></td></tr></table></figure></p>
@@ -325,33 +304,45 @@
 <h2 id="AJAX-ASP实例"><a href="#AJAX-ASP实例" class="headerlink" title="AJAX ASP实例"></a>AJAX ASP实例</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="title">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">script</span> <span class="attribute">type</span>=<span class="value">"text/javascript"</span>&gt;</span><span class="javascript"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">showHint</span>(<span class="params">str</span>)</span><br><span class="line"></span>&#123;</span><br><span class="line"><span class="keyword">var</span> xmlhttp;</span><br><span class="line"><span class="keyword">if</span> (str.length==<span class="number">0</span>)</span><br><span class="line">	&#123;</span><br><span class="line">	<span class="built_in">document</span>.getElementById(<span class="string">"txtHint"</span>).innerHTML=<span class="string">""</span>;</span><br><span class="line">	<span class="keyword">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line"><span class="keyword">if</span> (<span class="built_in">window</span>.XMLHttpRequest)</span><br><span class="line">	&#123;</span><br><span class="line">	<span class="comment">//code for IE7+,FireFox,Chrome,Opera,Safari</span></span><br><span class="line">	xmlhttp=<span class="keyword">new</span> XMLHttpRequest();</span><br><span class="line">	&#125;</span><br><span class="line"><span class="keyword">else</span> </span><br><span class="line">	&#123;</span><br><span class="line">	xmlhttp = <span class="keyword">new</span> ActiveXobject(<span class="string">"Microsoft.XMLHTTP"</span>);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">xmlhttp.onreadystatechange = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span><br><span class="line">	</span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (xmlhttp.readyState==<span class="number">4</span> &amp;&amp; xmlhttp.status==<span class="number">200</span>)</span><br><span class="line">		&#123;</span><br><span class="line">		<span class="built_in">document</span>.getElementById(<span class="string">"txtHint"</span>).innerHTML=xmlhttp.responseText;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">xmlhttp.open(<span class="string">"GET"</span>,<span class="string">"/ajax/gethint.asp?q="</span> + str,<span class="literal">true</span>);</span><br><span class="line">xmlhttp.send();</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="title">h3</span>&gt;</span>请在下面的输入框中键入字符A-Z：<span class="tag">&lt;/<span class="title">h3</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">form</span> <span class="attribute">action</span>=<span class="value">""</span>&gt;</span></span><br><span class="line">姓氏：<span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"text"</span> <span class="attribute">id</span>=<span class="value">"text1"</span> <span class="attribute">onkeyup</span>=<span class="value">"showHint(this.value)"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">form</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">p</span>&gt;</span>建议：<span class="tag">&lt;<span class="title">span</span> <span class="attribute">id</span>=<span class="value">"txtHint"</span>&gt;</span><span class="tag">&lt;/<span class="title">span</span>&gt;</span><span class="tag">&lt;/<span class="title">p</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="title">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">html</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
 <p>ASP部分<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#60;%&#10;response.expires=-1&#10;dim a(30)&#10;&#39;&#29992;&#21517;&#23383;&#26469;&#22635;&#20805;&#25968;&#32452;&#10;a(1)=&#34;Anna&#34;&#10;a(2)=&#34;Brittany&#34;&#10;a(3)=&#34;Cinderella&#34;&#10;a(4)=&#34;Diana&#34;&#10;a(5)=&#34;Eva&#34;&#10;a(6)=&#34;Fiona&#34;&#10;a(7)=&#34;Gunda&#34;&#10;a(8)=&#34;Hege&#34;&#10;a(9)=&#34;Inga&#34;&#10;a(10)=&#34;Johanna&#34;&#10;a(11)=&#34;Kitty&#34;&#10;a(12)=&#34;Linda&#34;&#10;a(13)=&#34;Nina&#34;&#10;a(14)=&#34;Ophelia&#34;&#10;a(15)=&#34;Petunia&#34;&#10;a(16)=&#34;Amanda&#34;&#10;a(17)=&#34;Raquel&#34;&#10;a(18)=&#34;Cindy&#34;&#10;a(19)=&#34;Doris&#34;&#10;a(20)=&#34;Eve&#34;&#10;a(21)=&#34;Evita&#34;&#10;a(22)=&#34;Sunniva&#34;&#10;a(23)=&#34;Tove&#34;&#10;a(24)=&#34;Unni&#34;&#10;a(25)=&#34;Violet&#34;&#10;a(26)=&#34;Liza&#34;&#10;a(27)=&#34;Elizabeth&#34;&#10;a(28)=&#34;Ellen&#34;&#10;a(29)=&#34;Wenche&#34;&#10;a(30)=&#34;Vicky&#34;&#10;&#10;&#39;&#33719;&#24471;&#26469;&#33258; URL &#30340; q &#21442;&#25968;&#10;q=ucase(request.querystring(&#34;q&#34;))&#10;&#10;&#39;&#22914;&#26524; q &#22823;&#20110; 0&#65292;&#21017;&#26597;&#25214;&#25968;&#32452;&#20013;&#30340;&#25152;&#26377;&#25552;&#31034;&#10;if len(q)&#62;0 then&#10;  hint=&#34;&#34;&#10;  for i=1 to 30&#10;    if q=ucase(mid(a(i),1,len(q))) then&#10;      if hint=&#34;&#34; then&#10;        hint=a(i)&#10;      else&#10;        hint=hint &#38; &#34; , &#34; &#38; a(i)&#10;      end if&#10;    end if&#10;  next&#10;end if&#10;&#10;&#39;&#22914;&#26524;&#26410;&#25214;&#21040;&#25552;&#31034;&#65292;&#21017;&#36755;&#20986; &#34;no suggestion&#34;&#10;&#39;&#21542;&#21017;&#36755;&#20986;&#27491;&#30830;&#30340;&#20540;&#10;if hint=&#34;&#34; then&#10;  response.write(&#34;no suggestion&#34;)&#10;else&#10;  response.write(hint)&#10;end if&#10;%&#62;</span><br></pre></td></tr></table></figure></p>
 
-          
-        
       
     </div>
 
     <footer class="post-footer">
       
-
+        <div class="post-tags">
+          
+            <a href="/tags/AJAX/" rel="tag">#AJAX</a>
+          
+        </div>
       
 
       
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/02/29/Digital-Shadowsocks-实现免流量上网（天大亲测可用）/" rel="next" title="Digital + Shadowsocks 实现免流量上网（天大亲测可用）">
+                <i class="fa fa-chevron-left"></i> Digital + Shadowsocks 实现免流量上网（天大亲测可用）
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
       
-        <div class="post-eof"></div>
+
+      
       
     </footer>
   </article>
 
 
-    
 
-  </section>
-
-  
-  <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
-  </nav>
-
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -359,6 +350,14 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/02/29/AJAX学习笔记/"
+           data-title="AJAX学习笔记" data-url="http://yoursite.com/2016/02/29/AJAX学习笔记/">
+      </div>
+    
+  </div>
+
 
         </div>
         
@@ -378,8 +377,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/uploads/avatar.jpg"
@@ -433,6 +441,23 @@
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator">
+            <i class="fa fa-angle-double-up"></i>
+          </div>
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#AJAX-XHR"><span class="nav-number">1.</span> <span class="nav-text">AJAX-XHR</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#创建XMLHttpRequest对象"><span class="nav-number">1.1.</span> <span class="nav-text">创建XMLHttpRequest对象</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#AJAX-向服务器发送请求"><span class="nav-number">1.2.</span> <span class="nav-text">AJAX-向服务器发送请求</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#GET请求"><span class="nav-number">1.2.1.</span> <span class="nav-text">GET请求</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#POST请求"><span class="nav-number">1.2.2.</span> <span class="nav-text">POST请求</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Async-True"><span class="nav-number">1.2.3.</span> <span class="nav-text">Async-True</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Async-false"><span class="nav-number">1.2.4.</span> <span class="nav-text">Async-false</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#AJAX-服务器响应"><span class="nav-number">1.3.</span> <span class="nav-text">AJAX-服务器响应</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#responseText"><span class="nav-number">1.3.1.</span> <span class="nav-text">responseText</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#responseXML属性"><span class="nav-number">1.3.2.</span> <span class="nav-text">responseXML属性</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#AJAX-onreadnstatechange-事件"><span class="nav-number">1.4.</span> <span class="nav-text">AJAX-onreadnstatechange 事件</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#使用callback函数"><span class="nav-number">1.4.1.</span> <span class="nav-text">使用callback函数</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AJAX-ASP实例"><span class="nav-number"></span> <span class="nav-text">AJAX ASP实例</span></a></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator">
+            <i class="fa fa-angle-double-down"></i>
+          </div>
+        </section>
       
 
     </div>
@@ -514,6 +539,167 @@
 
 
   
+  
+<script type="text/javascript" src="/js/src/scrollspy.js?v=0.5.0"></script>
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 1 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = NexT.utils.escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    NexT.motion.middleWares.sidebar = function () {
+      var $tocContent = $('.post-toc-content');
+
+      if (CONFIG.sidebar === 'post') {
+        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+          NexT.utils.displaySidebar();
+        }
+      }
+    };
+  });
+</script>
+
+
 
   
 

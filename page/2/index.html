@@ -222,6 +222,204 @@
             
               
                 
+                <a class="post-title-link" href="/2016/02/17/CSS学习笔记-2/" itemprop="url">
+                  CSS学习笔记(2)
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-02-17T16:42:21+08:00" content="2016-02-17">
+              2016-02-17
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/02/17/CSS学习笔记-2/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/02/17/CSS学习笔记-2/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="CSS-水平对齐"><a href="#CSS-水平对齐" class="headerlink" title="CSS 水平对齐"></a>CSS 水平对齐</h3><p>在 CSS 中，可以使用多种属性来水平对齐元素<br>对齐块元素<br>块元素指的是如：<br><figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;h1&gt;</span></span><br><span class="line"><span class="tag">&lt;p&gt;</span></span><br><span class="line"><span class="tag">&lt;div&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>占据全部可用宽度的元素，并且在其前后都会换行</p>
+<h3 id="使用-margin-属性来水平对齐"><a href="#使用-margin-属性来水平对齐" class="headerlink" title="使用 margin 属性来水平对齐"></a>使用 margin 属性来水平对齐</h3><p>可通过将左和右外边距设置为 “auto”，来对齐块元素。<br>例：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">.center</span><br><span class="line">&#123;</span><br><span class="line">margin-left:auto;</span><br><span class="line">margin-right:auto;</span><br><span class="line">width:70%;</span><br><span class="line">background-color:#b0e0e6;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="提示：如果宽度是-100-，则对齐没有效果。"><a href="#提示：如果宽度是-100-，则对齐没有效果。" class="headerlink" title="提示：如果宽度是 100%，则对齐没有效果。"></a>提示：如果宽度是 100%，则对齐没有效果。</h3><h3 id="使用-position-属性进行左和右对齐"><a href="#使用-position-属性进行左和右对齐" class="headerlink" title="使用 position 属性进行左和右对齐"></a>使用 position 属性进行左和右对齐</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">.right</span><br><span class="line">&#123;</span><br><span class="line">positin:absolute;</span><br><span class="line">right:0px;</span><br><span class="line">width:300px;</span><br><span class="line">background-color:#b0e0e6</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="使用-float-属性来进行左和右对齐"><a href="#使用-float-属性来进行左和右对齐" class="headerlink" title="使用 float 属性来进行左和右对齐"></a>使用 float 属性来进行左和右对齐</h3><p>例：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">.right</span><br><span class="line">&#123;</span><br><span class="line">float:right;</span><br><span class="line">width:300px;</span><br><span class="line">background-color:#b0e0e6;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<hr>
+<h2 id="CSS导航栏"><a href="#CSS导航栏" class="headerlink" title="CSS导航栏"></a>CSS导航栏</h2><p>导航栏的本质其实就是一个链接列表，所以我们可以使用<code>&lt;ul&gt;</code>和<code>&lt;li&gt;</code>元素<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">ul</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">li</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"http://www.baidu.com"</span>&gt;</span>Baidu<span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">li</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"http://www.hao123.com"</span>&gt;</span>hao123<span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">li</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"http://www.360.com"</span>&gt;</span>360<span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">ul</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>效果如下</p>
+<html><br><body><br><ul><br><li><a href="http://www.baidu.com" target="_blank" rel="external">Baidu</a></li><br><li><a href="http://www.hao123.com" target="_blank" rel="external">hao123</a></li><br><li><a href="http://www.360.com" target="_blank" rel="external">360</a></li><br></ul><br></body><br></html>
+          
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/02/17/CSS学习笔记(1)/" itemprop="url">
+                  CSS学习笔记(1)-CSS选择器
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-02-17T15:19:58+08:00" content="2016-02-17">
+              2016-02-17
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/02/17/CSS学习笔记(1)/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/02/17/CSS学习笔记(1)/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="CSS后代选择器："><a href="#CSS后代选择器：" class="headerlink" title="CSS后代选择器："></a>CSS后代选择器：</h3><p>后代选择器又称为包含选择器，可以选择作为某后代的元素</p>
+<p>比如我想对h1元素中的em元素应用样式<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">h1 em&#123;color:red;&#125;</span><br></pre></td></tr></table></figure></p>
+<p>此操作会把作为h1元素后代的em元素的文本变红，其他不收到影响<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">h1</span>&gt;</span>This is a <span class="tag">&lt;<span class="title">em</span>&gt;</span>important<span class="tag">&lt;/<span class="title">em</span>&gt;</span> heading<span class="tag">&lt;/<span class="title">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">p</span>&gt;</span>This is a <span class="tag">&lt;<span class="title">em</span>&gt;</span> important<span class="tag">&lt;/<span class="title">em</span>&gt;</span> prargraph.<span class="tag">&lt;/<span class="title">p</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="CSS子元素选择器"><a href="#CSS子元素选择器" class="headerlink" title="CSS子元素选择器:"></a>CSS子元素选择器:</h3><p>只能选择作为某元素子元素的元素。<br>例：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">h1&gt;strong&#123;color:red;&#125;</span><br></pre></td></tr></table></figure></p>
+<p>此规则会令h1下面的两个strong元素变红,但是第二个h1元素的子元素因为是em所以不受影响<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">h1</span>&gt;</span>This is <span class="tag">&lt;<span class="title">strong</span>&gt;</span>very<span class="tag">&lt;/<span class="title">strong</span>&gt;</span><span class="tag">&lt;<span class="title">strong</span>&gt;</span>very<span class="tag">&lt;/<span class="title">strong</span>&gt;</span>important.<span class="tag">&lt;/<span class="title">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">h1</span>&gt;</span>This is <span class="tag">&lt;<span class="title">em</span>&gt;</span>really<span class="tag">&lt;<span class="title">strong</span>&gt;</span>very<span class="tag">&lt;/<span class="title">strong</span>&gt;</span><span class="tag">&lt;/<span class="title">em</span>&gt;</span>important.<span class="tag">&lt;/<span class="title">h1</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="结合后代选择器和子选择器"><a href="#结合后代选择器和子选择器" class="headerlink" title="结合后代选择器和子选择器"></a>结合后代选择器和子选择器</h3><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">table</span><span class="class">.company</span> td&gt;p</span><br></pre></td></tr></table></figure>
+<p>选择作为td元素子元素的所有p元素，这个td元素继承于table元素，table元素有一个包含company的class属性</p>
+<h3 id="CSS相邻兄弟选择器"><a href="#CSS相邻兄弟选择器" class="headerlink" title="CSS相邻兄弟选择器:"></a>CSS相邻兄弟选择器:</h3><p>可以①选择紧接在另一个元素后的元素②二者有相同的父元素<br>例如，如果要增加紧接在 h1 元素后出现的段落的上边距，可以这样写<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">h1 + p &#123;margin-top:50px;&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="相邻兄弟结合符还可以结合其他结合符："><a href="#相邻兄弟结合符还可以结合其他结合符：" class="headerlink" title="相邻兄弟结合符还可以结合其他结合符："></a>相邻兄弟结合符还可以结合其他结合符：</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">html &gt; body table + ul &#123;margin-top:20px;&#125;</span><br></pre></td></tr></table></figure>
+<p>选择紧接在 table 元素后出现的所有兄弟 ul 元素，该 table 元素包含在一个 body 元素中，body 元素本身是 html 元素的子元素。</p>
+
+          
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/02/15/用Git-Hexo搭建个人Blog/" itemprop="url">
                   用Git+Hexo搭建个人Blog
                 </a>
@@ -355,7 +553,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">11</span>
+              <span class="site-state-item-count">13</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -365,7 +563,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-count">8</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
