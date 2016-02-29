@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="CSS," />
+  <meta name="keywords" content="技巧," />
 
 
 
@@ -57,22 +57,37 @@
 
 
 
-<meta name="description" content="CSS后代选择器：后代选择器又称为包含选择器，可以选择作为某后代的元素
-比如我想对h1元素中的em元素应用样式1h1 em&amp;#123;color:red;&amp;#125;
-此操作会把作为h1元素后代的em元素的文本变红，其他不收到影响12&amp;lt;h1&amp;gt;This is a &amp;lt;em&amp;gt;important&amp;lt;/em&amp;gt; heading&amp;lt;/h1&amp;gt;&amp;lt;p&amp;gt;This">
+<meta name="description" content="先说原理：    天大的校园网是IPV4和IPV6双栈接入的，而信网中心对于IPV6产生的流量是不计费的，这个方法的原理就是租用支持IPV6的服务器，在服务器端搭建shadowsocks，以代理的方式访问IPV4，从而避免高额流量。（顺带可以翻墙）但是不代表这个方法是完全免费不要钱的！
+
+ipv6是什么
+
+IPv6是一个相对于IPv4的概念，IPv4即我们现在通常说的IP(Internet Pro">
 <meta property="og:type" content="article">
-<meta property="og:title" content="CSS学习笔记(1)-CSS选择器">
-<meta property="og:url" content="http://yoursite.com/2016/02/17/CSS学习笔记(1)/index.html">
+<meta property="og:title" content="Digital + Shadowsocks 部署代理&翻墙&校园网免流量">
+<meta property="og:url" content="http://yoursite.com/2016/02/29/DigitalOcean+Shadowsocks实现免流量上网/index.html">
 <meta property="og:site_name" content="TsingLight's Blog">
-<meta property="og:description" content="CSS后代选择器：后代选择器又称为包含选择器，可以选择作为某后代的元素
-比如我想对h1元素中的em元素应用样式1h1 em&amp;#123;color:red;&amp;#125;
-此操作会把作为h1元素后代的em元素的文本变红，其他不收到影响12&amp;lt;h1&amp;gt;This is a &amp;lt;em&amp;gt;important&amp;lt;/em&amp;gt; heading&amp;lt;/h1&amp;gt;&amp;lt;p&amp;gt;This">
-<meta property="og:updated_time" content="2016-02-17T08:55:18.974Z">
+<meta property="og:description" content="先说原理：    天大的校园网是IPV4和IPV6双栈接入的，而信网中心对于IPV6产生的流量是不计费的，这个方法的原理就是租用支持IPV6的服务器，在服务器端搭建shadowsocks，以代理的方式访问IPV4，从而避免高额流量。（顺带可以翻墙）但是不代表这个方法是完全免费不要钱的！
+
+ipv6是什么
+
+IPv6是一个相对于IPv4的概念，IPv4即我们现在通常说的IP(Internet Pro">
+<meta property="og:image" content="http://yoursite.com/uploads/ss-1.jpg">
+<meta property="og:image" content="http://yoursite.com/uploads/ss-2.jpg">
+<meta property="og:image" content="http://yoursite.com/uploads/ss-3.jpg">
+<meta property="og:image" content="http://yoursite.com/uploads/ss-4.jpg">
+<meta property="og:image" content="http://yoursite.com/uploads/ss-5.jpg">
+<meta property="og:image" content="http://yoursite.com/uploads/ss-6.jpg">
+<meta property="og:image" content="http://yoursite.com/uploads/ss-8.jpg">
+<meta property="og:image" content="http://yoursite.com/uploads/ss-9.jpg">
+<meta property="og:image" content="http://yoursite.com/uploads/ss-10.jpg">
+<meta property="og:updated_time" content="2016-02-29T14:11:18.911Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="CSS学习笔记(1)-CSS选择器">
-<meta name="twitter:description" content="CSS后代选择器：后代选择器又称为包含选择器，可以选择作为某后代的元素
-比如我想对h1元素中的em元素应用样式1h1 em&amp;#123;color:red;&amp;#125;
-此操作会把作为h1元素后代的em元素的文本变红，其他不收到影响12&amp;lt;h1&amp;gt;This is a &amp;lt;em&amp;gt;important&amp;lt;/em&amp;gt; heading&amp;lt;/h1&amp;gt;&amp;lt;p&amp;gt;This">
+<meta name="twitter:title" content="Digital + Shadowsocks 部署代理&翻墙&校园网免流量">
+<meta name="twitter:description" content="先说原理：    天大的校园网是IPV4和IPV6双栈接入的，而信网中心对于IPV6产生的流量是不计费的，这个方法的原理就是租用支持IPV6的服务器，在服务器端搭建shadowsocks，以代理的方式访问IPV4，从而避免高额流量。（顺带可以翻墙）但是不代表这个方法是完全免费不要钱的！
+
+ipv6是什么
+
+IPv6是一个相对于IPv4的概念，IPv4即我们现在通常说的IP(Internet Pro">
 
 
 
@@ -90,7 +105,7 @@
   };
 </script>
 
-  <title> CSS学习笔记(1)-CSS选择器 | TsingLight's Blog </title>
+  <title> Digital + Shadowsocks 部署代理&翻墙&校园网免流量 | TsingLight's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -220,7 +235,7 @@
             
             
               
-                CSS学习笔记(1)-CSS选择器
+                Digital + Shadowsocks 部署代理&翻墙&校园网免流量
               
             
           </h1>
@@ -232,8 +247,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-02-17T15:19:58+08:00" content="2016-02-17">
-              2016-02-17
+            <time itemprop="dateCreated" datetime="2016-02-29T09:06:14+08:00" content="2016-02-29">
+              2016-02-29
             </time>
           </span>
 
@@ -243,8 +258,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/02/17/CSS学习笔记(1)/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/02/17/CSS学习笔记(1)/" itemprop="commentsCount"></span>
+                <a href="/2016/02/29/DigitalOcean+Shadowsocks实现免流量上网/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/02/29/DigitalOcean+Shadowsocks实现免流量上网/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -265,16 +280,26 @@
       
 
       
-        <h3 id="CSS后代选择器："><a href="#CSS后代选择器：" class="headerlink" title="CSS后代选择器："></a>CSS后代选择器：</h3><p>后代选择器又称为包含选择器，可以选择作为某后代的元素</p>
-<p>比如我想对h1元素中的em元素应用样式<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">h1 em&#123;color:red;&#125;</span><br></pre></td></tr></table></figure></p>
-<p>此操作会把作为h1元素后代的em元素的文本变红，其他不收到影响<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">h1</span>&gt;</span>This is a <span class="tag">&lt;<span class="title">em</span>&gt;</span>important<span class="tag">&lt;/<span class="title">em</span>&gt;</span> heading<span class="tag">&lt;/<span class="title">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">p</span>&gt;</span>This is a <span class="tag">&lt;<span class="title">em</span>&gt;</span> important<span class="tag">&lt;/<span class="title">em</span>&gt;</span> prargraph.<span class="tag">&lt;/<span class="title">p</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
-<h3 id="CSS子元素选择器"><a href="#CSS子元素选择器" class="headerlink" title="CSS子元素选择器:"></a>CSS子元素选择器:</h3><p>只能选择作为某元素子元素的元素。<br>例：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">h1&gt;strong&#123;color:red;&#125;</span><br></pre></td></tr></table></figure></p>
-<p>此规则会令h1下面的两个strong元素变红,但是第二个h1元素的子元素因为是em所以不受影响<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">h1</span>&gt;</span>This is <span class="tag">&lt;<span class="title">strong</span>&gt;</span>very<span class="tag">&lt;/<span class="title">strong</span>&gt;</span><span class="tag">&lt;<span class="title">strong</span>&gt;</span>very<span class="tag">&lt;/<span class="title">strong</span>&gt;</span>important.<span class="tag">&lt;/<span class="title">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">h1</span>&gt;</span>This is <span class="tag">&lt;<span class="title">em</span>&gt;</span>really<span class="tag">&lt;<span class="title">strong</span>&gt;</span>very<span class="tag">&lt;/<span class="title">strong</span>&gt;</span><span class="tag">&lt;/<span class="title">em</span>&gt;</span>important.<span class="tag">&lt;/<span class="title">h1</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
-<h3 id="结合后代选择器和子选择器"><a href="#结合后代选择器和子选择器" class="headerlink" title="结合后代选择器和子选择器"></a>结合后代选择器和子选择器</h3><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">table</span><span class="class">.company</span> td&gt;p</span><br></pre></td></tr></table></figure>
-<p>选择作为td元素子元素的所有p元素，这个td元素继承于table元素，table元素有一个包含company的class属性</p>
-<h3 id="CSS相邻兄弟选择器"><a href="#CSS相邻兄弟选择器" class="headerlink" title="CSS相邻兄弟选择器:"></a>CSS相邻兄弟选择器:</h3><p>可以①选择紧接在另一个元素后的元素②二者有相同的父元素<br>例如，如果要增加紧接在 h1 元素后出现的段落的上边距，可以这样写<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">h1 + p &#123;margin-top:50px;&#125;</span><br></pre></td></tr></table></figure></p>
-<h3 id="相邻兄弟结合符还可以结合其他结合符："><a href="#相邻兄弟结合符还可以结合其他结合符：" class="headerlink" title="相邻兄弟结合符还可以结合其他结合符："></a>相邻兄弟结合符还可以结合其他结合符：</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">html &gt; body table + ul &#123;margin-top:20px;&#125;</span><br></pre></td></tr></table></figure>
-<p>选择紧接在 table 元素后出现的所有兄弟 ul 元素，该 table 元素包含在一个 body 元素中，body 元素本身是 html 元素的子元素。</p>
+        <p>先说原理：<br>    天大的校园网是IPV4和IPV6双栈接入的，而信网中心对于IPV6产生的流量是不计费的，这个方法的原理就是租用支持IPV6的服务器，在服务器端搭建shadowsocks，以代理的方式访问IPV4，从而避免高额流量。（顺带可以翻墙）但是不代表这个方法是完全免费不要钱的！</p>
+<blockquote>
+<p>ipv6是什么</p>
+<blockquote>
+<p>IPv6是一个相对于IPv4的概念，IPv4即我们现在通常说的IP(Internet Protocol)，而v4\v6中的v就是Version。IP是一种协议，它是用于Internet网络中数据交换的一种协议，即电脑之间共同遵守的规定，这个规定能指引数据在网线中到达指定的地方。而数据是怎么知道指定的电脑是哪一台呢？这就要靠IP地址,而传统的IP地址只有四节，一节只有0-255的选择，在电脑和移动端飞速增多的当下早就不够用啦。而新技术IPv6协议下的地址有八节，每一节还是四个十六进制位，即0-ffff，<br>天大从IPv4协议走就是我们熟知的按流量计费的模式，而从IPv6走学校是不用登录且不收费！而且IPv6协议下的校园网实际的速度会更快。<br>另外还有一点福利是，著名的GFW，也就是俗称的“墙”是位于IPv4上的，如果你走IPv6连接则不会存在网站被墙的问题。</p>
+</blockquote>
+</blockquote>
+<p>首先你需要选择一个服务器提供商，这个教程里我用的是<a href="http://www.digitalocean.com" target="_blank" rel="external">www.digitalocean.com</a> 然后创建账号,登陆<br><img src="/uploads/ss-1.jpg" alt=""><br>如果你是GitHub的学生用户，github提供了50刀优惠金额，(附带其他各种开发工具各种优惠)<br><a href="https://education.github.com/pack" target="_blank" rel="external">GitHub Student Packet</a>但是领取完你需要用你的PayPal充值5美元到你的digital ocean账户上验证该账户</p>
+<p>登陆后，点击右上角的“create droplets”<br><img src="/uploads/ss-2.jpg" alt="create droplets"><br>选择Ubuntu-$5 per/month - San Francisco（旧金山机房对大陆IP有速度优化）<br><code>Select additional options</code>部分   <code>ipv6</code>项目必须勾选，其他看个人喜好<br><code>Add your SSH keys</code>这里你需要配置你的SSH key，也可以不配置，看个人<br>如果你配置好了SSH，只要有public key就可以登录你的服务器，没有配置SSH的话，DigitalOcean会自动发送给你一个很复杂的密码作为登录口令，登录名是root<br><img src="/uploads/ss-3.jpg" alt="create droplets finish"><br>之后打开你建立好的droplets，点击Console Access 进入服务端控制程序<br>弹出的命令行提示你输入密码，就是你邮箱中DigitalOcean发送的口令<br>接下来输入以下命令安装shadowsocks</p>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">adp-<span class="built_in">get</span> install <span class="keyword">python</span>-gevent <span class="keyword">python</span>-pip</span><br><span class="line">pip install shadowsocks</span><br></pre></td></tr></table></figure>
+<p>到这里shadowsocks就建立完成<br>之后我们需要在服务器本地/etc目录下建立一个文件，文件名为 shadowsocks.json<br>输入如下命令<br><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">cd</span> /etc</span><br><span class="line"><span class="keyword">vi</span> /etc/shadowsocks.json</span><br></pre></td></tr></table></figure></p>
+<p>这里还需要针对ipv6修改一下shadowsocks的配置文件，内容如下：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    "<span class="attribute">server</span>":<span class="value"><span class="string">"::"</span></span>,</span><br><span class="line">    "<span class="attribute">server_port</span>":<span class="value"><span class="number">8388</span></span>,</span><br><span class="line">    "<span class="attribute">local_address</span>": <span class="value"><span class="string">"127.0.0.1"</span></span>,</span><br><span class="line">    "<span class="attribute">local_port</span>":<span class="value"><span class="number">1080</span></span>,</span><br><span class="line">    "<span class="attribute">password</span>":<span class="value"><span class="string">"mypassword"</span></span>,</span><br><span class="line">    "<span class="attribute">timeout</span>":<span class="value"><span class="number">300</span></span>,</span><br><span class="line">    "<span class="attribute">method</span>":<span class="value"><span class="string">"aes-256-cfb"</span></span>,</span><br><span class="line">    "<span class="attribute">fast_open</span>": <span class="value"><span class="literal">false</span></span><br><span class="line"></span>&#125;</span><br></pre></td></tr></table></figure>
+<p>输入完毕后，按ESC-输入   :wq!<br>即可保存并退出（记得打冒号）<br>代码的含义是：<br>“server”同时监听所有IP地址（v4和v6)<br>““”server_port”：服务器端口 默认8388 你可以自己修改<br>“local_address”: “127.0.0.1”,<br>“local_port”:1080,设置本地IP和端口，不用改<br>“password”:”mypassword” 这里写你自己需要的用户名<br>“timeout”:300 设置超时等待时间<br>“method”:”aes-256-cfb” 设置加密方式<br>“fast_open”: false  是否使用TCP_FASTOPEN这个不用管</p>
+<p>最后输入<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssserver -c /etc/shadowsocks.json -d start</span><br></pre></td></tr></table></figure></p>
+<p>后台启动ShadowSocks服务</p>
+<p>然后你需要下载shadowsocks客户端，<br><a href="http://www.ishadowsocks.com" target="_blank" rel="external">ishadowsocks</a><br>这里下载<br>输入你的服务器IP和端口以及密码，单机确定即可</p>
+<p>这里有一点：<br>Digital Ocean提供的Droplets支持IPV6，也就是说服务器本身存在两个IP地址<br>你需要自己填写上相应的IPV6地址才可以实现免流量，如果你填写的是服务器的IPV4地址，则只是翻墙，依旧计算流量。</p>
+<p>在控制台输入<code>ifconfig</code>即可，与windows的<code>ipconfig</code>不同<br>如图所示<br><img src="/uploads/ss-4.jpg" alt="Login"></p>
+<p>最后你可以测试一下<br>首先连上1_tjuwlan，但是别登陆<br><img src="/uploads/ss-5.jpg" alt="Login"><br><img src="/uploads/ss-6.jpg" alt="Login"><br>设置好服务器ip和端口，启动代理服务<br><img src="/uploads/ss-8.jpg" alt="Login"><br><img src="/uploads/ss-9.jpg" alt="Login"><br>成功，试试YouTube<br><img src="/uploads/ss-10.jpg" alt="Login"><br>成功，教程到此结束</p>
 
       
     </div>
@@ -283,7 +308,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/CSS/" rel="tag">#CSS</a>
+            <a href="/tags/技巧/" rel="tag">#技巧</a>
           
         </div>
       
@@ -292,16 +317,16 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/02/15/用Git-Hexo搭建个人Blog/" rel="next" title="用Git+Hexo搭建个人Blog">
-                <i class="fa fa-chevron-left"></i> 用Git+Hexo搭建个人Blog
+              <a href="/2016/02/27/jQuery学习笔记-1/" rel="next" title="jQuery学习笔记-1">
+                <i class="fa fa-chevron-left"></i> jQuery学习笔记-1
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/02/17/CSS学习笔记-2/" rel="prev" title="CSS学习笔记(2)">
-                CSS学习笔记(2) <i class="fa fa-chevron-right"></i>
+              <a href="/2016/02/29/AJAX学习笔记/" rel="prev" title="AJAX学习笔记">
+                AJAX学习笔记 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -328,8 +353,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/02/17/CSS学习笔记(1)/"
-           data-title="CSS学习笔记(1)-CSS选择器" data-url="http://yoursite.com/2016/02/17/CSS学习笔记(1)/">
+      <div class="ds-thread" data-thread-key="2016/02/29/DigitalOcean+Shadowsocks实现免流量上网/"
+           data-title="Digital + Shadowsocks 部署代理&翻墙&校园网免流量" data-url="http://yoursite.com/2016/02/29/DigitalOcean+Shadowsocks实现免流量上网/">
       </div>
     
   </div>
@@ -427,7 +452,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#CSS后代选择器："><span class="nav-number">1.</span> <span class="nav-text">CSS后代选择器：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CSS子元素选择器"><span class="nav-number">2.</span> <span class="nav-text">CSS子元素选择器:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#结合后代选择器和子选择器"><span class="nav-number">3.</span> <span class="nav-text">结合后代选择器和子选择器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CSS相邻兄弟选择器"><span class="nav-number">4.</span> <span class="nav-text">CSS相邻兄弟选择器:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#相邻兄弟结合符还可以结合其他结合符："><span class="nav-number">5.</span> <span class="nav-text">相邻兄弟结合符还可以结合其他结合符：</span></a></li></ol></div>
+              <p class="post-toc-empty">此文章未包含目录</p>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
