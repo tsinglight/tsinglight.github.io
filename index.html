@@ -446,116 +446,6 @@
             
               
                 
-                <a class="post-title-link" href="/2016/02/29/DigitalOcean+Shadowsocks实现免流量上网/" itemprop="url">
-                  Digital + Shadowsocks 代理&翻墙&校园网免流量
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-02-29T09:06:14+08:00" content="2016-02-29">
-              2016-02-29
-            </time>
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/02/29/DigitalOcean+Shadowsocks实现免流量上网/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/02/29/DigitalOcean+Shadowsocks实现免流量上网/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>先说原理：<br>    天大的校园网是IPV4和IPV6双栈接入的，而信网中心对于IPV6产生的流量是不计费的，这个方法的原理就是租用支持IPV6的服务器，在服务器端搭建shadowsocks，以代理的方式访问IPV4，从而避免高额流量。（顺带可以翻墙）但是不代表这个方法是完全免费不要钱的！</p>
-<blockquote>
-<p>ipv6是什么</p>
-<blockquote>
-<p>IPv6是一个相对于IPv4的概念，IPv4即我们现在通常说的IP(Internet Protocol)，而v4\v6中的v就是Version。IP是一种协议，它是用于Internet网络中数据交换的一种协议，即电脑之间共同遵守的规定，这个规定能指引数据在网线中到达指定的地方。而数据是怎么知道指定的电脑是哪一台呢？这就要靠IP地址,而传统的IP地址只有四节，一节只有0-255的选择，在电脑和移动端飞速增多的当下早就不够用啦。而新技术IPv6协议下的地址有八节，每一节还是四个十六进制位，即0-ffff，<br>天大从IPv4协议走就是我们熟知的按流量计费的模式，而从IPv6走学校是不用登录且不收费！而且IPv6协议下的校园网实际的速度会更快。<br>另外还有一点福利是，著名的GFW，也就是俗称的“墙”是位于IPv4上的，如果你走IPv6连接则不会存在网站被墙的问题。</p>
-</blockquote>
-</blockquote>
-<p>首先你需要选择一个服务器提供商，这个教程里我用的是<a href="http://www.digitalocean.com" target="_blank" rel="external">www.digitalocean.com</a> 然后创建账号,登陆<br><img src="/uploads/ss-1.jpg" alt=""><br>如果你是GitHub的学生用户，github提供了50刀优惠金额，(附带其他各种开发工具各种优惠)<br><a href="https://education.github.com/pack" target="_blank" rel="external">GitHub Student Packet</a>但是领取完你需要用你的PayPal充值5美元到你的digital ocean账户上验证该账户</p>
-<p>登陆后，点击右上角的“create droplets”<br><img src="/uploads/ss-2.jpg" alt="create droplets"><br>选择Ubuntu-$5 per/month - San Francisco（旧金山机房对大陆IP有速度优化）<br><code>Select additional options</code>部分   <code>ipv6</code>项目必须勾选，其他看个人喜好<br><code>Add your SSH keys</code>这里你需要配置你的SSH key，也可以不配置，看个人<br>如果你配置好了SSH，只要有public key就可以登录你的服务器，没有配置SSH的话，DigitalOcean会自动发送给你一个很复杂的密码作为登录口令，登录名是root<br><img src="/uploads/ss-3.jpg" alt="create droplets finish"><br>之后打开你建立好的droplets，点击Console Access 进入服务端控制程序<br>弹出的命令行提示你输入密码，就是你邮箱中DigitalOcean发送的口令<br>接下来输入以下命令安装shadowsocks</p>
-<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">adp-<span class="built_in">get</span> install <span class="keyword">python</span>-gevent <span class="keyword">python</span>-pip</span><br><span class="line">pip install shadowsocks</span><br></pre></td></tr></table></figure>
-<p>到这里shadowsocks就建立完成<br>之后我们需要在服务器本地/etc目录下建立一个文件，文件名为 shadowsocks.json<br>输入如下命令<br><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">cd</span> /etc</span><br><span class="line"><span class="keyword">vi</span> /etc/shadowsocks.json</span><br></pre></td></tr></table></figure></p>
-<p>这里还需要针对ipv6修改一下shadowsocks的配置文件，内容如下：</p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    "<span class="attribute">server</span>":<span class="value"><span class="string">"::"</span></span>,</span><br><span class="line">    "<span class="attribute">server_port</span>":<span class="value"><span class="number">8388</span></span>,</span><br><span class="line">    "<span class="attribute">local_address</span>": <span class="value"><span class="string">"127.0.0.1"</span></span>,</span><br><span class="line">    "<span class="attribute">local_port</span>":<span class="value"><span class="number">1080</span></span>,</span><br><span class="line">    "<span class="attribute">password</span>":<span class="value"><span class="string">"mypassword"</span></span>,</span><br><span class="line">    "<span class="attribute">timeout</span>":<span class="value"><span class="number">300</span></span>,</span><br><span class="line">    "<span class="attribute">method</span>":<span class="value"><span class="string">"aes-256-cfb"</span></span>,</span><br><span class="line">    "<span class="attribute">fast_open</span>": <span class="value"><span class="literal">false</span></span><br><span class="line"></span>&#125;</span><br></pre></td></tr></table></figure>
-<p>输入完毕后，按ESC-输入   :wq!<br>即可保存并退出（记得打冒号）<br>代码的含义是：<br>“server”同时监听所有IP地址（v4和v6)<br>““”server_port”：服务器端口 默认8388 你可以自己修改<br>“local_address”: “127.0.0.1”,<br>“local_port”:1080,设置本地IP和端口，不用改<br>“password”:”mypassword” 这里写你自己需要的用户名<br>“timeout”:300 设置超时等待时间<br>“method”:”aes-256-cfb” 设置加密方式<br>“fast_open”: false  是否使用TCP_FASTOPEN这个不用管</p>
-<p>最后输入<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssserver -c /etc/shadowsocks.json -d start</span><br></pre></td></tr></table></figure></p>
-<p>后台启动ShadowSocks服务</p>
-<p>然后你需要下载shadowsocks客户端，<br><a href="http://www.ishadowsocks.com" target="_blank" rel="external">ishadowsocks</a><br>这里下载<br>输入你的服务器IP和端口以及密码，单机确定即可</p>
-<p>这里有一点：<br>Digital Ocean提供的Droplets支持IPV6，也就是说服务器本身存在两个IP地址<br>你需要自己填写上相应的IPV6地址才可以实现免流量，如果你填写的是服务器的IPV4地址，则只是翻墙，依旧计算流量。</p>
-<p>在控制台输入<code>ifconfig</code>即可，与windows的<code>ipconfig</code>不同<br>如图所示<br><img src="/uploads/ss-4.jpg" alt="Login"></p>
-<p>最后你可以测试一下<br>首先连上1_tjuwlan，但是别登陆<br><img src="/uploads/ss-5.jpg" alt="Login"><br><img src="/uploads/ss-6.jpg" alt="Login"><br>设置好服务器ip和端口，启动代理服务<br><img src="/uploads/ss-8.jpg" alt="Login"><br><img src="/uploads/ss-9.jpg" alt="Login"><br>成功，试试YouTube<br><img src="/uploads/ss-10.jpg" alt="Login"><br>成功，教程到此结束</p>
-
-          
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
                 <a class="post-title-link" href="/2016/02/27/jQuery学习笔记-1/" itemprop="url">
                   jQuery学习笔记-1
                 </a>
@@ -1394,6 +1284,119 @@
 
 
     
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/02/17/JavaScript学习笔记/" itemprop="url">
+                  JavaScript学习笔记
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-02-17T19:35:22+08:00" content="2016-02-17">
+              2016-02-17
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/02/17/JavaScript学习笔记/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/02/17/JavaScript学习笔记/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="JavaScript使用"><a href="#JavaScript使用" class="headerlink" title="JavaScript使用"></a>JavaScript使用</h2><p>HTML中的脚本要放在<code>&lt;script&gt;</code>和<code>&lt;/script&gt;</code>标签之间<br>脚本位于HTML的<code>&lt;body&gt;</code>或者<head>部分<br>JavaScript就包含在这里面,当然也可以吧脚本保存到外部文件中去，如下<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="doctype">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">script</span> <span class="attribute">src</span>=<span class="value">"myScript.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">html</span>&gt;</span></span><br></pre></td></tr></table></figure></head></p>
+<h2 id="JavaScript的输出"><a href="#JavaScript的输出" class="headerlink" title="JavaScript的输出"></a>JavaScript的输出</h2><hr>
+<p>JavaScript通常用于操作HTML元素</p>
+<hr>
+<p>可以使用<code>document.getElementById(id)</code><br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="doctype">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="title">h1</span>&gt;</span>My Page<span class="tag">&lt;/<span class="title">h1</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="title">p</span> <span class="attribute">id</span>=<span class="value">"demo"</span>&gt;</span>My First Page<span class="tag">&lt;/<span class="title">p</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="title">script</span>&gt;</span><span class="javascript"></span><br><span class="line"><span class="built_in">document</span>.getElementById(<span class="string">"demo"</span>).innerHTML=<span class="string">"My JavaScript"</span>;</span><br><span class="line"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="title">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">html</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>用JavaScript写入HTML文档<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="doctype">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">h1</span>&gt;</span>My Web Page<span class="tag">&lt;/<span class="title">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">script</span>&gt;</span><span class="javascript"></span><br><span class="line"><span class="built_in">document</span>.write(<span class="string">"&lt;p&gt;My JavaScript&lt;/p&gt;"</span>);</span><br><span class="line"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">html</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h4 id="Tip-document-write-会向文档写入内容，如果在文档加载完成之后再次执行document-write-会覆盖整个HTML页面"><a href="#Tip-document-write-会向文档写入内容，如果在文档加载完成之后再次执行document-write-会覆盖整个HTML页面" class="headerlink" title="Tip:document.write 会向文档写入内容，如果在文档加载完成之后再次执行document.write,会覆盖整个HTML页面"></a>Tip:<code>document.write</code> 会向文档写入内容，如果在文档加载完成之后再次执行document.write,会覆盖整个HTML页面</h4><h4 id="Tip-在JavaScript中，把数字与字符串相加的结果是字符串"><a href="#Tip-在JavaScript中，把数字与字符串相加的结果是字符串" class="headerlink" title="Tip:在JavaScript中，把数字与字符串相加的结果是字符串"></a>Tip:在JavaScript中，把数字与字符串相加的结果是字符串</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">x=<span class="number">5</span>+<span class="string">"5"</span>;</span><br><span class="line"><span class="built_in">document</span>.write(x);</span><br><span class="line"><span class="string">`</span></span><br></pre></td></tr></table></figure>
+<p>输出为<code>55</code></p>
+<h3 id="switch语句"><a href="#switch语句" class="headerlink" title="switch语句"></a>switch语句</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">switch</span>(n)</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line">  执行代码块 <span class="number">1</span></span><br><span class="line">  <span class="keyword">break</span>;</span><br><span class="line"><span class="keyword">case</span> <span class="number">2</span>:</span><br><span class="line">  执行代码块 <span class="number">2</span></span><br><span class="line">  <span class="keyword">break</span>;</span><br><span class="line"><span class="keyword">default</span>:</span><br><span class="line">  n 与 <span class="keyword">case</span> <span class="number">1</span> 和 <span class="keyword">case</span> <span class="number">2</span> 不同时执行的代码</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="For-In-循环"><a href="#For-In-循环" class="headerlink" title="For/In 循环"></a>For/In 循环</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> person=&#123;fname:<span class="string">"john"</span>,lname:<span class="string">"Doe"</span>,age:<span class="number">25</span>&#125;;</span><br><span class="line"><span class="keyword">for</span> (x <span class="keyword">in</span> person)</span><br><span class="line">&#123;</span><br><span class="line">txt=txt + person[x];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="JavaScript-错误-Throw、Try-和-Catch"><a href="#JavaScript-错误-Throw、Try-和-Catch" class="headerlink" title="JavaScript 错误 - Throw、Try 和 Catch"></a>JavaScript 错误 - Throw、Try 和 Catch</h3><h4 id="JavaScript-测试和捕捉"><a href="#JavaScript-测试和捕捉" class="headerlink" title="JavaScript 测试和捕捉"></a>JavaScript 测试和捕捉</h4><p>try 语句允许我们定义在执行时进行错误测试的代码块。<br>catch 语句允许我们定义当 try 代码块发生错误时，所执行的代码块。</p>
+<h4 id="JavaScript-语句-try-和-catch-是成对出现的。"><a href="#JavaScript-语句-try-和-catch-是成对出现的。" class="headerlink" title="JavaScript 语句 try 和 catch 是成对出现的。"></a>JavaScript 语句 try 和 catch 是成对出现的。</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span></span><br><span class="line">  &#123;</span><br><span class="line">  <span class="comment">//在这里运行代码</span></span><br><span class="line">  &#125;</span><br><span class="line"><span class="keyword">catch</span>(err)</span><br><span class="line">  &#123;</span><br><span class="line">  <span class="comment">//在这里处理错误</span></span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<p>下面的例子中，我们将<code>alert</code>故意写错<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="title">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">script</span>&gt;</span><span class="actionscript"></span><br><span class="line"><span class="keyword">var</span> txt=<span class="string">""</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">message</span><span class="params">()</span></span><br><span class="line"></span>&#123;</span><br><span class="line"><span class="keyword">try</span></span><br><span class="line">  &#123;</span><br><span class="line">  adddlert(<span class="string">"Welcome guest!"</span>);</span><br><span class="line">  &#125;</span><br><span class="line"><span class="keyword">catch</span>(err)</span><br><span class="line">  &#123;</span><br><span class="line">  txt=<span class="string">"There was an error on this page.\n\n"</span>;</span><br><span class="line">  txt+=<span class="string">"Error description: "</span> + err.message + <span class="string">"\n\n"</span>;</span><br><span class="line">  txt+=<span class="string">"Click OK to continue.\n\n"</span>;</span><br><span class="line">  alert(txt);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">head</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="title">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"button"</span> <span class="attribute">value</span>=<span class="value">"View message"</span> <span class="attribute">onclick</span>=<span class="value">"message()"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="title">html</span>&gt;</span></span></span><br></pre></td></tr></table></figure></p>
+<h4 id="Throw语句"><a href="#Throw语句" class="headerlink" title="Throw语句"></a>Throw语句</h4><p>throw语句允许我们创建或抛出异常<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">function myFunction()</span><br><span class="line">&#123;</span><br><span class="line">try</span><br><span class="line">  &#123;</span><br><span class="line">  var x=document.getElementById("demo").value;</span><br><span class="line">  if(x=="")    throw "empty";</span><br><span class="line">  if(isNaN(x)) throw "not a number";</span><br><span class="line">  if(x&gt;10)     throw "too high";</span><br><span class="line">  if(x&lt;5)      throw "too low";</span><br><span class="line">  &#125;</span><br><span class="line">catch(err)</span><br><span class="line">  &#123;</span><br><span class="line">  var y=document.getElementById("mess");</span><br><span class="line">  y.innerHTML="Error: " + err + ".";</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;h1&gt;My First JavaScript&lt;/h1&gt;</span><br><span class="line">&lt;p&gt;Please input a number between 5 and 10:&lt;/p&gt;</span><br><span class="line">&lt;input id="demo" type="text"&gt;</span><br><span class="line">&lt;button type="button" onclick="myFunction()"&gt;Test Input&lt;/button&gt;</span><br><span class="line">&lt;p id="mess"&gt;&lt;/p&gt;</span><br></pre></td></tr></table></figure></p>
+<h3 id="JavaScript-表单验证"><a href="#JavaScript-表单验证" class="headerlink" title="JavaScript 表单验证"></a>JavaScript 表单验证</h3><p>JavaScript 可用来在数据被送往服务器前对 HTML 表单中的这些输入数据进行验证。</p>
+<p>被 JavaScript 验证的这些典型的表单数据有：</p>
+<ul>
+<li>用户是否已填写表单中的必填项目？</li>
+<li>用户输入的邮件地址是否合法？</li>
+<li>用户是否已输入合法的日期？</li>
+<li>用户是否在数据域 (numeric field) 中输入了文本？</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="title">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">script</span> <span class="attribute">type</span>=<span class="value">"text/javascript"</span>&gt;</span><span class="actionscript"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">validate_required</span><span class="params">(field,alerttxt)</span></span><br><span class="line"></span>&#123;</span><br><span class="line"><span class="keyword">with</span>(fiedl)</span><br><span class="line">	&#123;</span><br><span class="line">	<span class="keyword">if</span> (value==<span class="literal">null</span>||value==<span class="string">""</span>)</span><br><span class="line">		&#123;alert(alerttxt);<span class="keyword">return</span> <span class="literal">false</span>&#125;</span><br><span class="line">	<span class="keyword">else</span> &#123;<span class="keyword">return</span> <span class="literal">true</span>&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">validate_form</span><span class="params">(thisform)</span></span><br><span class="line"></span>&#123;</span><br><span class="line"><span class="keyword">with</span> (thisform)</span><br><span class="line">	&#123;</span><br><span class="line">	<span class="keyword">if</span> (validate_required(email,<span class="string">"Email must be filled out!"</span>)==<span class="literal">false</span>)</span><br><span class="line">		&#123;email.focus();<span class="keyword">return</span> <span class="literal">false</span>&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">head</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="title">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">form</span> <span class="attribute">action</span>=<span class="value">"submitpage.htm"</span> <span class="attribute">onsubmit</span>=<span class="value">"return validate_form(this)"</span> <span class="attribute">method</span>=<span class="value">"post"</span>&gt;</span></span><br><span class="line">Email: <span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"text"</span> <span class="attribute">name</span>=<span class="value">"email"</span> <span class="attribute">size</span>=<span class="value">"30"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"submit"</span> <span class="attribute">value</span>=<span class="value">"Submit"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">form</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">html</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
 
   </section>
 
@@ -1440,7 +1443,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">14</span>
+              <span class="site-state-item-count">13</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -1450,7 +1453,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-count">8</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
