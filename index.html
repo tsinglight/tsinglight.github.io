@@ -222,6 +222,102 @@
             
               
                 
+                <a class="post-title-link" href="/2016/02/29/纯IPV6网络环境下访问IPV4资源/" itemprop="url">
+                  纯IPV6网络环境下访问IPV4资源
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-02-29T23:02:17+08:00" content="2016-02-29">
+              2016-02-29
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/02/29/纯IPV6网络环境下访问IPV4资源/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/02/29/纯IPV6网络环境下访问IPV4资源/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>此方法是老方法，许多人都已经用过。优点很多，缺点也不少。仅支持vista/win7及以上版本。另外，此方法没有实际测试过不保证有效。</p>
+<p>我们都知道IPv6与IPv4相比有很多优势，比如具有更大的地址空间（最大2^128）、更高的安全性等等。而且使用IPv6网络资源的用户肯定也体验过它惊人的传输速率。</p>
+<p> 另外，IPv6还有一个优势就是你可以通过IPv6网络免费访问IPv4资源。也就是说如果你当前使用的是IPv6网络，那么你就不用再额外花钱购买流量（或账号）来上网了，只需稍稍更改一下DNS就可以畅游网络。</p>
+<h1 id="以下是解决方案"><a href="#以下是解决方案" class="headerlink" title="以下是解决方案:"></a>以下是解决方案:</h1><p>打开本地连接属性，双击Internet协议版本6(TCP/IPv6)，打开其属性如图<br><img src="/uploads/jc-1.jpg" alt="create droplets"><br>将首选DNS服务器地址填上2001:778::37，备用DNS服务器地址填上2001:df8:0:7::1确定，至此就完成了一大半了。据说2001:778::37封禁了中国教育网IP段，但是也存在成功案例。<br>然后回到本地连接属性，如图<br> <img src="/uploads/jc-2.jpg" alt="create droplets"><br> 这里我们只需把IPv4取消，强制令系统使用IPV6，就可以完全畅游网络了，而且还可以浏览GFW不想让你浏览的网站，比如facebook、twitter、Youtube等等。对于翻墙来讲，这要比Google App Engine要来的容易（仅仅针对翻墙来比较）。如果出现不能浏览的情况，建议使用Google Chrome浏览器或者IE浏览器。</p>
+<h1 id="存在缺点"><a href="#存在缺点" class="headerlink" title="存在缺点"></a>存在缺点</h1><p>这个方法有一个非常大的缺点，就是大部分客户端不能通过他的DNS来登陆，比如QQ、邮箱客户端、网盘客户端等诸如此类。这倒是有一个解决办法，不过就不能免费体验了，你仍然需要一个网络账户，而且不用取消IPv4。也就是说你之前怎么上网就怎么上网，除了把IPv6协议属性的DNS服务器地址填上之后，其他的啥也不用动。</p>
+<h1 id="最后，怎么查看自己当前的网络环境？"><a href="#最后，怎么查看自己当前的网络环境？" class="headerlink" title="最后，怎么查看自己当前的网络环境？"></a>最后，怎么查看自己当前的网络环境？</h1><p><a href="http://test-ipv6.com/" target="_blank" rel="external">http://test-ipv6.com</a><br>这个网站可以在线检测你当前的网络环境，查看是否支持IPV6</p>
+
+          
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/02/29/JSON学习笔记/" itemprop="url">
                   JSON学习笔记
                 </a>
@@ -1290,110 +1386,6 @@
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/02/17/JavaScript-HTML-DOM-1/" itemprop="url">
-                  JavaScript HTML DOM(1)
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-02-17T22:51:43+08:00" content="2016-02-17">
-              2016-02-17
-            </time>
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/02/17/JavaScript-HTML-DOM-1/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/02/17/JavaScript-HTML-DOM-1/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="JavaScript-HTML-DOM"><a href="#JavaScript-HTML-DOM" class="headerlink" title="JavaScript HTML DOM"></a>JavaScript HTML DOM</h1><p>DOM：Document Object Model</p>
-<p>JavaScript可以通过三种方法查找HTML元素</p>
-<ul>
-<li>通过ID名</li>
-<li>通过标签名</li>
-<li>通过类名</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//通过标签名查找HTML元素</span></span><br><span class="line"><span class="keyword">var</span> x=<span class="built_in">document</span>.getElementById(<span class="string">"main"</span>);</span><br><span class="line"><span class="keyword">var</span> y=x.getElementsByTagName(<span class="string">"p"</span>);</span><br><span class="line"><span class="comment">//查找id=main的元素，再在其中找所有&lt;p&gt;元素</span></span><br></pre></td></tr></table></figure>
-<h4 id="改变HTML的属性"><a href="#改变HTML的属性" class="headerlink" title="改变HTML的属性"></a>改变HTML的属性</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.getElementById(id).attribute=<span class="keyword">new</span> value</span><br></pre></td></tr></table></figure>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="title">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="title">img</span> <span class="attribute">id</span>=<span class="value">"image"</span> <span class="attribute">src</span>=<span class="value">"smiley.gif"</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="title">script</span>&gt;</span><span class="javascript"></span><br><span class="line"><span class="built_in">document</span>.getElementById(<span class="string">"image"</span>).src=<span class="string">"landscape.jpg"</span>;</span><br><span class="line"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="title">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">html</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
-<h4 id="改变HTML的样式"><a href="#改变HTML的样式" class="headerlink" title="改变HTML的样式"></a>改变HTML的样式</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.getElementById(id).style.property=<span class="keyword">new</span> style</span><br></pre></td></tr></table></figure>
-<h4 id="onload-和-onunload-事件"><a href="#onload-和-onunload-事件" class="headerlink" title="onload 和 onunload 事件"></a>onload 和 onunload 事件</h4><p>onload 和 onunload 事件会在用户进入或离开页面时被触发。<br>onload 事件可用于检测访问者的浏览器类型和浏览器版本，并基于这些信息来加载网页的正确版本。<br>onload 和 onunload 事件可用于处理 cookie。</p>
-<pre><code class="javascript">&lt;body onload=<span class="string">"checkCookies()"</span>&gt;
-</code></pre>
-
-          
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
 
   </section>
 
@@ -1440,7 +1432,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">14</span>
+              <span class="site-state-item-count">15</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
