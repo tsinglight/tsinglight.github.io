@@ -222,6 +222,100 @@
             
               
                 
+                <a class="post-title-link" href="/2016/03/09/Python-Socket编程/" itemprop="url">
+                  Python Socket编程
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-03-09T15:05:47+08:00" content="2016-03-09">
+              2016-03-09
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/03/09/Python-Socket编程/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/09/Python-Socket编程/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>基于UDP协议：<br>客户端 UDPClient.py<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> socket <span class="keyword">import</span> *</span><br><span class="line">serverName = <span class="string">'host ip address here'</span></span><br><span class="line">serverPort = <span class="number">12000</span></span><br><span class="line">clientSocket = socket(AF_INET,SOCK_DGRAM)</span><br><span class="line">message = raw_input(<span class="string">'input lowercase sentence:'</span>)</span><br><span class="line">clientSocket.sendto(message,(serverName,serverPort))</span><br><span class="line">modifiedMessage, serverAddress = clientSocket.recvfrom(<span class="number">2048</span>)</span><br><span class="line"><span class="keyword">print</span> modifiedMessage</span><br><span class="line">clientSocket.close()</span><br></pre></td></tr></table></figure></p>
+<p>服务器端 UDPServer.py<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> socket <span class="keyword">import</span> *</span><br><span class="line">serverPort = <span class="number">12000</span></span><br><span class="line">serverSocket = socket(AF_INET,SOCK_DGRAM)</span><br><span class="line">serverSocket.bind((<span class="string">''</span>,serverPort))</span><br><span class="line"><span class="keyword">print</span> <span class="string">"The server is ready to receive"</span></span><br><span class="line"><span class="keyword">while</span> <span class="keyword">True</span>:</span><br><span class="line">	message, clientAddress = serverSocket.recvfrom(<span class="number">2048</span>)</span><br><span class="line">	modifiedMessage = message.upper()</span><br><span class="line">	serverSocket.sendto(modifiedMessage,clientAddress)</span><br></pre></td></tr></table></figure></p>
+<p>基于TCP协议：<br>TCPClient.py<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> socket <span class="keyword">import</span> *</span><br><span class="line">serverName = <span class="string">'host ip address here'</span></span><br><span class="line">serverPort = <span class="number">12000</span></span><br><span class="line">clientSocket = socket(AF_INET,SOCK_STREAM)</span><br><span class="line">clientSocket.connect((serverName,serverPort))</span><br><span class="line">sentence = raw_input(<span class="string">'Input lowercase sentence:'</span>)</span><br><span class="line">clientSocket.send(sentence)</span><br><span class="line">modifiedSentence = clientSocket.recv(<span class="number">1024</span>)</span><br><span class="line"><span class="keyword">print</span> <span class="string">'From Server:'</span>,modifiedSentence</span><br><span class="line">clientSocket.close()</span><br></pre></td></tr></table></figure></p>
+<p>TCPServer.py<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> socket <span class="keyword">import</span> *</span><br><span class="line">serverPort <span class="number">12000</span></span><br><span class="line">serverSocket = socket (AF_INET,SOCK_STREAM)</span><br><span class="line">serverSocket.bind((<span class="string">''</span>,serverPort))</span><br><span class="line">serverSocket.listen(<span class="number">1</span>)</span><br><span class="line"><span class="keyword">print</span> <span class="string">'The server is ready to receive'</span></span><br><span class="line"><span class="keyword">while</span> <span class="number">1</span>:</span><br><span class="line">	connectionSocket, addr = serverSocket.accept()</span><br><span class="line">	sentence = connectionSocket.recv(<span class="number">1024</span>)</span><br><span class="line">	capitalizedSentence = sentence.upper()</span><br><span class="line">	connectionSocket.send(capitalizedSentence)</span><br><span class="line">	connectionSocket.close()</span><br></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/02/29/纯IPV6网络环境下访问IPV4资源/" itemprop="url">
                   纯IPV6网络环境下访问IPV4资源
                 </a>
@@ -367,7 +461,11 @@
       
         
           
-            
+            <p>#JSON</p>
+<ul>
+<li>JavaScript对象表示法</li>
+</ul>
+
           
         
       
@@ -1282,110 +1380,6 @@
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/02/17/JavaScript-HTML-DOM-2/" itemprop="url">
-                  JavaScript HTML DOM (2)
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-02-17T23:07:05+08:00" content="2016-02-17">
-              2016-02-17
-            </time>
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/02/17/JavaScript-HTML-DOM-2/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/02/17/JavaScript-HTML-DOM-2/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <hr>
-<h2 id="添加和删除节点"><a href="#添加和删除节点" class="headerlink" title="添加和删除节点"></a>添加和删除节点</h2><hr>
-<p>添加分成3步：</p>
-<ol>
-<li>创建元素</li>
-<li>创建节点追加到元素上</li>
-<li>向已有的元素追加创建的新元素<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=<span class="string">"div1"</span>&gt;</span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="title">p</span> <span class="attribute">id</span>=<span class="value">"p1"</span>&gt;</span> 这是一个段落<span class="tag">&lt;/<span class="title">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">p</span> <span class="attribute">id</span>=<span class="value">"p2"</span>&gt;</span> 这是另一个段落<span class="tag">&lt;/<span class="title">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="title">script</span>&gt;</span><span class="javascript"></span><br><span class="line"><span class="keyword">var</span> para=<span class="built_in">document</span>.createElement(<span class="string">"p"</span>);</span><br><span class="line"><span class="keyword">var</span> node=<span class="built_in">document</span>.createTextNode(<span class="string">"这是新的段落"</span>);</span><br><span class="line">para.appendChild(node);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> element=<span class="built_in">document</span>.getElementById(<span class="string">"div1"</span>);</span><br><span class="line">element.appendChild(para);</span><br><span class="line"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<p>删除节点有两步:</p>
-<ol>
-<li>找到其父元素</li>
-<li>删除父元素的子元素（即要删除的元素）</li>
-</ol>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> child=<span class="built_in">document</span>.getElementById(<span class="string">"p1"</span>);</span><br><span class="line">child.parentNode.removeChild(child);</span><br></pre></td></tr></table></figure>
-          
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
 
   </section>
 
@@ -1432,7 +1426,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">15</span>
+              <span class="site-state-item-count">16</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -1442,7 +1436,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-count">11</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
